@@ -1,0 +1,1158 @@
+{
+  "built_at": "2026-05-30T14:22:40.508780",
+  "total_files": 90,
+  "documents": [
+    {
+      "path": ".pytest_cache/README.md",
+      "size_bytes": 302,
+      "decisions": [],
+      "word_count": 40
+    },
+    {
+      "path": "ARKA_MASTER_MANIFEST.md",
+      "size_bytes": 10889,
+      "decisions": [],
+      "word_count": 681
+    },
+    {
+      "path": "app_bridge/chatgpt_inbox.md",
+      "size_bytes": 305,
+      "decisions": [],
+      "word_count": 37
+    },
+    {
+      "path": "bridge_memory/active_context.md",
+      "size_bytes": 956,
+      "decisions": [],
+      "word_count": 88
+    },
+    {
+      "path": "bridge_memory/arka_state.json",
+      "size_bytes": 155,
+      "decisions": [],
+      "word_count": 17
+    },
+    {
+      "path": "bridge_memory/journal/20260517_0819_emergency_ARKA.md",
+      "size_bytes": 1310,
+      "decisions": [],
+      "word_count": 108
+    },
+    {
+      "path": "bridge_memory/journal/20260517_2312_unknown.md",
+      "size_bytes": 234,
+      "decisions": [
+        "DECISION-96"
+      ],
+      "word_count": 26
+    },
+    {
+      "path": "bridge_memory/journal/20260517_2317_unknown.md",
+      "size_bytes": 988,
+      "decisions": [
+        "DECISION-83",
+        "DECISION-88",
+        "DECISION-89",
+        "DECISION-90",
+        "DECISION-92",
+        "DECISION-93",
+        "DECISION-94",
+        "DECISION-95",
+        "DECISION-96"
+      ],
+      "word_count": 100
+    },
+    {
+      "path": "bridge_memory/journal/20260521_0655_unknown.md",
+      "size_bytes": 629,
+      "decisions": [],
+      "word_count": 62
+    },
+    {
+      "path": "bridge_memory/journal/20260526_1734_claude_ai.md",
+      "size_bytes": 207,
+      "decisions": [],
+      "word_count": 22
+    },
+    {
+      "path": "bridge_memory/journal/20260529_1313_claude_ai.md",
+      "size_bytes": 58,
+      "decisions": [],
+      "word_count": 6
+    },
+    {
+      "path": "bridge_memory/journal/20260529_1328_claude_ai.md",
+      "size_bytes": 294,
+      "decisions": [],
+      "word_count": 30
+    },
+    {
+      "path": "bridge_memory/open_loops.md",
+      "size_bytes": 209,
+      "decisions": [],
+      "word_count": 19
+    },
+    {
+      "path": "bridge_memory/rejected_decisions.md",
+      "size_bytes": 109,
+      "decisions": [],
+      "word_count": 10
+    },
+    {
+      "path": "coordination/scripts_registry.md",
+      "size_bytes": 859,
+      "decisions": [],
+      "word_count": 80
+    },
+    {
+      "path": "docs/TZ_OLLAMA_AGENT_v1.md",
+      "size_bytes": 7553,
+      "decisions": [],
+      "word_count": 763
+    },
+    {
+      "path": "exchange/inbox/audit_memory_001.md",
+      "size_bytes": 4547,
+      "decisions": [
+        "DECISION-65",
+        "DECISION-66",
+        "DECISION-67",
+        "DECISION-68",
+        "DECISION-69",
+        "DECISION-70"
+      ],
+      "word_count": 394
+    },
+    {
+      "path": "exchange/outbox/TEST-20260513-0001-AAA.md",
+      "size_bytes": 554,
+      "decisions": [],
+      "word_count": 52
+    },
+    {
+      "path": "exchange/outbox/architect_answers.md",
+      "size_bytes": 1371,
+      "decisions": [],
+      "word_count": 122
+    },
+    {
+      "path": "exchange/outbox/architect_answers2.md",
+      "size_bytes": 2717,
+      "decisions": [],
+      "word_count": 226
+    },
+    {
+      "path": "exchange/outbox/claude_consensus.md",
+      "size_bytes": 74,
+      "decisions": [],
+      "word_count": 2
+    },
+    {
+      "path": "exchange/outbox/claude_last.md",
+      "size_bytes": 54,
+      "decisions": [],
+      "word_count": 3
+    },
+    {
+      "path": "exchange/outbox/claude_response.md",
+      "size_bytes": 1078,
+      "decisions": [],
+      "word_count": 94
+    },
+    {
+      "path": "exchange/outbox/consensus_packet.md",
+      "size_bytes": 3184,
+      "decisions": [],
+      "word_count": 279
+    },
+    {
+      "path": "exchange/outbox/consensus_review_summary.md",
+      "size_bytes": 2945,
+      "decisions": [],
+      "word_count": 285
+    },
+    {
+      "path": "exchange/outbox/deepseek_concept_final.md",
+      "size_bytes": 216,
+      "decisions": [],
+      "word_count": 14
+    },
+    {
+      "path": "exchange/outbox/deepseek_concept_v2.md",
+      "size_bytes": 212,
+      "decisions": [],
+      "word_count": 15
+    },
+    {
+      "path": "exchange/outbox/deepseek_consensus.md",
+      "size_bytes": 98,
+      "decisions": [],
+      "word_count": 3
+    },
+    {
+      "path": "exchange/outbox/deepseek_cycle2.md",
+      "size_bytes": 317,
+      "decisions": [],
+      "word_count": 20
+    },
+    {
+      "path": "exchange/outbox/deepseek_cycle3.md",
+      "size_bytes": 223,
+      "decisions": [],
+      "word_count": 11
+    },
+    {
+      "path": "exchange/outbox/deepseek_protocol.md",
+      "size_bytes": 691,
+      "decisions": [],
+      "word_count": 41
+    },
+    {
+      "path": "exchange/outbox/deepseek_protocol_v2.md",
+      "size_bytes": 104,
+      "decisions": [],
+      "word_count": 3
+    },
+    {
+      "path": "exchange/outbox/deepseek_response.md",
+      "size_bytes": 635,
+      "decisions": [],
+      "word_count": 51
+    },
+    {
+      "path": "exchange/outbox/gemini_concept_final.md",
+      "size_bytes": 8145,
+      "decisions": [],
+      "word_count": 554
+    },
+    {
+      "path": "exchange/outbox/gemini_concept_v2.md",
+      "size_bytes": 3244,
+      "decisions": [],
+      "word_count": 230
+    },
+    {
+      "path": "exchange/outbox/gemini_consensus.md",
+      "size_bytes": 21677,
+      "decisions": [],
+      "word_count": 1579
+    },
+    {
+      "path": "exchange/outbox/gemini_cycle2.md",
+      "size_bytes": 7115,
+      "decisions": [],
+      "word_count": 555
+    },
+    {
+      "path": "exchange/outbox/gemini_cycle3.md",
+      "size_bytes": 959,
+      "decisions": [],
+      "word_count": 76
+    },
+    {
+      "path": "exchange/outbox/gemini_protocol.md",
+      "size_bytes": 2775,
+      "decisions": [],
+      "word_count": 216
+    },
+    {
+      "path": "exchange/outbox/gemini_protocol_v2.md",
+      "size_bytes": 1290,
+      "decisions": [],
+      "word_count": 94
+    },
+    {
+      "path": "exchange/outbox/gemini_response.md",
+      "size_bytes": 1204,
+      "decisions": [],
+      "word_count": 83
+    },
+    {
+      "path": "exchange/outbox/gpt_concept_final.md",
+      "size_bytes": 4655,
+      "decisions": [],
+      "word_count": 293
+    },
+    {
+      "path": "exchange/outbox/gpt_concept_v2.md",
+      "size_bytes": 3257,
+      "decisions": [],
+      "word_count": 199
+    },
+    {
+      "path": "exchange/outbox/gpt_consensus.md",
+      "size_bytes": 4638,
+      "decisions": [],
+      "word_count": 256
+    },
+    {
+      "path": "exchange/outbox/gpt_cycle2.md",
+      "size_bytes": 3127,
+      "decisions": [],
+      "word_count": 198
+    },
+    {
+      "path": "exchange/outbox/gpt_cycle3.md",
+      "size_bytes": 3463,
+      "decisions": [],
+      "word_count": 223
+    },
+    {
+      "path": "exchange/outbox/gpt_protocol.md",
+      "size_bytes": 2886,
+      "decisions": [],
+      "word_count": 161
+    },
+    {
+      "path": "exchange/outbox/gpt_protocol_v2.md",
+      "size_bytes": 1935,
+      "decisions": [
+        "DECISION-001"
+      ],
+      "word_count": 104
+    },
+    {
+      "path": "exchange/outbox/gpt_response.md",
+      "size_bytes": 1089,
+      "decisions": [],
+      "word_count": 74
+    },
+    {
+      "path": "governance/ARCH_MANIFEST.md",
+      "size_bytes": 969,
+      "decisions": [],
+      "word_count": 107
+    },
+    {
+      "path": "governance/ARKA_CONCEPT_v1.md",
+      "size_bytes": 6167,
+      "decisions": [
+        "DECISION-37",
+        "DECISION-55",
+        "DECISION-56",
+        "DECISION-57",
+        "DECISION-58",
+        "DECISION-59",
+        "DECISION-63"
+      ],
+      "word_count": 575
+    },
+    {
+      "path": "governance/ARKA_GOVERNANCE_v1.md",
+      "size_bytes": 10018,
+      "decisions": [],
+      "word_count": 921
+    },
+    {
+      "path": "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "size_bytes": 2647,
+      "decisions": [
+        "DECISION-65",
+        "DECISION-66",
+        "DECISION-67",
+        "DECISION-68",
+        "DECISION-69",
+        "DECISION-70"
+      ],
+      "word_count": 225
+    },
+    {
+      "path": "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "size_bytes": 11755,
+      "decisions": [
+        "DECISION-65",
+        "DECISION-66",
+        "DECISION-67",
+        "DECISION-68",
+        "DECISION-69",
+        "DECISION-70",
+        "DECISION-71",
+        "DECISION-72",
+        "DECISION-73",
+        "DECISION-74",
+        "DECISION-75",
+        "DECISION-76",
+        "DECISION-77"
+      ],
+      "word_count": 1067
+    },
+    {
+      "path": "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "size_bytes": 11556,
+      "decisions": [
+        "DECISION-65",
+        "DECISION-66",
+        "DECISION-67",
+        "DECISION-68",
+        "DECISION-69",
+        "DECISION-70",
+        "DECISION-71",
+        "DECISION-72",
+        "DECISION-73",
+        "DECISION-74",
+        "DECISION-75",
+        "DECISION-76",
+        "DECISION-77",
+        "DECISION-78",
+        "DECISION-79"
+      ],
+      "word_count": 988
+    },
+    {
+      "path": "governance/ARKA_PACKET_SPEC.md",
+      "size_bytes": 778,
+      "decisions": [],
+      "word_count": 85
+    },
+    {
+      "path": "governance/ARKA_UNIFIED_TASK_PROMPT_v2.3.md",
+      "size_bytes": 1646,
+      "decisions": [
+        "DECISION-84"
+      ],
+      "word_count": 153
+    },
+    {
+      "path": "governance/CHAT_PROTOCOL.md",
+      "size_bytes": 1204,
+      "decisions": [],
+      "word_count": 110
+    },
+    {
+      "path": "governance/EXECUTION_POLICY.md",
+      "size_bytes": 762,
+      "decisions": [],
+      "word_count": 88
+    },
+    {
+      "path": "governance/FALLBACK_RULES.md",
+      "size_bytes": 923,
+      "decisions": [],
+      "word_count": 91
+    },
+    {
+      "path": "governance/GOVERNANCE_MASTER_VIEW.md",
+      "size_bytes": 591,
+      "decisions": [],
+      "word_count": 67
+    },
+    {
+      "path": "governance/addendums/GOVERNANCE_ADDENDUM_v0.5.1.md",
+      "size_bytes": 302,
+      "decisions": [],
+      "word_count": 42
+    },
+    {
+      "path": "governance/releases/APPROVED_COMPONENTS.md",
+      "size_bytes": 1649,
+      "decisions": [],
+      "word_count": 172
+    },
+    {
+      "path": "governance/releases/ARKA_V6.1_ALIGNED.md",
+      "size_bytes": 252,
+      "decisions": [],
+      "word_count": 35
+    },
+    {
+      "path": "governance/releases/MODEL_DISPATCHER_v3.1_APPROVED.md",
+      "size_bytes": 2188,
+      "decisions": [],
+      "word_count": 249
+    },
+    {
+      "path": "governance/runtime/ACTIVE_CONTEXT_PACK.json",
+      "size_bytes": 765,
+      "decisions": [],
+      "word_count": 57
+    },
+    {
+      "path": "governance/runtime/ACTIVE_GOVERNANCE_POINTER.json",
+      "size_bytes": 488,
+      "decisions": [],
+      "word_count": 28
+    },
+    {
+      "path": "governance_engine/config/policy.json",
+      "size_bytes": 83,
+      "decisions": [],
+      "word_count": 8
+    },
+    {
+      "path": "governance_engine/config/profile.json",
+      "size_bytes": 104,
+      "decisions": [],
+      "word_count": 10
+    },
+    {
+      "path": "governance_engine/runtime/ACTIVE_GOVERNANCE_POINTER.json",
+      "size_bytes": 169,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_165928.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_170042.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_170957.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_171226.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_171548.json",
+      "size_bytes": 62,
+      "decisions": [],
+      "word_count": 6
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_171631.json",
+      "size_bytes": 62,
+      "decisions": [],
+      "word_count": 6
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_171816.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_171905.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_171954.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "governance_engine/storage/snapshots/snapshot_20260529_172157.json",
+      "size_bytes": 76,
+      "decisions": [],
+      "word_count": 9
+    },
+    {
+      "path": "modules/audit_synthesizer/exports/latest_for_claude.md",
+      "size_bytes": 4434,
+      "decisions": [],
+      "word_count": 395
+    },
+    {
+      "path": "router_v2/inbox/test2.md",
+      "size_bytes": 15,
+      "decisions": [],
+      "word_count": 3
+    },
+    {
+      "path": "router_v2/outbox/result_v2_1779095095.md",
+      "size_bytes": 0,
+      "decisions": [],
+      "word_count": 0
+    },
+    {
+      "path": "status/ARKA_CONTEXT.md",
+      "size_bytes": 3939,
+      "decisions": [
+        "DECISION-37",
+        "DECISION-38",
+        "DECISION-39",
+        "DECISION-40",
+        "DECISION-41",
+        "DECISION-42",
+        "DECISION-43",
+        "DECISION-44",
+        "DECISION-45"
+      ],
+      "word_count": 353
+    },
+    {
+      "path": "status/ARKA_OPEN_IDEAS.md",
+      "size_bytes": 1175,
+      "decisions": [],
+      "word_count": 107
+    },
+    {
+      "path": "status/ARKA_RUNTIME_STATE.json",
+      "size_bytes": 83,
+      "decisions": [],
+      "word_count": 7
+    },
+    {
+      "path": "status/ARKA_STATE.md",
+      "size_bytes": 18369,
+      "decisions": [
+        "DECISION-100",
+        "DECISION-101",
+        "DECISION-102",
+        "DECISION-103",
+        "DECISION-104",
+        "DECISION-105",
+        "DECISION-106",
+        "DECISION-107",
+        "DECISION-108",
+        "DECISION-109",
+        "DECISION-110",
+        "DECISION-111",
+        "DECISION-112",
+        "DECISION-113",
+        "DECISION-114",
+        "DECISION-115",
+        "DECISION-116",
+        "DECISION-117",
+        "DECISION-118",
+        "DECISION-119",
+        "DECISION-120",
+        "DECISION-121",
+        "DECISION-122",
+        "DECISION-123",
+        "DECISION-124",
+        "DECISION-125",
+        "DECISION-126",
+        "DECISION-127",
+        "DECISION-128",
+        "DECISION-129",
+        "DECISION-130",
+        "DECISION-131",
+        "DECISION-132",
+        "DECISION-133",
+        "DECISION-134",
+        "DECISION-135",
+        "DECISION-136",
+        "DECISION-137",
+        "DECISION-138",
+        "DECISION-139",
+        "DECISION-140",
+        "DECISION-141",
+        "DECISION-142",
+        "DECISION-143",
+        "DECISION-144",
+        "DECISION-145",
+        "DECISION-146",
+        "DECISION-147",
+        "DECISION-148",
+        "DECISION-149",
+        "DECISION-150",
+        "DECISION-37",
+        "DECISION-38",
+        "DECISION-39",
+        "DECISION-40",
+        "DECISION-41",
+        "DECISION-42",
+        "DECISION-43",
+        "DECISION-44",
+        "DECISION-45",
+        "DECISION-46",
+        "DECISION-47",
+        "DECISION-48",
+        "DECISION-49",
+        "DECISION-50",
+        "DECISION-51",
+        "DECISION-52",
+        "DECISION-53",
+        "DECISION-54",
+        "DECISION-60",
+        "DECISION-61",
+        "DECISION-62",
+        "DECISION-63",
+        "DECISION-64",
+        "DECISION-65",
+        "DECISION-66",
+        "DECISION-67",
+        "DECISION-68",
+        "DECISION-69",
+        "DECISION-70",
+        "DECISION-71",
+        "DECISION-72",
+        "DECISION-73",
+        "DECISION-74",
+        "DECISION-75",
+        "DECISION-76",
+        "DECISION-77",
+        "DECISION-78",
+        "DECISION-79",
+        "DECISION-80",
+        "DECISION-81",
+        "DECISION-82",
+        "DECISION-83",
+        "DECISION-84",
+        "DECISION-85",
+        "DECISION-86",
+        "DECISION-88",
+        "DECISION-89",
+        "DECISION-90",
+        "DECISION-91",
+        "DECISION-92",
+        "DECISION-93",
+        "DECISION-94",
+        "DECISION-95",
+        "DECISION-96",
+        "DECISION-97",
+        "DECISION-98",
+        "DECISION-99"
+      ],
+      "word_count": 1656
+    },
+    {
+      "path": "status/decisions.md",
+      "size_bytes": 1050,
+      "decisions": [
+        "DECISION-83",
+        "DECISION-88",
+        "DECISION-89",
+        "DECISION-90",
+        "DECISION-92",
+        "DECISION-93",
+        "DECISION-94",
+        "DECISION-95",
+        "DECISION-96"
+      ],
+      "word_count": 100
+    },
+    {
+      "path": "status/model_health.json",
+      "size_bytes": 211,
+      "decisions": [],
+      "word_count": 11
+    },
+    {
+      "path": "status/models_report.json",
+      "size_bytes": 1309,
+      "decisions": [],
+      "word_count": 90
+    }
+  ],
+  "decisions": {
+    "DECISION-96": [
+      "bridge_memory/journal/20260517_2312_unknown.md",
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-83": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-88": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-89": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-90": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-92": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-93": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-94": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-95": [
+      "bridge_memory/journal/20260517_2317_unknown.md",
+      "status/ARKA_STATE.md",
+      "status/decisions.md"
+    ],
+    "DECISION-65": [
+      "exchange/inbox/audit_memory_001.md",
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-66": [
+      "exchange/inbox/audit_memory_001.md",
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-67": [
+      "exchange/inbox/audit_memory_001.md",
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-68": [
+      "exchange/inbox/audit_memory_001.md",
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-69": [
+      "exchange/inbox/audit_memory_001.md",
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-70": [
+      "exchange/inbox/audit_memory_001.md",
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-001": [
+      "exchange/outbox/gpt_protocol_v2.md"
+    ],
+    "DECISION-37": [
+      "governance/ARKA_CONCEPT_v1.md",
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-55": [
+      "governance/ARKA_CONCEPT_v1.md"
+    ],
+    "DECISION-56": [
+      "governance/ARKA_CONCEPT_v1.md"
+    ],
+    "DECISION-57": [
+      "governance/ARKA_CONCEPT_v1.md"
+    ],
+    "DECISION-58": [
+      "governance/ARKA_CONCEPT_v1.md"
+    ],
+    "DECISION-59": [
+      "governance/ARKA_CONCEPT_v1.md"
+    ],
+    "DECISION-63": [
+      "governance/ARKA_CONCEPT_v1.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-71": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-72": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-73": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-74": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-75": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-76": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-77": [
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-78": [
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-79": [
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-84": [
+      "governance/ARKA_UNIFIED_TASK_PROMPT_v2.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-38": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-39": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-40": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-41": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-42": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-43": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-44": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-45": [
+      "status/ARKA_CONTEXT.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-100": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-101": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-102": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-103": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-104": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-105": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-106": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-107": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-108": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-109": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-110": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-111": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-112": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-113": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-114": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-115": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-116": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-117": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-118": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-119": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-120": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-121": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-122": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-123": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-124": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-125": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-126": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-127": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-128": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-129": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-130": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-131": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-132": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-133": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-134": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-135": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-136": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-137": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-138": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-139": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-140": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-141": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-142": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-143": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-144": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-145": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-146": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-147": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-148": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-149": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-150": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-46": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-47": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-48": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-49": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-50": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-51": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-52": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-53": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-54": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-60": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-61": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-62": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-64": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-80": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-81": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-82": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-85": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-86": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-91": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-97": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-98": [
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-99": [
+      "status/ARKA_STATE.md"
+    ]
+  }
+}
