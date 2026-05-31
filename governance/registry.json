@@ -1,15 +1,6 @@
 {
   "documents": [
     {
-      "doc_id": "NEVA-DOC-000",
-      "title": "ARKA_V6_APPROVED",
-      "path": "governance/ARKA_V6_APPROVED.md",
-      "index_path": "governance/ARKA_V6_INDEX.docx",
-      "status": "FIXED",
-      "date_fixed": "2026-05-30",
-      "version": "6.0"
-    },
-    {
       "doc_id": "NEVA-DOC-001",
       "title": "NEVA_CONSTITUTION_v0.1",
       "path": "governance/NEVA_CONSTITUTION_v0.1.docx",
@@ -45,6 +36,11 @@
       "doc_id": "NEVA-TASK-005",
       "title": "NEVA MAP_BUILDER v1.1",
       "type": "TOOL"
+    },
+    {
+      "doc_id": "NEVA-DOC-000",
+      "title": "NEVA V1 \u2014 \u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442 \u0441\u0438\u0441\u0442\u0435\u043c\u044b",
+      "type": "GOVERNANCE"
     }
   ],
   "last_updated": "2026-05-31",

@@ -1,0 +1,10 @@
+{
+  "doc_id": "NEVA-DOC-000",
+  "title": "NEVA V1 — Центральный документ системы",
+  "type": "GOVERNANCE",
+  "version": "1.0",
+  "verified": true,
+  "depends_on": [],
+  "conflicts": [],
+  "updates_required": []
+}
