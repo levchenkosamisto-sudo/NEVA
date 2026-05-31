@@ -1,0 +1,13 @@
+{
+  "doc_id": "NEVA-TASK-004",
+  "title": "NEVA Guardian v3.1",
+  "type": "TOOL",
+  "version": "3.1",
+  "verified": true,
+  "depends_on": [
+    "NEVA-TASK-003"
+  ],
+  "required_by": [],
+  "depth": 1,
+  "health": "OK"
+}

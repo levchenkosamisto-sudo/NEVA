@@ -1,0 +1,91 @@
+{
+  "updated": "2026-05-31T18:18:23.189455",
+  "version": "1.1",
+  "total_documents": 6,
+  "indexed_documents": 2,
+  "health": "WARNING",
+  "components": [
+    {
+      "doc_id": "NEVA-DOC-000",
+      "title": "",
+      "type": "",
+      "version": "",
+      "verified": false,
+      "depends_on": [],
+      "required_by": [
+        "NEVA-TASK-005"
+      ],
+      "depth": 0,
+      "health": "CRITICAL"
+    },
+    {
+      "doc_id": "NEVA-DOC-001",
+      "title": "",
+      "type": "",
+      "version": "",
+      "verified": false,
+      "depends_on": [],
+      "required_by": [],
+      "depth": 0,
+      "health": "CRITICAL"
+    },
+    {
+      "doc_id": "NEVA-TASK-002",
+      "title": "",
+      "type": "",
+      "version": "",
+      "verified": false,
+      "depends_on": [],
+      "required_by": [],
+      "depth": 0,
+      "health": "CRITICAL"
+    },
+    {
+      "doc_id": "NEVA-TASK-003",
+      "title": "",
+      "type": "",
+      "version": "",
+      "verified": false,
+      "depends_on": [],
+      "required_by": [
+        "NEVA-TASK-004"
+      ],
+      "depth": 0,
+      "health": "CRITICAL"
+    },
+    {
+      "doc_id": "NEVA-TASK-004",
+      "title": "NEVA Guardian v3.1",
+      "type": "TOOL",
+      "version": "3.1",
+      "verified": true,
+      "depends_on": [
+        "NEVA-TASK-003"
+      ],
+      "required_by": [],
+      "depth": 1,
+      "health": "OK"
+    },
+    {
+      "doc_id": "NEVA-TASK-005",
+      "title": "NEVA MAP_BUILDER v1.1",
+      "type": "TOOL",
+      "version": "1.1",
+      "verified": true,
+      "depends_on": [
+        "NEVA-DOC-000"
+      ],
+      "required_by": [],
+      "depth": 1,
+      "health": "OK"
+    }
+  ],
+  "conflicts_active": [],
+  "updates_pending": [],
+  "unindexed_documents": [
+    "NEVA-DOC-000",
+    "NEVA-DOC-001",
+    "NEVA-TASK-002",
+    "NEVA-TASK-003"
+  ]
+}

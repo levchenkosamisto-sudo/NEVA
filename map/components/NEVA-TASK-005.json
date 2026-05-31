@@ -1,0 +1,13 @@
+{
+  "doc_id": "NEVA-TASK-005",
+  "title": "NEVA MAP_BUILDER v1.1",
+  "type": "TOOL",
+  "version": "1.1",
+  "verified": true,
+  "depends_on": [
+    "NEVA-DOC-000"
+  ],
+  "required_by": [],
+  "depth": 1,
+  "health": "OK"
+}

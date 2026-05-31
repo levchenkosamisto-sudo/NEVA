@@ -1,0 +1,13 @@
+{
+  "doc_id": "NEVA-DOC-000",
+  "title": "",
+  "type": "",
+  "version": "",
+  "verified": false,
+  "depends_on": [],
+  "required_by": [
+    "NEVA-TASK-005"
+  ],
+  "depth": 0,
+  "health": "CRITICAL"
+}

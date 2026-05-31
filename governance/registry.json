@@ -35,6 +35,16 @@
       "status": "FIXED",
       "date_fixed": "2026-05-31",
       "version": "1.0"
+    },
+    {
+      "doc_id": "NEVA-TASK-004",
+      "title": "NEVA Guardian v3.1",
+      "type": "TOOL"
+    },
+    {
+      "doc_id": "NEVA-TASK-005",
+      "title": "NEVA MAP_BUILDER v1.1",
+      "type": "TOOL"
     }
   ],
   "last_updated": "2026-05-31",

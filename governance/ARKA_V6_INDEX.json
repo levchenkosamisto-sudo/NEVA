@@ -1,0 +1,18 @@
+{
+  "doc_id": "NEVA-TEST-001",
+  "title": "Test",
+  "type": "TEST",
+  "version": "1.0",
+  "status": "DRAFT",
+  "verified": true,
+  "verified_by": null,
+  "verified_at": null,
+  "date_created": "2026-05-31",
+  "author": "Mock",
+  "path": "test.md",
+  "parents": [],
+  "children": [],
+  "conflicts": [],
+  "updates_required": [],
+  "open_issues": []
+}

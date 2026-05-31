@@ -1,0 +1,44 @@
+{
+  "logs": [
+    {
+      "operation": "start",
+      "status": "STARTED",
+      "details": {},
+      "timestamp": "2026-05-31T09:15:18.764759"
+    },
+    {
+      "operation": "deepseek",
+      "status": "STARTED",
+      "details": {},
+      "timestamp": "2026-05-31T09:15:18.765774"
+    },
+    {
+      "operation": "deepseek",
+      "status": "SUCCESS",
+      "details": {
+        "doc_id": "NEVA-TEST-001"
+      },
+      "timestamp": "2026-05-31T09:15:18.765995"
+    },
+    {
+      "operation": "gemini",
+      "status": "STARTED",
+      "details": {},
+      "timestamp": "2026-05-31T09:15:18.766192"
+    },
+    {
+      "operation": "gemini",
+      "status": "SUCCESS",
+      "details": {
+        "verdict": "APPROVED"
+      },
+      "timestamp": "2026-05-31T09:15:18.766317"
+    },
+    {
+      "operation": "finish",
+      "status": "SUCCESS",
+      "details": {},
+      "timestamp": "2026-05-31T09:15:18.766604"
+    }
+  ]
+}
