@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Локальные рабочие директории
+sandbox/
+reports/
+deliverables/
+index/
+
+# Env файлы
+.env
+*.env
