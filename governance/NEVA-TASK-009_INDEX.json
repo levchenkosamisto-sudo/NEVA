@@ -1,0 +1,10 @@
+{
+  "doc_id": "NEVA-TASK-009",
+  "title": "NEVA SEMANTIC AUDITOR v1.0",
+  "type": "TOOL",
+  "version": "1.0",
+  "verified": true,
+  "depends_on": ["NEVA-TASK-004"],
+  "conflicts": [],
+  "updates_required": []
+}

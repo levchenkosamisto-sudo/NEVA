@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-05-30T14:22:40.508780",
-  "total_files": 90,
+  "built_at": "2026-06-01T06:54:54.473172+00:00",
+  "total_files": 58,
   "documents": [
     {
       "path": ".pytest_cache/README.md",
@@ -109,213 +109,6 @@
       "size_bytes": 7553,
       "decisions": [],
       "word_count": 763
-    },
-    {
-      "path": "exchange/inbox/audit_memory_001.md",
-      "size_bytes": 4547,
-      "decisions": [
-        "DECISION-65",
-        "DECISION-66",
-        "DECISION-67",
-        "DECISION-68",
-        "DECISION-69",
-        "DECISION-70"
-      ],
-      "word_count": 394
-    },
-    {
-      "path": "exchange/outbox/TEST-20260513-0001-AAA.md",
-      "size_bytes": 554,
-      "decisions": [],
-      "word_count": 52
-    },
-    {
-      "path": "exchange/outbox/architect_answers.md",
-      "size_bytes": 1371,
-      "decisions": [],
-      "word_count": 122
-    },
-    {
-      "path": "exchange/outbox/architect_answers2.md",
-      "size_bytes": 2717,
-      "decisions": [],
-      "word_count": 226
-    },
-    {
-      "path": "exchange/outbox/claude_consensus.md",
-      "size_bytes": 74,
-      "decisions": [],
-      "word_count": 2
-    },
-    {
-      "path": "exchange/outbox/claude_last.md",
-      "size_bytes": 54,
-      "decisions": [],
-      "word_count": 3
-    },
-    {
-      "path": "exchange/outbox/claude_response.md",
-      "size_bytes": 1078,
-      "decisions": [],
-      "word_count": 94
-    },
-    {
-      "path": "exchange/outbox/consensus_packet.md",
-      "size_bytes": 3184,
-      "decisions": [],
-      "word_count": 279
-    },
-    {
-      "path": "exchange/outbox/consensus_review_summary.md",
-      "size_bytes": 2945,
-      "decisions": [],
-      "word_count": 285
-    },
-    {
-      "path": "exchange/outbox/deepseek_concept_final.md",
-      "size_bytes": 216,
-      "decisions": [],
-      "word_count": 14
-    },
-    {
-      "path": "exchange/outbox/deepseek_concept_v2.md",
-      "size_bytes": 212,
-      "decisions": [],
-      "word_count": 15
-    },
-    {
-      "path": "exchange/outbox/deepseek_consensus.md",
-      "size_bytes": 98,
-      "decisions": [],
-      "word_count": 3
-    },
-    {
-      "path": "exchange/outbox/deepseek_cycle2.md",
-      "size_bytes": 317,
-      "decisions": [],
-      "word_count": 20
-    },
-    {
-      "path": "exchange/outbox/deepseek_cycle3.md",
-      "size_bytes": 223,
-      "decisions": [],
-      "word_count": 11
-    },
-    {
-      "path": "exchange/outbox/deepseek_protocol.md",
-      "size_bytes": 691,
-      "decisions": [],
-      "word_count": 41
-    },
-    {
-      "path": "exchange/outbox/deepseek_protocol_v2.md",
-      "size_bytes": 104,
-      "decisions": [],
-      "word_count": 3
-    },
-    {
-      "path": "exchange/outbox/deepseek_response.md",
-      "size_bytes": 635,
-      "decisions": [],
-      "word_count": 51
-    },
-    {
-      "path": "exchange/outbox/gemini_concept_final.md",
-      "size_bytes": 8145,
-      "decisions": [],
-      "word_count": 554
-    },
-    {
-      "path": "exchange/outbox/gemini_concept_v2.md",
-      "size_bytes": 3244,
-      "decisions": [],
-      "word_count": 230
-    },
-    {
-      "path": "exchange/outbox/gemini_consensus.md",
-      "size_bytes": 21677,
-      "decisions": [],
-      "word_count": 1579
-    },
-    {
-      "path": "exchange/outbox/gemini_cycle2.md",
-      "size_bytes": 7115,
-      "decisions": [],
-      "word_count": 555
-    },
-    {
-      "path": "exchange/outbox/gemini_cycle3.md",
-      "size_bytes": 959,
-      "decisions": [],
-      "word_count": 76
-    },
-    {
-      "path": "exchange/outbox/gemini_protocol.md",
-      "size_bytes": 2775,
-      "decisions": [],
-      "word_count": 216
-    },
-    {
-      "path": "exchange/outbox/gemini_protocol_v2.md",
-      "size_bytes": 1290,
-      "decisions": [],
-      "word_count": 94
-    },
-    {
-      "path": "exchange/outbox/gemini_response.md",
-      "size_bytes": 1204,
-      "decisions": [],
-      "word_count": 83
-    },
-    {
-      "path": "exchange/outbox/gpt_concept_final.md",
-      "size_bytes": 4655,
-      "decisions": [],
-      "word_count": 293
-    },
-    {
-      "path": "exchange/outbox/gpt_concept_v2.md",
-      "size_bytes": 3257,
-      "decisions": [],
-      "word_count": 199
-    },
-    {
-      "path": "exchange/outbox/gpt_consensus.md",
-      "size_bytes": 4638,
-      "decisions": [],
-      "word_count": 256
-    },
-    {
-      "path": "exchange/outbox/gpt_cycle2.md",
-      "size_bytes": 3127,
-      "decisions": [],
-      "word_count": 198
-    },
-    {
-      "path": "exchange/outbox/gpt_cycle3.md",
-      "size_bytes": 3463,
-      "decisions": [],
-      "word_count": 223
-    },
-    {
-      "path": "exchange/outbox/gpt_protocol.md",
-      "size_bytes": 2886,
-      "decisions": [],
-      "word_count": 161
-    },
-    {
-      "path": "exchange/outbox/gpt_protocol_v2.md",
-      "size_bytes": 1935,
-      "decisions": [
-        "DECISION-001"
-      ],
-      "word_count": 104
-    },
-    {
-      "path": "exchange/outbox/gpt_response.md",
-      "size_bytes": 1089,
-      "decisions": [],
-      "word_count": 74
     },
     {
       "path": "governance/ARCH_MANIFEST.md",
@@ -437,10 +230,16 @@
       "word_count": 67
     },
     {
-      "path": "governance/addendums/GOVERNANCE_ADDENDUM_v0.5.1.md",
-      "size_bytes": 302,
+      "path": "governance/NEVA_CONTEXT.md",
+      "size_bytes": 2649,
       "decisions": [],
-      "word_count": 42
+      "word_count": 310
+    },
+    {
+      "path": "governance/addendums/GOVERNANCE_ADDENDUM_v0.5.1.md",
+      "size_bytes": 8442,
+      "decisions": [],
+      "word_count": 1002
     },
     {
       "path": "governance/releases/APPROVED_COMPONENTS.md",
@@ -787,51 +586,6 @@
       "status/ARKA_STATE.md",
       "status/decisions.md"
     ],
-    "DECISION-65": [
-      "exchange/inbox/audit_memory_001.md",
-      "governance/ARKA_MEMORY_LAYER_v0.1.md",
-      "governance/ARKA_MEMORY_LAYER_v0.2.md",
-      "governance/ARKA_MEMORY_LAYER_v0.3.md",
-      "status/ARKA_STATE.md"
-    ],
-    "DECISION-66": [
-      "exchange/inbox/audit_memory_001.md",
-      "governance/ARKA_MEMORY_LAYER_v0.1.md",
-      "governance/ARKA_MEMORY_LAYER_v0.2.md",
-      "governance/ARKA_MEMORY_LAYER_v0.3.md",
-      "status/ARKA_STATE.md"
-    ],
-    "DECISION-67": [
-      "exchange/inbox/audit_memory_001.md",
-      "governance/ARKA_MEMORY_LAYER_v0.1.md",
-      "governance/ARKA_MEMORY_LAYER_v0.2.md",
-      "governance/ARKA_MEMORY_LAYER_v0.3.md",
-      "status/ARKA_STATE.md"
-    ],
-    "DECISION-68": [
-      "exchange/inbox/audit_memory_001.md",
-      "governance/ARKA_MEMORY_LAYER_v0.1.md",
-      "governance/ARKA_MEMORY_LAYER_v0.2.md",
-      "governance/ARKA_MEMORY_LAYER_v0.3.md",
-      "status/ARKA_STATE.md"
-    ],
-    "DECISION-69": [
-      "exchange/inbox/audit_memory_001.md",
-      "governance/ARKA_MEMORY_LAYER_v0.1.md",
-      "governance/ARKA_MEMORY_LAYER_v0.2.md",
-      "governance/ARKA_MEMORY_LAYER_v0.3.md",
-      "status/ARKA_STATE.md"
-    ],
-    "DECISION-70": [
-      "exchange/inbox/audit_memory_001.md",
-      "governance/ARKA_MEMORY_LAYER_v0.1.md",
-      "governance/ARKA_MEMORY_LAYER_v0.2.md",
-      "governance/ARKA_MEMORY_LAYER_v0.3.md",
-      "status/ARKA_STATE.md"
-    ],
-    "DECISION-001": [
-      "exchange/outbox/gpt_protocol_v2.md"
-    ],
     "DECISION-37": [
       "governance/ARKA_CONCEPT_v1.md",
       "status/ARKA_CONTEXT.md",
@@ -854,6 +608,42 @@
     ],
     "DECISION-63": [
       "governance/ARKA_CONCEPT_v1.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-65": [
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-66": [
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-67": [
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-68": [
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-69": [
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
+      "status/ARKA_STATE.md"
+    ],
+    "DECISION-70": [
+      "governance/ARKA_MEMORY_LAYER_v0.1.md",
+      "governance/ARKA_MEMORY_LAYER_v0.2.md",
+      "governance/ARKA_MEMORY_LAYER_v0.3.md",
       "status/ARKA_STATE.md"
     ],
     "DECISION-71": [

@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, UTC
 
 ARKA_ROOT = Path.home() / "Documents" / "ARKA"
 
@@ -42,7 +42,22 @@ DECISION_RE = re.compile(r"DECISION-\d+")
 
 def is_excluded(path: Path) -> bool:
     parts = set(path.parts)
-    return bool(parts & EXCLUDED_DIRS)
+
+    if parts & EXCLUDED_DIRS:
+        return True
+
+    path_str = str(path)
+
+    if "exchange/inbox/" in path_str:
+        return True
+
+    if "exchange/outbox/" in path_str:
+        return True
+
+    if "exchange/retry/" in path_str:
+        return True
+
+    return False
 
 
 def collect_files(root: Path) -> list[Path]:
@@ -102,7 +117,7 @@ def build_index() -> dict:
             )
 
     return {
-        "built_at": datetime.utcnow().isoformat(),
+        "built_at": datetime.now(UTC).isoformat(),
         "total_files": len(documents),
         "documents": documents,
         "decisions": all_decisions,
