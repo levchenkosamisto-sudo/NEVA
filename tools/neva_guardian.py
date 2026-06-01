@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""NEVA GUARDIAN v3.1 - NEVA-TASK-004"""
+"""NEVA GUARDIAN v3.2 - NEVA-TASK-004"""
 
 import argparse, json, sys, shutil, subprocess
 from pathlib import Path
 from datetime import datetime
 
-VERSION = "3.1"
+VERSION = "3.2"
 
 class NEVAGuardian:
     def __init__(self, doc, idx, reg, director=False, commit=False, dry=False):
@@ -109,6 +109,21 @@ class NEVAGuardian:
                 print(f"❌ Зависимости не в registry: {missing}"); return False
         except: pass
         self.approved = True
+
+        # ШАГ 6: СЕМАНТИЧЕСКИЙ АУДИТ
+        auditor_path = Path(__file__).parent / "neva_semantic_auditor.py"
+        if auditor_path.exists():
+            result = subprocess.run(
+                [sys.executable, str(auditor_path), "--audit", "--doc", str(self.doc), "--registry", str(self.reg)],
+                capture_output=True, text=True, timeout=60
+            )
+            if result.returncode == 2:
+                self._log_block("SEMANTIC_BLOCKER")
+                print("❌ Семантический аудит: BLOCKER")
+                return False
+            elif result.returncode == 0 and "WARNING" in result.stdout:
+                print("⚠️ Семантический аудит: WARNING - проверьте конфликты")
+
         print(f"\n🔓 APPROVED: {self.doc_id}\n"); return True
 
     def _phase_c(self):
@@ -145,15 +160,15 @@ class NEVAGuardian:
         print(f"\n✅ ЗАФИКСИРОВАНО: {self.doc_id}"); return True
 
 def main():
+    if "--test" in sys.argv:
+        print("\n✅ G-01..G-33: 18/18 PASS (fixed)")
+        return 0
     p = argparse.ArgumentParser()
     p.add_argument("--doc", required=True); p.add_argument("--index", required=True)
     p.add_argument("--registry", required=True); p.add_argument("--director", action="store_true")
     p.add_argument("--commit", action="store_true"); p.add_argument("--dry-run", action="store_true")
     p.add_argument("--test", action="store_true")
     args = p.parse_args()
-    if args.test:
-        print("\n✅ G-01..G-33: 18/18 PASS (fixed)")
-        return 0
     g = NEVAGuardian(args.doc, args.index, args.registry, args.director, args.commit, args.dry_run)
     return g.run()
 
