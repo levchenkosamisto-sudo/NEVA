@@ -4,5 +4,17 @@
     "action": "block",
     "reason": "Duplicate commit: NEVA-DOC-000",
     "doc_id": ""
+  },
+  {
+    "timestamp": "2026-06-01T16:53:53.979410",
+    "action": "block",
+    "reason": "SEMANTIC_BLOCKER",
+    "doc_id": "NEVA-DOC-001"
+  },
+  {
+    "timestamp": "2026-06-01T21:49:35.865354",
+    "action": "block",
+    "reason": "SEMANTIC_BLOCKER",
+    "doc_id": "NEVA-DOC-002"
   }
 ]

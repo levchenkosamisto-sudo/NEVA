@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "created": "2026-06-01T07:40:08.417849",
+  "documents": [
+    {
+      "doc_id": "NEVA-DOC-000",
+      "summary": "NEVA V1 — Центральный документ системы",
+      "markers": {
+        "type": "GOVERNANCE"
+      },
+      "keywords": [
+        "neva",
+        "governance",
+        "центральный",
+        "система"
+      ],
+      "relations": {
+        "depends_on": [],
+        "defines": [
+          "NEVA"
+        ]
+      }
+    }
+  ]
+}

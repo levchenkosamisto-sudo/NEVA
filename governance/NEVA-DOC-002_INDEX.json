@@ -1,0 +1,36 @@
+{
+  "doc_id": "NEVA-DOC-002",
+  "title": "NEVA Audit Protocol — Регламент аудита",
+  "type": "protocol",
+  "version": "0.1-DRAFT",
+  "status": "DRAFT",
+  "file": "neva_audit_protocol_DRAFT.md",
+  "created": "2026-06-01",
+  "author": "Claude (архитектор)",
+  "verified": true,
+  "conflicts": [],
+  "depends_on": [],
+  "updates_required": [],
+  "description": "7-этапный регламент аудита НЕВА. Статус DRAFT — открыт для изменений.",
+  "summary": "7-этапный регламент аудита НЕВА. Статус DRAFT — открыт для изменений.",
+  "markers": {
+    "type": "PROTOCOL",
+    "status": "DRAFT"
+  },
+  "keywords": [
+    "аудит",
+    "регламент",
+    "7 этапов",
+    "review",
+    "snapshot",
+    "rework",
+    "нева",
+    "protocol"
+  ],
+  "relations": {
+    "depends_on": [],
+    "defines": [
+      "NEVA_AUDIT_PROTOCOL"
+    ]
+  }
+}
