@@ -1,0 +1,24 @@
+--- neva_guardian.py (v3.1)
++++ neva_guardian.py (v3.2)
+
+После строки:
+    if director_override:
+        print("⚠️  --director флаг: пропускаем конфликты")
+        return True, "DIRECTOR_OVERRIDE"
+
+Добавить:
+
+    # ШАГ 6: СЕМАНТИЧЕСКИЙ АУДИТ
+    import subprocess
+    auditor_path = Path(__file__).parent / "neva_semantic_auditor.py"
+    if auditor_path.exists():
+        result = subprocess.run(
+            [sys.executable, str(auditor_path), "--audit", "--doc", str(doc_path), "--registry", str(registry_path)],
+            capture_output=True, text=True, timeout=60
+        )
+        if result.returncode == 2:
+            log_block("SEMANTIC_BLOCKER", result.stdout)
+            return False, "SEMANTIC_BLOCKER"
+        elif result.returncode == 0 and "WARNING" in result.stdout:
+            print("⚠️ Семантический аудит: WARNING - проверьте конфликты")
+
