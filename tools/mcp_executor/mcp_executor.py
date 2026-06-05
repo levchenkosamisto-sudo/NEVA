@@ -28,10 +28,10 @@ except ImportError:
 def safe_path(path: str):
     if not path:
         return None
-    full = os.path.realpath(os.path.join(BASE_DIR, os.path.expanduser(path)))
-    if not full.startswith(BASE_DIR + os.sep) and full != BASE_DIR:
-        return None
-    return full
+    candidate = os.path.abspath(os.path.join(BASE_DIR, path.lstrip('/')))
+    if candidate.startswith(BASE_DIR + os.sep) or candidate == BASE_DIR:
+        return candidate
+    return None
 
 
 def execute(command: dict):
