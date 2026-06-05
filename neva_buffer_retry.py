@@ -139,13 +139,16 @@ class NEVABufferMiddleware(BaseHTTPMiddleware):
         body = await request.body()
         request._body = body  # без этого handler получит пустой body
 
-        # Буферизуем только write-запросы
-        if request.method == "POST" and not await _graphiti_available():
-            _buffer_request(request, body)
-            return JSONResponse(
-                {"status": "buffered", "message": "Graphiti недоступен"},
-                status_code=202
-            )
+        # Буферизуем только если внешний Graphiti недоступен
+        # Пропускаем проверку для внутренних запросов самого сервера
+        skip_paths = ["/api/v1/health", "/api/v1/metrics"]
+        if request.method == "POST" and str(request.url.path) not in skip_paths:
+            if not await _graphiti_available():
+                _buffer_request(request, body)
+                return JSONResponse(
+                    {"status": "buffered", "message": "Graphiti недоступен"},
+                    status_code=202
+                )
 
         return await call_next(request)
 

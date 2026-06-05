@@ -54,7 +54,7 @@ class NevaGraphiti:
         if not KUZU_AVAILABLE:
             raise RuntimeError("kuzu не установлен: pip install kuzu==0.11.3")
 
-        os.makedirs(self.db_path, exist_ok=True)
+        # Kuzu сам создаёт файл БД — os.makedirs не нужен
         self.db = kuzu.Database(self.db_path)
         self.conn = kuzu.Connection(self.db)
         self._init_schema()
