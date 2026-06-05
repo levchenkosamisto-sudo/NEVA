@@ -1,9 +1,10 @@
 import os
 import subprocess
 import time
+
 from graph.execution_logger import log_execution
 
-BASE_DIR = os.path.realpath(os.path.expanduser("~/Documents/NEVA"))
+BASE_DIR = os.path.realpath(os.path.expanduser("~/Documents/NEVA_MCP_BRIDGE"))
 
 
 def safe_path(path: str):
