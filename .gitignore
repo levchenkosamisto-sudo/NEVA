@@ -16,3 +16,13 @@ deliverables/
 # Env файлы
 .env
 *.env
+*.db
+*.wal
+*.log
+kuzu_data
+kuzu_data.wal
+.venv/
+__pycache__/
+.DS_Store
+test.db
+test_restore.db
