@@ -1,12 +1,27 @@
 # NEVA Medic Knowledge — NEVA Medic сам
-# Версия: 1.0 | Дата: 2026-06-15 | Архитектор: Claude
+# Версия: 2.0 | Дата: 2026-06-15 | Архитектор: Claude
 
 ## Назначение
 neva_medic.py v3.8 — L1 авторемонт системы NEVA.
-Цикл heal каждую минуту. AI-диагностика + playbook исполнение. knowledge base v4.0.
+Цикл heal каждую минуту. AI-диагностика + playbook. knowledge base v5.0.
 Файл: ~/Documents/NEVA_MCP_BRIDGE/neva_medic.py
 Лог: ~/Documents/NEVA_MCP_BRIDGE/logs/medic.log
 Статус: PROD (критический — без него 0 авторемонта)
+
+## ДВОЙНАЯ ЗАЩИТА МЕДИКА (2026-06-15)
+
+```
+macOS launchd (PID 1)
+  └─ com.neva.medic → KeepAlive: true
+       Падение медика → launchd поднимает за 10с (автоматически)
+
+neva_status_dot.py (watchdog, каждые 15с)
+  └─ medic_alive()? → нет → nohup запуск за ~23с
+       → точка: yellow (ремонт) → green (ок)
+neva_status_dot.py сам защищён launchd KeepAlive (com.neva.status-dot)
+```
+
+Модель: systemd watchdog chain — OS supervisor (макос) + app watchdog (status_dot)
 
 ## АРХИТЕКТУРА
 ```
@@ -17,12 +32,12 @@ neva_medic.py heal_cycle() (каждую 60с)
   ├─ load_knowledge()      ← читает medic_knowledge/*.md
   ├─ run_playbook()        ← выполняет bash команды
   ├─ incident_log_write()  ← пишет state/incident_log.json
-  └─ push_event()          ← отправляет событие в MCP сервер
+  └─ push_event()          ← отправляет событие в MCP :9000
 ```
 
 ## Запуск
 ```bash
-# Login Items (LaunchAgent) — основной
+# launchd KeepAlive (com.neva.medic) — автоматически при входе в систему
 # Fallback вручной:
 nohup /Users/arka/Documents/NEVA/.venv/bin/python3 -u \
   /Users/arka/Documents/NEVA_MCP_BRIDGE/neva_medic.py \
@@ -33,11 +48,11 @@ nohup /Users/arka/Documents/NEVA/.venv/bin/python3 -u \
 ```bash
 # Живой ли:
 ps aux | grep neva_medic | grep -v grep
-# Лог свежий если mtime < 120с:
-stat -f %m ~/Documents/NEVA_MCP_BRIDGE/logs/medic.log
-# Последние события:
-tail -20 ~/Documents/NEVA_MCP_BRIDGE/logs/medic.log
-# Самотест:
+# Лог свежий:
+tail -10 ~/Documents/NEVA_MCP_BRIDGE/logs/medic.log
+# launchd статус:
+launchctl list com.neva.medic
+# Self-test:
 /Users/arka/Documents/NEVA/.venv/bin/python3 \
   /Users/arka/Documents/NEVA_MCP_BRIDGE/neva_medic.py --self-test
 ```
@@ -45,19 +60,14 @@ tail -20 ~/Documents/NEVA_MCP_BRIDGE/logs/medic.log
 ## Известные проблемы
 
 ### medic_not_running — медик упал
-Причина A: упал после неудачного playbook (3/3 FAIL)
-Причина B: исчерпан цикл рестартов Login Items
-Причина C: exception в heal_cycle без перехвата ошибки
-Решение: nohup запуск (см. выше)
-
-### medic_knowledge_stale — книга знаний не загружается
-Причина: файл не найден в medic_knowledge/
-Решение: проверить путь ~/Documents/NEVA/governance/medic_knowledge/
+Защита 1: launchd KeepAlive поднимает за 10с (автоматически)
+Защита 2: neva_status_dot watchdog поднимает через ~23с (nohup)
+Если оба не помогли → точка остаётся красной → вмешательство Директора
+Playbook: restart_medic (nohup)
 
 ### medic_ai_all_fail — все AI провайдеры недоступны
-Причина: Cerebras/Groq/OpenRouter — все 403/429/timeout
-Действие: медик работает но conf=0 — AI диагноз недоступен, playbook не запускается
-Решение: проверить API ключи в .env, обновить при необходимости
+Медик работает но conf=0 — playbook не запускается
+Решение: проверить API ключи в .env
 
 ## Playbook: restart_medic
 ```bash
@@ -73,4 +83,4 @@ ps aux | grep neva_medic | grep -v grep
 ## История аварий
 | Дата | Проблема | Решение |
 |---|---|---|
-| 2026-06-15 | Медик упал после 3/3 FAIL restart_mcp_server_net | nohup запуск вручную |
+| 2026-06-15 | Медик упал после 3/3 FAIL playbook, нет защиты | Установлен launchd KeepAlive + status_dot watchdog |
