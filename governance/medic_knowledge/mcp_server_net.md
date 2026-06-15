@@ -177,3 +177,19 @@ curl -s http://127.0.0.1:9000/health | python3 -c "import json,sys; print(json.l
 Перезапуск: kill 98615, новый PID 11731
 Результат: file_read/tree/git_status/system_info — все ok
 Коммит: 7d22342 (governance/neva_mcp_server_patched_2026-06-15.py)
+
+### 2026-06-15 — launchd exit 78 (backoff), kickstart решение
+Симптом: launchctl list | grep mcp → "- 78 com.neva.mcp-server", нет PID
+Причина: НЕ неправильный plist (он правильный: NEVA/.venv/bin/python3).
+  Реальная причина: многократные ручные запуски занимали порт 9000/9001.
+  launchd пытался запустить → сервер видел занятый порт → sys.exit(1).
+  После N падений launchd входил в backoff и переставал пытаться.
+Диагностика:
+  launchctl list com.neva.mcp-server → LastExitStatus=19968 (78*256), нет PID
+  lsof -i :9000 → занят ручным процессом
+Решение:
+  kill $(lsof -ti :9000 :9001 2>/dev/null)
+  launchctl kickstart -k gui/$(id -u)/com.neva.mcp-server
+  curl -s http://127.0.0.1:9000/health → {"status":"ok"}
+Правило: НЕ запускать ручные процессы на :9000/:9001 пока launchd агент загружен.
+  Либо: launchctl unload plist перед ручным запуском.
