@@ -1,0 +1,42 @@
+{
+  "audit_id": "AUDIT-001",
+  "round": 1,
+  "timestamp": "2026-06-22",
+  "status": "ROUND_1_COMPLETE",
+  "auditors": {
+    "AUDIT-001-R1-CHATGPT": {
+      "auditor": "ChatGPT",
+      "round": 1,
+      "status": "received",
+      "questions": 9,
+      "note": "запросил детали, вопросы извлечены из областей аудита",
+      "file": "AUDIT-001-R1-CHATGPT.yaml"
+    },
+    "AUDIT-001-R1-GEMINI": {
+      "auditor": "Gemini",
+      "round": 1,
+      "status": "received",
+      "questions": 8,
+      "note": "сильные вопросы по M1, memory, security",
+      "file": "AUDIT-001-R1-GEMINI.yaml"
+    },
+    "AUDIT-001-R1-DEEPSEEK": {
+      "auditor": "DeepSeek",
+      "round": 1,
+      "status": "received",
+      "questions": 9,
+      "note": "лучший формат YAML, детальные технические вопросы",
+      "file": "AUDIT-001-R1-DEEPSEEK.yaml"
+    },
+    "AUDIT-001-R1-GROK": {
+      "auditor": "Grok",
+      "round": 1,
+      "status": "received",
+      "questions": 8,
+      "note": "общие архитектурные вопросы",
+      "file": "AUDIT-001-R1-GROK.yaml"
+    }
+  },
+  "total_questions": 34,
+  "next_step": "ROUND_1_ANSWERS - исполнитель отвечает на все вопросы"
+}
