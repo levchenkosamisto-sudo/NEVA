@@ -1,23 +1,23 @@
 # DUMA AUDIT-001 R2
-Дата: 2026-06-22 07:28:51
+Дата: 2026-06-22 07:29:55
 Оркестратор: Gemini 2.0 Flash + Chrome CDP
 
 
 ## ChatGPT
 
-ERROR: 'ChatGoogleGenerativeAI' object has no attribute 'provider'
+NO RESULT
 
 
 ## Gemini
 
-ERROR: 'ChatGoogleGenerativeAI' object has no attribute 'provider'
+NO RESULT
 
 
 ## DeepSeek
 
-ERROR: 'ChatGoogleGenerativeAI' object has no attribute 'provider'
+NO RESULT
 
 
 ## Grok
 
-ERROR: 'ChatGoogleGenerativeAI' object has no attribute 'provider'
+NO RESULT
