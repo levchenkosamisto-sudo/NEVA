@@ -1,4 +1,4 @@
 # ChatGPT
-Дата: 2026-06-22 07:28:51
+Дата: 2026-06-22 07:29:55
 
-ERROR: 'ChatGoogleGenerativeAI' object has no attribute 'provider'
+NO RESULT
