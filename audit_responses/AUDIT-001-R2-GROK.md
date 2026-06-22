@@ -1,4 +1,4 @@
-# GROK
-Дата: 2026-06-22 07:02:04
+# Grok
+Дата: 2026-06-22 07:28:33
 
-NO RESPONSE
+ERROR: 'ChatGoogleGenerativeAI' object has no attribute 'provider'
