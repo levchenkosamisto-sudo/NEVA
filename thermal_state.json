@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "state": "DEGRADED",
+  "pressure_level": null,
+  "pressure_num": null,
+  "swap_gb": 1.58258056640625,
+  "mem_pct": 66.9,
+  "memory_pressure_high": false,
+  "mode": "ollama_only",
+  "ollama_available": true,
+  "ollama_serve_up": true,
+  "powermetrics_available": false,
+  "stopped_models": [],
+  "pending_operation": null,
+  "pending_created_wall": null,
+  "cooldown_until_wall": null,
+  "last_unblock_wall": 1782105001.220068,
+  "current_cooldown_sec": 120,
+  "hot_pending_since_wall": null,
+  "last_event": "2026-06-22T07:10:31.651556"
+}
