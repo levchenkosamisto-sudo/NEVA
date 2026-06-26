@@ -1,0 +1,168 @@
+АУДИТ CURSOR-001 — КРУГ 7
+Тема: Доработанный пакет документов после замечаний Круга 6
+Директор: Серж | Архитектор: Claude | Дата: 2026-06-26
+
+---
+
+ДОРАБОТКИ ПОСЛЕ КРУГА 6
+
+1. inspector_poll.py — кэш на диск (Gemini, критично)
+   Было: кэш {путь: время} только в памяти → при перезапуске спам в Telegram
+   Стало: кэш сохраняется в ~/.neva_inspector_cache.json
+   При старте: загружает кэш с диска, при обновлении — сохраняет
+
+2. notify_director.py — поведение при отсутствии .env (ChatGPT)
+   Добавлено в ТЗ: если NEVA_TELEGRAM_TOKEN или NEVA_TELEGRAM_CHAT_ID
+   отсутствуют или пусты → exit 1 + сообщение "ОШИБКА: переменная X не задана"
+   Добавлено в тесты: 2 новых теста
+
+3. review_checker.py — stdout vs stderr (DeepSeek)
+   Уточнено: незакрытые пункты → stdout. Ошибки (файл не найден) → stderr
+
+4. new_project.sh — частично созданная папка (DeepSeek)
+   Уточнено: если папка существует но не пустая → exit 1 + сообщение
+   "Папка [ИМЯ] уже существует и не пуста. Удалите вручную или выберите другое имя."
+   Не очищает автоматически — защита от случайного удаления данных
+
+5. Ротация logs/ (Gemini)
+   Добавлено в AGENTS.md: после завершения проекта Claude архивирует logs/
+   в NEVA/archive/[ИМЯ]-[дата]/ и очищает папку проекта
+
+6. new_project.sh → new_project.py (Gemini)
+   ПРИНЯТО: переписать на Python 3.12 (pathlib) для единообразия стека
+   и избежать bash-несовместимостей на macOS
+
+7. Кто перемещает questions.md в logs/ (DeepSeek)
+   Уточнено: Claude на Этапе 3 после ревью перемещает
+   questions.md + answers.md → logs/
+
+Отклонено:
+
+X. Интеграционные тесты fswatch + notify (Gemini)
+   ОТКЛОНЕНО — fswatch — системный процесс macOS, его нельзя надёжно
+   мокать в pytest. Покрываем notify_director.py юнит-тестами.
+   Интеграция fswatch проверяется вручную при первом запуске пайплайна.
+
+X. Тест на concurrent модификацию (Grok)
+   ОТКЛОНЕНО — race condition в fswatch покрыт Inspector poll как резервом.
+   Писать тест на concurrency для локального Mac-инструмента — оверинжиниринг.
+
+---
+
+ОБНОВЛЁННОЕ ТЗ ДЛЯ CURSOR
+
+Файлы к реализации:
+
+1. tools/pipeline/utils.py
+   - load_env(): читает .env, возвращает dict
+   - get_required(key): читает переменную, если нет → raise EnvironmentError
+   - setup_logger(name): настраивает логгер в logs/[name].log
+   - load_cache(path): читает JSON кэш с диска, возвращает dict
+   - save_cache(path, data): сохраняет dict в JSON кэш на диск
+
+2. tools/pipeline/notify_director.py
+   Вход: путь к questions.md (sys.argv[1])
+   Если STATUS: BLOCKED:
+     → get_required(NEVA_TELEGRAM_TOKEN) — exit 1 если нет
+     → get_required(NEVA_TELEGRAM_CHAT_ID) — exit 1 если нет
+     → отправить сообщение "🔴 BLOCKED: [проект]\n[первые 500 символов]"
+     → timeout 10 сек → retry 1 раз → exit 1
+   Если не BLOCKED → exit 0
+   Если файл не существует или пуст → exit 0
+   Все ошибки → stderr
+
+3. tools/pipeline/inspector_poll.py
+   Кэш: ~/.neva_inspector_cache.json (загружать при старте, сохранять при изменении)
+   Формат кэша: {"путь_к_файлу": "ISO timestamp последнего уведомления"}
+   Логика: если questions.md содержит BLOCKED и mtime < 10 мин
+           и (путь не в кэше или прошло > 10 мин с последнего уведомления)
+           → notify → обновить кэш
+   При падении notify → лог stderr, не падать, не обновлять кэш
+   Флаги: --interval 180, --projects-dir, --dry-run, --cache-file
+
+4. tools/pipeline/new_project.py (было .sh → Python 3.12)
+   Вход: имя проекта (sys.argv[1])
+   Создаёт ~/Documents/NEVA/projects/[ИМЯ]/ с файлами:
+     spec.md        — шаблон с разделами
+     AGENTS.md      — шаблон с правилами
+     tests_spec.py  — пустой с импортами
+     smoke_test.sh  — шаблон с TODO
+     questions.md   — STATUS: IDLE
+     answers.md     — пустой
+     logs/          — папка
+   Если папка существует и не пустая → stderr + exit 1
+   Если папка существует и пустая → использовать, продолжить
+
+5. tools/pipeline/review_checker.py
+   Вход: путь к review.md (sys.argv[1])
+   stdout: список незакрытых пунктов или "OK — все пункты закрыты"
+   stderr: ошибки (файл не найден, нет пунктов)
+   exit 0: все [x]
+   exit 1: есть [ ] или ошибка
+
+Порядок реализации: utils → notify → inspector → new_project → review_checker
+Язык: Python 3.12, pathlib, без внешних зависимостей кроме requests (Telegram)
+Правила: ruff обязателен, никаких TODO/pass/NotImplementedError
+
+---
+
+ОБНОВЛЁННЫЕ ТЕСТЫ (21 тест, добавлено 2)
+
+notify_director.py — 8 тестов:
+  - BLOCKED → Telegram отправлен
+  - RESOLVED → Telegram не отправляется
+  - Файл не существует → exit 0
+  - Пустой файл → exit 0
+  - Длинное сообщение → обрезается до 500 символов
+  - Telegram timeout → retry 1 раз → exit 1
+  - [НОВЫЙ] NEVA_TELEGRAM_TOKEN отсутствует → exit 1 + сообщение в stderr
+  - [НОВЫЙ] NEVA_TELEGRAM_CHAT_ID отсутствует → exit 1 + сообщение в stderr
+
+inspector_poll.py — 6 тестов:
+  - Находит BLOCKED проект
+  - Игнорирует RESOLVED проект
+  - Не дублирует уведомления < 10 мин (из памяти)
+  - [ОБНОВЛЁН] Не дублирует после перезапуска (кэш с диска)
+  - Создаёт projects/ если не существует
+  - Падение notify → poll не падает, кэш не обновляется
+
+new_project.py — 4 теста:
+  - Создаёт все обязательные файлы и папки
+  - questions.md имеет STATUS: IDLE
+  - Папка существует и не пустая → exit 1
+  - [НОВЫЙ] Папка существует и пустая → создаёт файлы, exit 0
+
+review_checker.py — 5 тестов:
+  - Все [x] → exit 0 + stdout "OK"
+  - Один [ ] → exit 1 + незакрытые пункты в stdout
+  - Файл не существует → exit 1 + stderr
+  - Нет пунктов → exit 1 + stderr
+  - Перечисляет незакрытые пункты в stdout
+
+utils.py — 3 теста:
+  - load_env читает .env корректно
+  - get_required бросает EnvironmentError если переменной нет
+  - load_cache возвращает пустой dict если файл не существует
+
+Итого: 26 тестов
+
+---
+
+ЗАДАНИЕ — КРУГ 7: ФИНАЛЬНАЯ ОЦЕНКА ПАКЕТА
+
+Архитектор принял 5 из 7 замечаний Круга 6.
+
+Отклонено:
+- Интеграционные тесты fswatch (нельзя надёжно мокировать системный процесс)
+- Тест на concurrent модификацию (покрыт Inspector как резервом)
+
+Оцени доработанный пакет по трём документам:
+
+ДОКУМЕНТ 1 (Архитектура): замечания устранены?
+ДОКУМЕНТ 2 (ТЗ): замечания устранены?
+ДОКУМЕНТ 3 (Тесты): замечания устранены?
+
+ИТОГ: ПАКЕТ ГОТОВ / ДОРАБОТАТЬ
+Если ДОРАБОТАТЬ — один блокирующий пункт.
+
+Отвечай на русском. Кратко.

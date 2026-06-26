@@ -1,0 +1,80 @@
+АУДИТ INSPECTOR-001 — КРУГ 5
+Исправления по замечаниям Круга 4
+
+---
+
+## ЧТО ИСПРАВЛЕНО
+
+**Замечание DeepSeek 1: STARTING → DEAD без ожидания grace period**
+Принято.
+Логика: если в состоянии STARTING PID исчез → немедленно DEAD (не ждать grace).
+Grace period нужен только чтобы не требовать HTTP/heartbeat у только что запустившегося процесса.
+Не для задержки обнаружения падения.
+
+Новый переход:
+  STARTING → DEAD : PID исчез (мгновенно, без ожидания grace period)
+  STARTING → ALIVE: grace period истёк + PID есть + (HTTP OK или нет HTTP)
+
+**Замечание DeepSeek 2: pkill по PID, не по имени**
+Принято.
+Используем psutil.Process(pid).terminate() → wait(5с) → .kill() если ещё жив.
+Это: (1) убивает именно нужный процесс, (2) даёт шанс graceful shutdown.
+
+```python
+def kill_graceful(pid: int, timeout: int = 5):
+    try:
+        proc = psutil.Process(pid)
+        proc.terminate()          # SIGTERM
+        proc.wait(timeout=timeout)
+    except psutil.TimeoutExpired:
+        proc.kill()               # SIGKILL если не ответил
+    except psutil.NoSuchProcess:
+        pass                      # уже мёртв
+```
+
+**Замечание ChatGPT + Gemini: background_auditor без CPU критерия**
+Принято.
+background_auditor мониторится только по наличию PID (psutil.pid_exists).
+Нет HTTP, нет log, нет CPU — только PID.
+Обоснование: фоновый аудитор ожидает события и законно молчит часами.
+
+---
+
+## ФИНАЛЬНАЯ КОНФИГУРАЦИЯ ПРОГРАММ
+
+```python
+PROGRAMS = {
+  'claude_desktop':    {'match': 'Claude',              'http': None,         'log': None,          'grace': 30, 'stale_timeout': None},
+  'neva_medic':        {'match': 'neva_medic.py',       'http': None,         'log': 'medic.log',   'grace': 30, 'stale_timeout': 180},
+  'neva_mcp_server':   {'match': 'neva_mcp_server.py',  'http': ':9000',      'log': None,          'grace': 30, 'stale_timeout': 120},
+  'neva_thermal_guard':{'match': 'neva_thermal_guard.py','http': None,         'log': 'thermal.log', 'grace': 30, 'stale_timeout': 120},
+  'neva_approval':     {'match': 'neva_approval_server', 'http': ':8766',      'log': None,          'grace': 30, 'stale_timeout': 120},
+  'background_auditor':{'match': 'background_auditor',   'http': None,         'log': None,          'grace': 60, 'stale_timeout': None},
+  'neva_control_ctr':  {'match': 'neva_control_center',  'http': ':9001',      'log': None,          'grace': 30, 'stale_timeout': 120},
+  'desktop_commander': {'match': 'desktop-commander',    'http': None,         'log': None,          'grace': 30, 'stale_timeout': 300},
+  'ollama':            {'match': 'ollama',               'http': ':11434',     'log': None,          'grace': 60, 'stale_timeout': None},
+  'chrome_cdp':        {'match': 'Google Chrome',        'http': ':9222/json', 'log': None,          'grace': 30, 'stale_timeout': None},
+}
+```
+
+`stale_timeout: None` — процесс не может быть STALE (только ALIVE или DEAD).
+
+---
+
+## ФИНАЛЬНАЯ АРХИТЕКТУРА v4 (ИЗМЕНЕНИЯ ОТ v3)
+
+1. STARTING → DEAD: мгновенно при потере PID
+2. kill_graceful(pid): SIGTERM → wait(5с) → SIGKILL по PID
+3. background_auditor, ollama, chrome_cdp, claude_desktop: stale_timeout=None
+
+Всё остальное без изменений от v3.
+
+---
+
+## ЗАДАНИЕ КРУГА 5
+
+Это финальный вопрос.
+
+Остались ли блокирующие замечания?
+
+Вердикт: ГОТОВ или НЕ ГОТОВ.

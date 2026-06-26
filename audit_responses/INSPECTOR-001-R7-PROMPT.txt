@@ -1,0 +1,29 @@
+АУДИТ INSPECTOR-001 — КРУГ 7 (ФИНАЛЬНЫЙ)
+Последнее исправление по ChatGPT Круг 6
+
+---
+
+## ИСПРАВЛЕНИЕ
+
+ChatGPT Круг 6: heartbeat обновляется до check_triggers.
+Если триггер завис (kill_graceful, osascript) — Medic не узнает.
+
+ПРИНЯТО. Финальный порядок цикла:
+
+```python
+while True:
+    current_state = check_all_10()        # мониторинг
+    write_atomic('inspector_status.json') # запись состояния
+    check_triggers(current_state)         # действия (kill, restart)
+    Path('state/inspector_heartbeat').touch()  # пульс ПОСЛЕ всего
+    time.sleep(30)
+```
+
+Теперь если любой шаг завис — heartbeat не обновится — Medic обнаружит через 90с.
+
+---
+
+Это единственное изменение. Всё остальное без изменений от v5.
+
+Блокирующие замечания остались?
+ГОТОВ или НЕ ГОТОВ.

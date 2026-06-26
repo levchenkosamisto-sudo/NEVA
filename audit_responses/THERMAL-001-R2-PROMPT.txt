@@ -1,0 +1,82 @@
+АУДИТ ThermalGuard NEVA — КРУГ 2 (лучшее решение + критика)
+
+Я разрабатываю NEVA — AI-оркестратор на Mac M1.
+ThermalGuard — компонент термоустойчивости. Ты задавал вопросы в Круге 1.
+Ниже — мои ответы на все твои вопросы + контекст системы.
+
+=== ОТВЕТЫ НА ВОПРОСЫ КРУГА 1 ===
+
+КОД:
+1. DEGRADED→HEALTHY: FSM не имеет прямого перехода. temp=None (powermetrics без sudo
+   через launchd) → _determine_level() всегда возвращает DEGRADED. Выход только через
+   BLOCKED→UNBLOCKING→NOMINAL, но туда не попасть без температуры. Система заперта.
+
+2. Race condition (2 FAIL): multiprocessing.Queue в _powermetrics_worker() — два
+   одновременных вызова (self-test + основной цикл) без mutex на уровне процессов.
+   _load_state() не имеет блокировки при чтении в момент os.replace().
+
+3. powermetrics без sudo: PermissionError перехватывается в Python → logger.error()
+   в thermal.log. stderr пуст → thermal_error.log пуст. temp=None → DEGRADED навсегда.
+
+4. ollama_available=False при serve_up=True: _update_ollama_available() ставит False
+   если stopped_models не пуст (qwen2.5:7b выгружена) ИЛИ cooldown активен ИЛИ
+   pending_operation не None. Служба жива, модель недоступна — корректное разделение.
+
+5. ThrottleInterval=30: это НЕ интервал поллинга. Это пауза launchd перед рестартом
+   при падении. Процесс работает непрерывно (KeepAlive=true), внутри while True
+   с poll_nominal_sec=30 / poll_active_sec=10 / poll_pending_sec=2.
+
+6. Гистерезис: WARM→NOMINAL — двойное условие (temp + swap). DEGRADED→NOMINAL — нет
+   гистерезиса, зависит только от наличия temp. recovery_hysteresis_sec=60 только для
+   BLOCKED→UNBLOCKING.
+
+7. Атомарность записи: tempfile → json.dump → flush → fsync(file) → os.replace() →
+   fsync(dir). _load_state() без блокировки чтения — теоретический race.
+
+8. powermetrics блокирует DEGRADED: ДА, это главная причина. Нет пути в NOMINAL
+   без температуры. Безопасное поведение, но блокирует систему навсегда без sudo.
+
+АРХИТЕКТУРА:
+1. Место в системе: независимый watchdog, отдельный launchd агент. Общается с Medic
+   только через файл thermal_state.json (pull-модель). Не знает о задачах NEVA.
+
+2. Kill-action при CRITICAL: не реализован намеренно (MVP). _do_critical() выгружает
+   модели через API. Kill процессов — нет sudo у user agent. Планируется: UDS→Medic.
+
+3. UDS: не реализован для ThermalGuard. Весь обмен через файл. Medic читает пассивно.
+
+4. Кто управляет: ThermalGuard автономен, Medic пассивно читает файл (pull).
+   ThermalGuard не вызывает Medic. Планируется push-модель через UDS.
+
+5. Расширяемость: _determine_level() расширяется легко. Конфиг перезагружается.
+   _act() и actions — требуют изменений для kill/throttling. FSM статичен но расширяем.
+
+6. NSProcessInfo vs powermetrics: NSProcessInfo — Objective-C/Swift API, требует PyObjC.
+   Не в стеке NEVA. Даёт только 4 уровня без цифр. powermetrics — детальнее, но sudo.
+
+=== ЗАДАЧА — КРУГ 2 ===
+
+Для каждой из 3 ключевых проблем предложи ЛУЧШЕЕ РЕШЕНИЕ и РАСКРИТИКУЙ текущую реализацию:
+
+ПРОБЛЕМА А: powermetrics требует sudo → система навсегда в DEGRADED.
+ПРОБЛЕМА Б: race condition в multiprocessing (2 FAIL теста).
+ПРОБЛЕМА В: нет UDS канала → Medic не получает push-уведомления от ThermalGuard.
+
+Для каждой проблемы:
+  КРИТИКА: что конкретно плохо в текущей реализации и почему
+  ЛУЧШЕЕ РЕШЕНИЕ: конкретный код/подход
+  РИСКИ решения: что может пойти не так
+  АЛЬТЕРНАТИВА: более простой вариант если лучшее решение сложно
+
+=== ОБЯЗАТЕЛЬНОЕ ОГРАНИЧЕНИЕ ===
+
+Все решения должны быть:
+  (1) Бесплатными сейчас и НАВСЕГДА (запрещены: SaaS, платные API, подписки)
+  (2) Работающими offline или через бесплатные локальные инструменты
+  (3) Совместимыми с Mac M1 + macOS Sequoia + Python 3.12 + venv
+  (4) Без внешних платных зависимостей
+
+Доступный стек: psutil, subprocess, multiprocessing, PyObjC (pip, бесплатно),
+launchctl, NSProcessInfo (через PyObjC), Unix sockets, threading, asyncio.
+
+Отвечай на русском. Конкретно. С кодом там где нужно.

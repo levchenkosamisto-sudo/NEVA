@@ -1,0 +1,76 @@
+АУДИТ ThermalGuard NEVA — КРУГ 3 (финальная валидация)
+
+Система термоустойчивости NEVA прошла 2 круга аудита.
+Ниже — обновлённая архитектура v10 с внесёнными изменениями
+и обоснованиями отклонённых предложений.
+
+=== ЧТО ИЗМЕНИЛОСЬ В v10 (принятые решения) ===
+
+А. КАСКАД ИСТОЧНИКОВ ТЕМПЕРАТУРЫ (_read_temp):
+   Было: только powermetrics (sudo) → при ошибке temp=None → вечный DEGRADED
+   Стало: powermetrics → NSProcessInfo.thermalState() (PyObjC, без sudo) → fallback
+   NSProcessInfo маппинг: Nominal=30°C, Fair=60°C, Serious=80°C, Critical=95°C
+   Теперь без sudo система работает через NSProcessInfo и выходит из DEGRADED.
+
+Б. fcntl.LOCK_SH ПРИ ЧТЕНИИ (_load_state):
+   Было: json.load() без блокировки — race condition с os.replace() в _write_state
+   Стало: fcntl.flock(f, LOCK_SH) перед json.load(), LOCK_UN после.
+   _write_state() уже использует atomic rename (tempfile→os.replace) — дополнительный
+   LOCK_EX не нужен, LOCK_SH при чтении достаточен для защиты от partial read.
+
+В. UDS PUSH К MEDIC (_notify_medic_uds):
+   Было: только файловый IPC (pull-модель) — Medic читает файл с задержкой
+   Стало: fire-and-forget push через Unix Domain Socket (/tmp/neva_medic.sock)
+   Вызывается при CRITICAL и BLOCKED. timeout=1с. При недоступности Medic — молча пропускает.
+
+=== ОТКЛОНЁННЫЕ ПРЕДЛОЖЕНИЯ (с обоснованием) ===
+
+1. sudoers NOPASSWD для powermetrics (ChatGPT, Gemini):
+   ОТКЛОНЕНО — требует ручной настройки на каждой машине, создаёт постоянную
+   sudo-привилегию для AI-процесса. NSProcessInfo решает проблему правильно.
+
+2. asyncio вместо multiprocessing (Gemini):
+   ОТКЛОНЕНО — powermetrics синхронный subprocess, async потребует полного
+   рефакторинга цикла. fcntl решает реальный race проще.
+
+3. IOKit/SMC через ctypes (DeepSeek):
+   ОТКЛОНЕНО — приватный недокументированный API Apple. Хрупко, может сломаться
+   в любом обновлении. NSProcessInfo официален и достаточен.
+
+4. FSEvents вместо UDS (Grok):
+   ОТКЛОНЕНО — pull-модель с задержкой хуже для CRITICAL. UDS проще и быстрее.
+   Не требует изменений в Medic прямо сейчас.
+
+5. multiprocessing.Manager.dict() (Grok):
+   ОТКЛОНЕНО — thermal_state.json контракт с Medic. При краше ThermalGuard
+   файл персистентен, Manager.dict() — нет.
+
+=== SELF-TEST v10 (11 тестов) ===
+
+Добавлены новые тесты:
+  #9: NSProcessInfo.thermalState() через PyObjC
+  #10: fcntl.LOCK_SH/LOCK_UN работает
+  #11: UDS /tmp/neva_medic.sock (WARN если Medic не запущен — нормально)
+
+=== ЗАДАЧА — КРУГ 3 ===
+
+Финальная валидация. Есть ли блокирующие замечания?
+
+Для каждого из трёх изменений (А, Б, В):
+  1. Корректна ли реализация? Есть ли ошибки в логике?
+  2. Достаточно ли это решение или нужно что-то ещё?
+  3. Есть ли риски которые мы пропустили?
+
+Для отклонённых предложений:
+  4. Согласен с обоснованием отклонения? Если нет — аргументируй конкретно.
+
+Вердикт: ГОТОВ или НЕ ГОТОВ (с блокирующим замечанием).
+
+=== ОГРАНИЧЕНИЯ (неизменны) ===
+
+Все решения должны быть:
+  (1) Бесплатными навсегда (no SaaS, no paid API, no подписки)
+  (2) Работающими offline
+  (3) Mac M1 + macOS Sequoia + Python 3.12 + venv
+
+Отвечай на русском. Коротко. Только блокирующие замечания если есть.

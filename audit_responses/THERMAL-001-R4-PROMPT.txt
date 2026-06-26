@@ -1,0 +1,66 @@
+АУДИТ ThermalGuard NEVA — КРУГ 4 (финальная валидация v11)
+
+В Круге 3 были блокирующие замечания. Все устранены в v11.
+Ниже — точные изменения и обоснования.
+
+=== ЧТО ИЗМЕНИЛОСЬ В v11 (ответ на замечания Круга 3) ===
+
+БЛОКЕР R3-ChatGPT: FSM использовал виртуальные °C от NSProcessInfo
+как реальные числа, сравнивая их с порогами HOT_TEMP_C=83, CRITICAL_TEMP_C=90.
+
+РЕШЕНИЕ v11:
+_determine_level() теперь принимает параметр source='powermetrics'|'nsprocessinfo'|'fallback'.
+
+Три полностью раздельных пути FSM:
+
+  source='powermetrics' (реальные °C от sudo powermetrics):
+    → стандартные числовые пороги: WARM_TEMP_C=75, HOT_TEMP_C=83, CRITICAL_TEMP_C=90
+    → HOT_PENDING с гистерезисом, каскадная выгрузка
+
+  source='nsprocessinfo' (категории Apple без °C, без sudo):
+    → прямой маппинг _last_ns_state (0-3) в уровни FSM:
+      0 (Nominal)  → NOMINAL (или WARM если swap высокий)
+      1 (Fair)     → WARM (или NOMINAL если swap низкий)
+      2 (Serious)  → DEGRADED (или DEGRADED_HIGH если swap/mem высокие)
+      3 (Critical) → CRITICAL
+    → числовые пороги HOT_TEMP_C/CRITICAL_TEMP_C НЕ используются
+    → NSProcessInfo НЕ может вызвать HOT_PENDING (нет точных °C)
+
+  source='fallback' (ни powermetrics, ни PyObjC):
+    → только swap/mem → DEGRADED или DEGRADED_HIGH
+
+ВИРТУАЛЬНЫЕ °C (NS_VIRTUAL_TEMP):
+  Сохранены только для state['temp_c'] и логов (телеметрия).
+  В логику FSM НЕ передаются.
+
+БЛОКЕР R3-Gemini: timeout=1с в _notify_medic_uds() блокирует CRITICAL цикл.
+РЕШЕНИЕ v11 (было в v10, подтверждаем):
+  s.setblocking(False) — истинный fire-and-forget.
+  except (OSError, BlockingIOError, ConnectionRefusedError, FileNotFoundError) — полное покрытие.
+
+БЛОКЕР R3-Gemini/DeepSeek: PyObjC ImportError не обёрнут.
+РЕШЕНИЕ (было в v10, подтверждаем):
+  try/except ImportError на уровне модуля → _HAS_PYOBJC = False.
+  pyobjc-framework-Cocoa добавлен в requirements.txt.
+  При _HAS_PYOBJC=False: _read_temp_nsprocessinfo() возвращает (None, None) → fallback.
+
+=== ИТОГ ТРЁХ КРУГОВ ===
+
+v9 → v10: каскад источников, fcntl lock, UDS push
+v10 → v11: раздельные пути FSM по источнику (ChatGPT R3 блокер закрыт)
+Синтаксис: ✅ PASS (python3 -m py_compile)
+
+=== ЗАДАЧА — КРУГ 4 ===
+
+Один вопрос: есть ли блокирующие замечания?
+
+Проверь конкретно:
+  1. Логика _determine_level() с тремя путями — корректна?
+  2. nsprocessinfo путь: ns=1 (Fair) → NOMINAL при низком swap — это правильно?
+  3. nsprocessinfo путь: HOT_PENDING не вызывается — это ок (нет точных °C)?
+  4. Остались ли незакрытые замечания из предыдущих кругов?
+
+Вердикт: ГОТОВ или НЕ ГОТОВ.
+Если НЕ ГОТОВ — одно конкретное замечание с кодом.
+
+Отвечай коротко. На русском. Только суть.

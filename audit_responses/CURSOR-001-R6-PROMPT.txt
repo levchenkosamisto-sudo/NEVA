@@ -1,0 +1,122 @@
+АУДИТ CURSOR-001 — ФИНАЛЬНЫЙ КРУГ (ПАКЕТ ДОКУМЕНТОВ)
+Директор: Серж | Архитектор: Claude | Дата: 2026-06-26
+
+Архитектура прошла 5 кругов аудита и получила ГОТОВ от всех 4 аудиторов.
+Теперь на аудит подаётся пакет документов для реализации.
+
+ЗАДАЧА ЭТОГО КРУГА:
+Проверить три документа на полноту, подробность и отсутствие слепых зон.
+Дать заключение по каждому документу отдельно.
+
+---
+
+ДОКУМЕНТ 1 — ФИНАЛЬНАЯ АРХИТЕКТУРА (CURSOR-001-FINAL-ARCH.md)
+
+Пайплайн 4 этапа:
+  Этап 1: Claude пишет spec.md + AGENTS.md + tests_spec.py + smoke_test.sh
+  Этап 2: Cursor пишет код → ruff → mypy(опц) → pytest → smoke_test.sh
+           При блокировке: questions.md (STATUS:BLOCKED) → fswatch → Telegram
+           + Inspector poll каждые 3 мин как резерв
+           После ответа Claude: STATUS: RESOLVED
+           Лимит: 3 итерации → эскалация Директору
+  Этап 3: Claude читает git diff + test_report.md + smoke_report.md
+           Заполняет review.md — чеклист 6 пунктов
+  Этап 4: Директор утверждает → деплой
+
+Структура папки: spec.md / AGENTS.md / tests_spec.py / smoke_test.sh /
+  src/ / test_report.md / smoke_report.md / questions.md / answers.md /
+  review.md / logs/
+
+---
+
+ДОКУМЕНТ 2 — ТЕХНИЧЕСКОЕ ЗАДАНИЕ ДЛЯ CURSOR (CURSOR-001-TASK.md)
+
+Что реализовать — 4 файла + 1 утилита:
+
+1. tools/pipeline/notify_director.py
+   Вход: путь к questions.md (sys.argv[1])
+   Действие: читает файл, если STATUS: BLOCKED → Telegram Директору
+   Формат сообщения: "🔴 BLOCKED: [проект]\n[первые 500 символов]"
+   Env: NEVA_TELEGRAM_TOKEN, NEVA_TELEGRAM_CHAT_ID из .env
+   Edge cases: файл не существует → exit 0; пустой → exit 0;
+               Telegram timeout → retry 1 раз → exit 1
+
+2. tools/pipeline/inspector_poll.py
+   Демон, сканирует все projects/ каждые N сек (default 180)
+   Если questions.md содержит BLOCKED и изменён < 10 мин назад → notify
+   Не дублирует: хранит {путь: время} в памяти, повтор только через 10 мин
+   Флаги: --interval, --projects-dir, --dry-run
+   Edge cases: нет projects/ → создать; файл заблокирован → пропустить;
+               notify упал → логировать и продолжать
+
+3. tools/pipeline/new_project.sh
+   Создаёт папку проекта со всеми шаблонами
+   questions.md создаётся со STATUS: IDLE
+   Если проект уже существует → exit 1
+
+4. tools/pipeline/review_checker.py
+   Вход: путь к review.md
+   Ищет [ ] и [x] пункты
+   Если все [x] → exit 0 + "OK"
+   Если есть [ ] → exit 1 + список незакрытых пунктов
+   Edge cases: файл не существует → exit 1; нет пунктов → exit 1
+
+5. tools/pipeline/utils.py
+   Общие функции: чтение .env, логирование
+
+Порядок реализации: utils → notify → inspector → new_project → review_checker
+Язык: Python 3.12, bash для .sh
+Правила: ruff обязателен, никаких TODO/pass/NotImplementedError
+
+---
+
+ДОКУМЕНТ 3 — ТЕСТЫ (CURSOR-001-TESTS.py)
+
+notify_director.py — 6 тестов:
+  - BLOCKED → Telegram отправлен
+  - RESOLVED → Telegram не отправляется
+  - Файл не существует → exit 0
+  - Пустой файл → exit 0
+  - Длинное сообщение → обрезается до 500 символов
+  - Telegram timeout → retry 1 раз → exit 1
+
+inspector_poll.py — 5 тестов:
+  - Находит BLOCKED проект
+  - Игнорирует RESOLVED проект
+  - Не дублирует уведомления (< 10 мин)
+  - Создаёт projects/ если не существует
+  - Падение notify → poll не падает
+
+new_project.sh — 3 теста:
+  - Создаёт все обязательные файлы и папки
+  - questions.md имеет STATUS: IDLE
+  - Дубликат проекта → exit 1
+
+review_checker.py — 5 тестов:
+  - Все [x] → exit 0 + "OK"
+  - Один [ ] → exit 1
+  - Файл не существует → exit 1
+  - Нет пунктов → exit 1
+  - Перечисляет незакрытые пункты в выводе
+
+Итого: 19 тестов
+
+---
+
+ЗАДАНИЕ ДЛЯ АУДИТОРА:
+
+Оцени каждый документ по трём критериям:
+  А. Подробность — достаточно ли деталей для Cursor без лишних вопросов?
+  Б. Полнота — есть ли пропущенные требования или сценарии?
+  В. Слепые зоны — что может пойти не так и не покрыто документами?
+
+Для каждого документа:
+  ДОКУМЕНТ 1 (Архитектура): А/Б/В — одно предложение на каждый критерий
+  ДОКУМЕНТ 2 (ТЗ): А/Б/В — одно предложение на каждый критерий
+  ДОКУМЕНТ 3 (Тесты): А/Б/В — одно предложение на каждый критерий
+
+В конце:
+  ПАКЕТ ГОТОВ / ДОРАБОТАТЬ
+  Если ДОРАБОТАТЬ — один конкретный пункт который блокирует.
+
+Отвечай на русском. Кратко и конкретно.

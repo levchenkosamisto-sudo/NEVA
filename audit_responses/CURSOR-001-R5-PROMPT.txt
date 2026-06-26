@@ -1,0 +1,113 @@
+АУДИТ CURSOR-001 — КРУГ 5
+Тема: Доработанное решение после замечаний Круга 4
+Директор: Серж | Архитектор: Claude | Дата: 2026-06-26
+
+---
+
+ДОРАБОТКИ ПОСЛЕ КРУГА 4
+
+Принято:
+
+1. Чеклист review.md — добавлен пункт трассировки (ChatGPT)
+   Было: 5 пунктов
+   Стало: 6 пунктов, добавлено:
+   - [ ] Каждое требование из spec.md покрыто тестом или smoke-проверкой
+
+2. questions.md — статус вместо очистки (Gemini)
+   Было: Cursor очищает questions.md после ответа
+   Стало: Cursor меняет первую строку на STATUS: RESOLVED
+   Преимущество: история блокировок сохраняется для ревью
+   fswatch фильтрует только строки с BLOCKED — нет ложных срабатываний
+
+Отклонено:
+
+X. requirements_traceability.md — отдельный файл трассировки (ChatGPT)
+   ОТКЛОНЕНО — отдельный файл дублирует spec.md и review.md.
+   Достаточно одного пункта в чеклисте. Меньше файлов — меньше накладных расходов.
+
+---
+
+ФИНАЛЬНОЕ РЕШЕНИЕ — ПАЙПЛАЙН 4 ЭТАПА:
+
+ЭТАП 1: СПЕЦИФИКАЦИЯ (Claude Desktop)
+  Claude пишет:
+    spec.md       — требования, контракты вход/выход, edge cases, примеры I/O
+    AGENTS.md     — правила Cursor: ruff обязателен, mypy опционален,
+                    при блокировке писать BLOCKED в questions.md,
+                    после ответа менять на STATUS: RESOLVED
+    tests_spec.py — тесты контрактов до кода
+    smoke_test.sh — реальный запуск с I/O из spec.md
+  Директор утверждает → Этап 2
+  Токены Claude: ~500
+
+ЭТАП 2: РЕАЛИЗАЦИЯ (Cursor)
+  Cursor: пишет код → ruff → mypy (если strict) → pytest → smoke_test.sh
+  Результат: test_report.md + smoke_report.md
+  При блокировке:
+    Cursor пишет questions.md: STATUS: BLOCKED\n[причина]
+    fswatch --event Modified + grep BLOCKED → Telegram
+    Inspector poll каждые 3 мин как резерв
+    Claude → answers.md
+    Cursor → STATUS: RESOLVED в questions.md → продолжает
+    После 3 итераций → эскалация Директору
+  Токены Claude: 0 (при блокировке ~200/итерация)
+
+ЭТАП 3: РЕВЬЮ (Claude Desktop)
+  Claude читает: git diff + test_report.md + smoke_report.md + questions.md
+  Заполняет review.md — чеклист 6 пунктов:
+    - [ ] Все функции из spec.md реализованы
+    - [ ] Каждое требование из spec.md покрыто тестом или smoke-проверкой
+    - [ ] Каждый edge case покрыт тестом
+    - [ ] Нет заглушек (TODO, pass, NotImplementedError)
+    - [ ] ruff — чисто
+    - [ ] smoke_test.sh — PASS
+  ГОТОВ / НЕ ГОТОВ. Если НЕ ГОТОВ → Cursor исправляет → повтор (до 3 циклов)
+  Токены Claude: ~400-600
+
+ЭТАП 4: УТВЕРЖДЕНИЕ (Директор)
+  Директор читает review.md → утверждает → деплой
+  Токены Claude: 0
+
+---
+
+СТРУКТУРА ФАЙЛОВ:
+
+~/Documents/NEVA/projects/[ИМЯ]/
+  spec.md           ← Claude, Этап 1
+  AGENTS.md         ← Claude, Этап 1
+  tests_spec.py     ← Claude, Этап 1
+  smoke_test.sh     ← Claude, Этап 1
+  src/              ← Cursor, Этап 2
+  test_report.md    ← Cursor, Этап 2
+  smoke_report.md   ← Cursor, Этап 2
+  questions.md      ← Cursor (STATUS: BLOCKED → STATUS: RESOLVED)
+  answers.md        ← Claude при блокировке
+  review.md         ← Claude, Этап 3
+  logs/             ← архив после завершения проекта
+
+ТРИГГЕР:
+  fswatch --event Modified --exclude '\.swp$' --exclude '~$'
+    | grep questions.md | xargs grep -l BLOCKED
+    | xargs python3 notify_director.py
+  + Inspector poll каждые 3 мин
+
+ЭКОНОМИЯ ТОКЕНОВ: 84% (800 вместо 5000 на задачу)
+
+---
+
+ЗАДАНИЕ — КРУГ 5: ФИНАЛЬНАЯ ОЦЕНКА
+
+Архитектор принял все замечания Круга 4 кроме одного.
+
+Отклонено: отдельный файл requirements_traceability.md
+Обоснование: дублирует spec.md и review.md, добавляет накладные расходы.
+Достаточно пункта в чеклисте review.md.
+
+ВОПРОС ОДИН:
+
+ГОТОВ / НЕ ГОТОВ / ДОРАБОТАТЬ?
+
+Если ДОРАБОТАТЬ — один конкретный пункт который блокирует.
+Если ГОТОВ — подтверди.
+
+Отвечай на русском. Одна строка.

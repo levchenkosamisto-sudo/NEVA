@@ -1,0 +1,126 @@
+АУДИТ INSPECTOR-001 — КРУГ 4
+Архитектура v3 — закрыты все блокирующие замечания Круга 3
+
+---
+
+## ЧТО ИСПРАВЛЕНО
+
+### БЛОКЕР 1: Конечный автомат (State Machine) — полное описание
+
+```
+Переходы статусов:
+
+DEAD → STARTING   : PID появился (новый create_time)
+STARTING → ALIVE  : grace period истёк + (HTTP OK или нет HTTP)
+STARTING → DEAD   : grace period истёк, PID уже нет
+ALIVE → STALE     : (HTTP fail И log stale) на 2 циклах подряд
+ALIVE → DEAD      : PID нет на 2 циклах подряд
+STALE → ALIVE     : (HTTP OK ИЛИ log свежий) на 2 циклах подряд
+STALE → DEAD      : STALE >5 мин → pkill -9 → PID нет
+
+Хранится: {pid, create_time, status, stale_since, dead_since, dead_cycles, stale_cycles, recover_cycles}
+Смена PID: если pid != prev_pid ИЛИ create_time != prev_create_time → сброс в STARTING
+```
+
+### БЛОКЕР 2: STALE→DEAD эскалация
+
+```python
+# В основном цикле, ПЕРЕД триггерами:
+for name, prog in programs.items():
+    if prog['status'] == 'STALE':
+        stale_duration = now - prog['stale_since']
+        if stale_duration > STALE_KILL_TIMEOUT:  # 300с = 5 мин
+            pkill_9(prog['match'])
+            prog['status'] = 'DEAD'
+            prog['dead_since'] = now
+            tg_send(f'⚡ Inspector: {name} завис →  pkill -9 → ожидаем перезапуск')
+```
+
+### БЛОКЕР 3: Процессы без HTTP/лог — критерий жизни
+
+Для background_auditor, desktop_commander, chrome_cdp — нет HTTP и нет лога.
+ALIVE = только PID + cpu_percent > 0 за последние 10 секунд (psutil.Process.cpu_times()).
+Если CPU = 0 более 5 минут при наличии PID → статус STALE.
+(Зависший процесс обычно не потребляет CPU или потребляет 100% — оба случая аномальны)
+
+Уточнение: desktop_commander имеет HTTP (9000 порт) → это уже покрыто.
+chrome_cdp проверяется через HTTP :9222/json.
+background_auditor — только PID (фоновый процесс, может законно молчать).
+
+### БЛОКЕР 4: Внешний контроль самого Inspector
+
+```
+Решение: launchd com.neva.inspector.plist (KeepAlive=true) — уже было.
+Дополнение: Inspector пишет heartbeat каждые 30с.
+Medic (когда живой) проверяет inspector_heartbeat freshness <90с.
+Если Inspector мёртв — Medic его поднимает через launchctl.
+Это не циклическая зависимость: Inspector и Medic взаимно контролируют друг друга,
+оба под launchd как последней защитой.
+```
+
+### Прочие исправления (Круг 3)
+
+- changed() сравнивает только хэш матрицы статусов (не CPU/uptime)
+- qwen: буфер 5 минут, вызов только при ≥2 изменениях или DEAD
+- fcntl убран из монитора (атомарная запись через os.replace достаточна)
+- Монитор обновляется раз в 10 секунд (не 5)
+- Hotkeys реализованы через threading.Thread + sys.stdin
+- Права на state/ — оба процесса пишут от одного пользователя arka
+
+### AppleScript — принятый риск
+
+Свёрнутое окно Claude считается АКТИВНЫМ (не делаем pkill).
+Критерий: если процесс Claude есть в System Events → не трогаем.
+Если процесса нет совсем → osascript 'tell application "Claude" to activate'.
+Риск ложной блокировки при свёрнутом окне принят — безопаснее чем потеря чата.
+
+---
+
+## ФИНАЛЬНАЯ АРХИТЕКТУРА v3 (ПОЛНАЯ)
+
+### Файлы
+```
+neva_inspector.py         — демон под launchd
+neva_inspector_monitor.py — дашборд (rich, вручную)
+com.neva.inspector.plist  — launchd конфиг
+```
+
+### State Machine (упрощённо)
+```
+launchd → Inspector (KeepAlive)
+Inspector → heartbeat каждые 30с
+Medic → проверяет heartbeat Inspector
+Inspector → контролирует Claude Desktop
+Claude → контролирует Medic
+Medic → контролирует Guard, MCP, остальных
+```
+
+### Действия с cooldown
+```
+Действие 1 (DC мёртв >60с): cooldown 10 мин, max 3/час
+Действие 2 (Claude+Medic мёртвы >5 мин): cooldown 15 мин, max 2/час
+Эскалация STALE (любой >5 мин): pkill -9, без cooldown
+```
+
+### Монитор
+```
+10 секунд обновление
+threading для hotkeys [M] и [Q]
+os.path.getmtime проверка freshness JSON (не fcntl)
+```
+
+---
+
+## ЗАДАНИЕ КРУГА 4
+
+Всё что было блокирующим в Круге 3 — закрыто.
+
+Финальная валидация:
+
+1. State Machine — корректны ли все переходы?
+2. STALE→DEAD через pkill -9 — риски?
+3. Взаимный контроль Inspector↔Medic — нет ли deadlock?
+4. Принятый риск по AppleScript окнам Claude — согласен?
+5. Остались ли блокирующие замечания?
+
+Вердикт: ГОТОВ или НЕ ГОТОВ.

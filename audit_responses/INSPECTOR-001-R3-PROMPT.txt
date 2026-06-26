@@ -1,0 +1,137 @@
+АУДИТ INSPECTOR-001 — КРУГ 3
+Доработанная архитектура v2 с учётом мировой практики (Круг 2)
+
+---
+
+## ЧТО ПРИНЯТО ИЗ ПРЕДЛОЖЕНИЙ КРУГА 2
+
+**ПРИНЯТО:**
+
+1. psutil вместо pgrep — единый Python API для всех процессов. proc.create_time() для uptime.
+2. Атомарная запись JSON — os.replace(tmp → inspector_status.json). Устраняет битые файлы.
+3. Monit-style anti-flapping — 2 цикла перед действием (уже было в v1, подтверждено).
+4. Event-driven qwen — вызываем ТОЛЬКО при изменении статуса (не каждые 5 минут).
+5. Maintenance mode флаг — state/inspector_maintenance, монитор показывает ярко.
+6. Stale триггер — процесс есть но завис (нет HTTP+лог) >5 мин → pkill -9 → переход в dead.
+7. launchd как primary — Inspector только следит, не дублирует launchd. При exit 78 throttle — override.
+8. Path.touch() для heartbeat — mtime вместо содержимого файла.
+
+**ОТКЛОНЕНО:**
+
+1. kqueue вместо polling — отклонено. Кomplексность: kqueue не покрывает HTTP проверки и log freshness. Polling 30с достаточен, CPU usage <0.1%.
+2. bash вместо Python — отклонено. JSON parsing Ollama/Telegram API на bash сложен и хрупок.
+3. curses вместо rich — отклонено. rich удобнее, потребление одинаковое.
+4. Убрать qwen полностью — отклонено. qwen загружается только когда нужен (event-driven), не висит в памяти 24/7. Ollama выгружает модель сам через 5 мин.
+5. PM2/Supervisor/God/Monit полностью — отклонено. Не мониторят Claude Desktop (GUI). Самописный Inspector оправдан.
+
+---
+
+## ФИНАЛЬНАЯ АРХИТЕКТУРА v2
+
+### Два файла (без изменений)
+```
+neva_inspector.py         — демон (launchd)
+neva_inspector_monitor.py — дашборд (rich, запускается вручную)
+```
+
+### Стек (минимальные зависимости)
+```
+psutil          — уже используется в NEVA
+rich            — pip install rich (небольшая)
+urllib.request  — stdlib, без requests
+```
+
+### Цикл (каждые 30с)
+
+```python
+while True:
+    prev_state = current_state
+    current_state = check_all_10()      # psutil + HTTP + log mtime
+    write_atomic(inspector_status.json)  # os.replace
+    Path('state/inspector_heartbeat').touch()
+
+    if changed(prev_state, current_state):
+        qwen_diagnosis = ask_qwen(current_state)  # только при изменениях
+        tg_send(diagnosis)
+
+    check_triggers(current_state)       # действия
+    sleep(30)
+```
+
+### 10 программ (psutil-based)
+```python
+PROGRAMS = {
+    'claude_desktop':    {'match': 'Claude',              'http': None,              'log': None,    'grace': 30},
+    'neva_medic':        {'match': 'neva_medic.py',       'http': None,              'log': 'medic.log', 'stale': 180},
+    'neva_mcp_server':   {'match': 'neva_mcp_server.py',  'http': ':9000/health',    'log': None,    'grace': 30},
+    'neva_thermal_guard':{'match': 'neva_thermal_guard.py','http': None,              'log': 'thermal.log','stale':120},
+    'neva_approval':     {'match': 'neva_approval_server', 'http': ':8766/health',   'log': None,    'grace': 30},
+    'background_auditor':{'match': 'background_auditor',   'http': None,             'log': None,    'grace': 60},
+    'neva_control_ctr':  {'match': 'neva_control_center',  'http': ':9001',          'log': None,    'grace': 30},
+    'desktop_commander': {'match': 'desktop-commander',    'http': None,             'log': None,    'grace': 30},
+    'ollama':            {'match': 'ollama',               'http': ':11434',         'log': None,    'grace': 60},
+    'chrome_cdp':        {'match': 'Google Chrome',        'http': ':9222/json',     'log': None,    'grace': 30},
+}
+```
+
+### Статусы процесса
+```
+ALIVE    — PID есть + (HTTP ОК или лог свежий или нет HTTP/лог проверки)
+STALE    — PID есть, но HTTP не отвечает И лог не свежий >порога
+DEAD     — PID нет (или после 2 циклов подтверждения)
+STARTING — PID появился, но grace period ещё не истёк
+```
+
+### Действие 1 — рестарт DC
+```
+Триггер: desktop_commander.status == DEAD на 2 циклах подряд (60с)
+Действие:
+  pkill -f "desktop-commander" (на случай зомби)
+  launchctl unload/load com.neva.mcp-server.plist
+  cooldown = 10 мин, max_retries = 3/час
+Telegram: "🔧 Inspector: Desktop Commander перезапущен"
+```
+
+### Действие 2 — перезапуск Claude Desktop
+```
+Триггер: claude_desktop.status == DEAD >5 мин
+         И neva_medic.status == DEAD >5 мин
+         И НЕТ файла state/inspector_suppress_claude
+Действие:
+  # Проверяем через AppleScript — нет ли активного окна Claude
+  result = osascript('tell app "System Events" to count windows of process "Claude"')
+  если result > 0 → НЕ делаем pkill, только Telegram
+  если result == 0 → osascript('tell application "Claude" to activate')
+  cooldown = 15 мин, max_retries = 2/час
+Telegram: "⚠️ Inspector: Claude Desktop перезапущен. Medic тоже мёртв."
+```
+
+### Монитор (rich)
+```
+Обновление: каждые 5 секунд (читает inspector_status.json)
+Защита: fcntl.LOCK_SH при чтении + проверка mtime (<60с иначе STALE WARNING)
+Показывает:
+  - Таблица 10 программ: имя / статус / PID / uptime / детали
+  - Система: swap / mem / cpu
+  - Последний qwen диагноз + время
+  - Последнее действие Inspector
+  - Режим обслуживания (если активен — мигающий жёлтый баннер)
+  - Hotkeys: [M] maintenance mode on/off, [Q] quit
+```
+
+---
+
+## ЗАДАНИЕ КРУГА 3
+
+Ты видишь доработанную архитектуру v2.
+
+Оцени конкретно:
+
+1. Логика статусов (ALIVE/STALE/DEAD/STARTING) — корректна?
+2. Действие 2 (Claude Desktop через osascript) — надёжно ли на macOS Sequoia?
+3. event-driven qwen — правильная ли логика триггера?
+4. Монитор (5с обновление, fcntl, hotkeys) — замечания?
+5. Что ещё не закрыто?
+
+Вердикт в конце: ГОТОВ или НЕ ГОТОВ.
+Если НЕ ГОТОВ — одно конкретное блокирующее замечание.

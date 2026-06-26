@@ -1,0 +1,41 @@
+АУДИТ ThermalGuard NEVA — КРУГ 1 (только вопросы)
+
+Я разрабатываю NEVA — AI-оркестратор на Mac M1.
+ThermalGuard — компонент термоустойчивости системы.
+
+ТЕХНИЧЕСКИЙ КОНТЕКСТ:
+- ThermalGuard v9.4, FSM 9 состояний
+- Self-test: 32/34 PASS, 2 FAIL (race condition — известная проблема)
+- Запуск: отдельный launchd агент, ThrottleInterval=30
+- Текущее состояние (thermal_state.json, 2026-06-23):
+    state=BLOCKED
+    swap=2.88GB, mem=76.5%
+    ollama_available=false, ollama_serve_up=true
+    powermetrics_available=false
+    stopped_models=[qwen2.5:7b]
+- Паттерн из логов (106 000 строк, период 2026-06-18):
+    state=DEGRADED ПОСТОЯННО — никогда не переходит в HEALTHY
+    даже при mem=76%, swap=1.5GB, pressure=nominal
+    p=None(None) чередуется с p=nominal(0) — powermetrics нестабилен
+    powermetrics_available мигает True/False
+    ollama_available=False при ollama_serve_up=True
+    thermal_error.log пуст
+- Mac M1 MacBook Air: пассивное охлаждение (нет вентилятора), 16GB RAM
+- qwen2.5:7b (~8GB RAM) и e5-small (~2GB) — взаимоисключающие
+- Medic v3.9: L1 restart / L2 AI repair (Cerebras/Groq) / L3 Claude
+- Связь ThermalGuard↔Medic: через файлы + UDS (частично)
+- НЕ РЕАЛИЗОВАНО: kill-action при CRITICAL, полный UDS канал
+- powermetrics требует sudo — вероятная причина мигания
+
+ЗАДАЧА — КРУГ 1: только вопросы. Без оценок, альтернатив, рекомендаций.
+
+ВОПРОСЫ ПО КОДУ (минимум 5):
+Формат: Q-КОД-N: [вопрос]
+Темы: FSM 9 состояний, race condition в 2 FAIL тестах,
+powermetrics без sudo, критерии DEGRADED→HEALTHY,
+ollama_available vs ollama_serve_up, ThrottleInterval=30.
+
+ВОПРОСЫ ПО АРХИТЕКТУРЕ (минимум 5):
+Формат: Q-АРХ-N: [вопрос]
+Темы: место в системе NEVA, kill-action при CRITICAL,
+UDS канал к Medic, кто кем управляет, расширяемость Этапа 2.

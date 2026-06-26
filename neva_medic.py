@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 """
-NEVA Medic v3.8
-v3.6: Ч4 ПОЛНАЯ — двусторонняя связь Medic ↔ Клод через MCP-сервер (:9000)
-v3.7: A2
-v3.8: FM mcp_approval_hang + mcp_proxy_fallback_stuck — Medic мониторит и перезапускает neva_mcp_server.py (:9000/:9001)
-      - detect_problems(): mcp_server_net_down, mcp_server_net_http, dashboard_http
-      - playbook restart_mcp_server_net: launchctl kickstart -k
-      - ST-18: проверка новых детекторов
+NEVA Medic v3.9
+v3.8: FM mcp_approval_hang + mcp_proxy_fallback_stuck
+v3.9: DUMA аудит — fcntl lock, heartbeat, boot-счётчик, whitelist playbooks, атомарные записи
 """
-import json, logging, os, subprocess, sys, time, urllib.request, urllib.error
+from pathlib import Path   # ← ПЕРВАЯ СТРОКА (аудит К5: NameError иначе)
+import fcntl, json, logging, os, subprocess, sys, time, urllib.request, urllib.error
 from datetime import datetime
-from pathlib import Path
 
 # ─── ПУТИ ──────────────────────────────────────────────────────────────────────
 BASE     = Path('~/Documents/NEVA_MCP_BRIDGE').expanduser()
@@ -26,6 +22,8 @@ LOG_PATH        = LOGS  / 'medic.log'
 ESCALATIONS     = BASE / 'escalations'
 LOCK_FILE       = STATE / 'medic.lock'
 PROBLEM_COUNTER = STATE / 'problem_counter.json'
+HEARTBEAT       = STATE / 'neva_medic.heartbeat'   # аудит К5
+BOOT_LOG        = STATE / 'neva_medic_boots.txt'   # аудит К5
 
 CLAUDE_INBOX    = BASE / 'claude_inbox'
 REPAIRS_DIR     = CLAUDE_INBOX / 'repairs'
@@ -77,6 +75,50 @@ logging.basicConfig(
     handlers=[logging.FileHandler(LOG_PATH), logging.StreamHandler(sys.stdout)]
 )
 log = logging.getLogger('neva_medic')
+
+
+# ─── DUMA v3.9: РАННИЙ СТАРТ (до тяжёлых импортов) ───────────────────────────
+
+def write_heartbeat(status: str):
+    """Атомарная запись heartbeat (аудит К5: race при чтении)."""
+    tmp = HEARTBEAT.with_suffix('.tmp')
+    tmp.write_text(f'{time.time()}|{os.getpid()}|{status}')
+    os.replace(tmp, HEARTBEAT)
+
+# 1. Мгновенный heartbeat ДО lock (аудит К5)
+STATE.mkdir(parents=True, exist_ok=True)
+write_heartbeat('starting')
+
+# 2. fcntl lock — spinlock retry (аудит К4: race window при kickstart)
+_FLOCK_FD = open(LOCK_FILE, 'w')
+
+def _acquire_flock(retries: int = 5, delay: float = 0.3) -> bool:
+    for i in range(retries):
+        try:
+            fcntl.flock(_FLOCK_FD, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            return True
+        except BlockingIOError:
+            if i < retries - 1:
+                time.sleep(delay)
+    return False
+
+if not _acquire_flock():
+    write_heartbeat('duplicate_exit')
+    sys.exit(0)
+
+# 3. Boot-счётчик crash loop (аудит К5)
+BOOT_LOG.touch(exist_ok=True)
+with open(BOOT_LOG, 'a') as _f:
+    _f.write(f'{time.time()}\n')
+
+_boots: list[float] = []
+for _l in BOOT_LOG.read_text().splitlines():
+    try: _boots.append(float(_l.strip()))
+    except ValueError: pass
+
+BOOT_LOG.write_text('\n'.join(str(t) for t in _boots if time.time()-t < 86400) + '\n')
+_recent_boots = [t for t in _boots if time.time()-t < 300]
+_CRASH_LOOP = len(_recent_boots) >= 3
 
 
 # ─── v3.6: MCP-СЕРВЕР СОБЫТИЯ (Ч4) ────────────────────────────────────────────
@@ -609,6 +651,7 @@ def decide_mode(problem: dict, ai_result: dict) -> str:
 # ─── PLAYBOOKS ─────────────────────────────────────────────────────────────────
 
 def run_playbook(name: str, dry_run: bool = False) -> bool:
+    # аудит К2: белый список — плейбуки только из предопределённого dict
     playbooks = {
         'start_approval_server': [
             {'action': 'run', 'cmd': ['pkill', '-f', 'neva_approval_server'], 'ignore_error': True},
@@ -889,6 +932,16 @@ def _update_escalation_index(esc_id: str, esc: dict):
 # ─── ГЛАВНЫЙ ЦИКЛ ──────────────────────────────────────────────────────────────
 
 def heal_cycle(dry_run: bool = False) -> dict:
+    # аудит К6: crash loop guard
+    if _CRASH_LOOP:
+        write_heartbeat('crash_loop')
+        mcp_push_event({'type': 'crash_loop_detected'})
+        log.critical('CRASH LOOP: 3+ перезапуска за 5 мин — жду ручного вмешательства')
+        time.sleep(3600)  # держим процесс живым → launchd не перезапускает
+        sys.exit(1)
+
+    write_heartbeat('running')  # аудит К5
+
     reply = mcp_check_reply()
     if reply:
         log.info(f'💬 Выполняю инструкцию Клода: {reply[:80]}')
@@ -908,6 +961,7 @@ def heal_cycle(dry_run: bool = False) -> dict:
         report = {'ts': datetime.now().isoformat(), 'status': 'ok', 'problems': [], 'actions': []}
         REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2, default=str))
         mcp_push_event({'type': 'heal_end', 'status': 'ok'})
+        write_heartbeat('heal_end')  # аудит К5
         return report
 
     log.warning(f'heal_cycle: {len(problems)} проблем: {[p["id"] for p in problems]}')
@@ -1012,6 +1066,7 @@ def heal_cycle(dry_run: bool = False) -> dict:
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2, default=str))
     mcp_push_event({'type': 'heal_end', 'status': report['status'],
                     'fixed': sum(1 for a in actions if a.get('success'))})
+    write_heartbeat('heal_end')  # аудит К5
     return report
 
 
@@ -1133,22 +1188,13 @@ def save_snapshot():
 
 
 def acquire_lock() -> bool:
-    try:
-        if LOCK_FILE.exists():
-            old_pid = int(LOCK_FILE.read_text().strip())
-            try: os.kill(old_pid, 0); return False
-            except (ProcessLookupError, PermissionError):
-                log.warning(f'Stale lock PID {old_pid}')
-        LOCK_FILE.write_text(str(os.getpid()))
-        return True
-    except Exception as e:
-        log.error(f'Lock: {e}'); return True
+    # аудит К4: заменён на fcntl.flock выше — этот метод оставлен для совместимости
+    return True  # lock уже захвачен через _acquire_flock() при старте
 
 
 def release_lock():
     try:
-        if LOCK_FILE.exists() and LOCK_FILE.read_text().strip() == str(os.getpid()):
-            LOCK_FILE.unlink()
+        _FLOCK_FD.close()
     except Exception: pass
 
 
@@ -1231,13 +1277,15 @@ def _load_incident_log() -> list:
     return []
 
 def incident_log_write(entry: dict):
-    """Пишет запись в incident_log.json. Хранит последние 500 инцидентов."""
+    """Пишет запись в incident_log.json. Хранит последние 500 инцидентов. Атомарно (аудит К6)."""
     try:
         log_data = _load_incident_log()
         log_data.append(entry)
         if len(log_data) > 500:
             log_data = log_data[-500:]
-        INCIDENT_LOG.write_text(json.dumps(log_data, ensure_ascii=False, indent=2, default=str))
+        tmp = Path(str(INCIDENT_LOG) + '.tmp')
+        tmp.write_text(json.dumps(log_data, ensure_ascii=False, indent=2, default=str))
+        os.replace(tmp, INCIDENT_LOG)
     except Exception as e:
         log.error(f'incident_log_write error: {e}')
 

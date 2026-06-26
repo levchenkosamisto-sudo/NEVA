@@ -1,0 +1,123 @@
+АУДИТ INSPECTOR-001 — КРУГ 1
+Тема: архитектура NEVA Inspector — независимый сторожевой монитор
+Директор: Серж | Архитектор: Claude | Дата: 2026-06-25
+
+---
+
+## КОНТЕКСТ: ЧТО ТАКОЕ NEVA
+
+NEVA — персональная AI-система на Mac M1 (macOS Sequoia, 16GB RAM, Python 3.12).
+Состоит из нескольких независимых процессов под управлением launchd.
+
+Текущая проблема: когда Claude Desktop и Medic падают одновременно —
+некому сообщить об аварии и некому поднять остальные процессы.
+Нужен независимый сторожевой процесс который работает всегда.
+
+---
+
+## ПРЕДЛОЖЕНИЕ АРХИТЕКТОРА: NEVA Inspector v1
+
+### Два файла
+
+```
+neva_inspector.py         — фоновый демон (launchd, всегда жив)
+neva_inspector_monitor.py — терминальный дашборд (rich, запускается вручную)
+```
+
+### Что контролирует (10 программ)
+
+| Программа         | Как проверяем                        |
+|-------------------|--------------------------------------|
+| Claude Desktop    | pgrep "Claude"                       |
+| neva_medic        | pgrep + log freshness <180с          |
+| neva_mcp_server   | pgrep + HTTP :9000/health            |
+| neva_thermal_guard| pgrep + log freshness <120с          |
+| neva_approval_srv | pgrep + HTTP :8766/health            |
+| background_auditor| pgrep                                |
+| neva_control_ctr  | pgrep + HTTP :9001                   |
+| Desktop Commander | pgrep "desktop-commander"            |
+| Ollama            | pgrep + HTTP :11434                  |
+| Chrome CDP        | HTTP :9222/json                      |
+
+### Цикл работы (каждые 30 секунд)
+
+```
+1. Проверяем все 10 программ
+2. Записываем state/inspector_status.json
+3. Проверяем триггеры действий
+4. Если триггер → действие → Telegram
+5. Каждые 5 минут → qwen2.5:7b → одна строка диагноза
+```
+
+### Два действия
+
+**Действие 1 — рестарт MCP серверов**
+Триггер: Desktop Commander мёртв >2 минут
+```
+pkill -f "desktop-commander"
+launchctl unload/load com.neva.mcp-server.plist
+Telegram: "🔧 Inspector: DC перезапущен"
+```
+
+**Действие 2 — перезапуск Claude Desktop**
+Триггер: Claude Desktop мёртв >5 минут И Medic мёртв >5 минут
+```
+pkill -f "Claude" (на случай зависания)
+sleep 3
+open -a "Claude Desktop"
+Telegram: "⚠️ Inspector: Claude перезапущен. Medic мёртв — Claude должен поднять."
+```
+Логика: Claude читает SESSION_BRIEF → видит что мертво → поднимает Medic → Medic поднимает остальных.
+
+### Монитор (терминальный дашборд)
+
+```
+neva_inspector_monitor.py
+— читает inspector_status.json каждые 5с
+— выводит таблицу: программа / статус / PID / uptime / детали
+— показывает: swap, mem, cpu
+— показывает последний диагноз qwen
+— показывает последние действия Inspector
+— библиотека: rich (бесплатно, pip install rich)
+```
+
+### Хранение состояния
+
+```json
+state/inspector_status.json:
+{
+  "ts": "2026-06-25T20:45:00",
+  "programs": {
+    "claude_desktop": {"alive": true, "pid": 12345, "dead_since": null},
+    "neva_medic":     {"alive": true, "pid": 91929, "dead_since": null},
+    ...
+  },
+  "system": {"swap_gb": 1.4, "mem_pct": 76, "cpu_pct": 12},
+  "qwen_diagnosis": "Все системы работают нормально",
+  "last_action": null
+}
+```
+
+### Движок диагноза — qwen2.5:7b
+
+Раз в 5 минут отправляем state JSON в qwen через Ollama API.
+Промпт: "Ты монитор системы NEVA. Дай одну строку диагноза на русском."
+Ответ записывается в inspector_status.json.
+0 токенов Claude. 0 нагрева (qwen=4.7GB, работает только когда не занят).
+
+---
+
+## ЗАДАНИЕ — КРУГ 1: ВОПРОСЫ
+
+Задай уточняющие вопросы по архитектуре.
+Только вопросы — без оценок, без альтернатив.
+
+Что интересует:
+- логика триггеров (пороги времени, условия)
+- выбор инструментов (rich, qwen, pgrep)
+- действие с Claude Desktop (риски прерывания чата)
+- монитор (формат вывода, частота обновления)
+- взаимодействие Inspector ↔ Medic ↔ Claude
+- что ещё не учтено в архитектуре
+
+Отвечай на русском. Только вопросы.
