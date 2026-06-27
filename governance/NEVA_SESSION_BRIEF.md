@@ -1,4 +1,41 @@
 # NEVA SESSION BRIEF | 2026-06-26 | АКТУАЛЬНО
+
+---
+## ⛔ ЖЁСТКОЕ ПРАВИЛО — MCP SuperAssistant и ДУМА (2026-06-27)
+
+### КАК ПРАВИЛЬНО РАБОТАТЬ С MCP SuperAssistant:
+Мировая практика (mcpsuperassistant.ai/docs):
+
+1. СНАЧАЛА: убедиться что все инструменты включены (Enable All в сайдбаре)
+2. СНАЧАЛА: включить Auto-Execute + Auto-Submit (кнопка MCP в чате)
+3. СНАЧАЛА: нажать "Insert" в сайдбаре — вставить MCP Instructions Prompt в чат
+4. ТОЛЬКО ПОТОМ: написать задачу аудитору
+5. ЖДАТЬ: ИИ генерирует ответ с tool call карточкой → расширение показывает RUN
+6. НАЖАТЬ RUN (или авто если Auto-Execute включён)
+7. РЕЗУЛЬТАТ вставляется в чат автоматически
+
+### ⛔ ЗАПРЕЩЕНО:
+- Отправлять промпты всем аудиторам одновременно через скрипт
+- Переходить к следующему аудитору не получив ответ от текущего
+- Работать с ИИ без вставки MCP Instructions Prompt
+- Пропускать шаг Enable All Tools
+
+### ✅ ПОРЯДОК ДУМЫ С MCP:
+ОТПРАВИЛ → ПОЛУЧИЛ ОТВЕТ → УБЕДИЛСЯ ЧТО ИНСТРУМЕНТ ВЫЗВАН →
+НАЖАЛ RUN → РЕЗУЛЬТАТ В ЧАТЕ → ТОЛЬКО ТОГДА ПЕРЕХОД К СЛЕДУЮЩЕМУ
+
+### КАК ЧЕЛОВЕК:
+Каждое действие — как будто я сижу за компьютером и делаю руками:
+- Открыл вкладку Grok
+- Включил All Tools
+- Включил Auto-Execute
+- Нажал Insert Instructions
+- Написал запрос
+- Подождал ответ с tool call карточкой
+- Убедился что RUN выполнился
+- Посмотрел результат
+- ТОЛЬКО ПОТОМ перешёл к ChatGPT
+---
 # CURSOR-001 ЗАКРЫТ (7 кругов, 4/4 ГОТОВ). Pipeline задеплоен. Переход в новый чат.
 
 ---
@@ -29,11 +66,38 @@
 ВКЛЮЧЕНО: Search chats, Memory, Artifacts, Code execution, Inline visualizations
 ВЫКЛЮЧЕНО: Network egress, AI-powered artifacts, Switch models when flagged
 
+### MCP SUPERASSISTANT — СТАТУС: ✅ РАБОТАЕТ (2026-06-27)
+Все 4 веб-ИИ подключены к NEVA MCP сервер :9000 через расширение Chrome.
+
+**Компоненты:**
+- Расширение: MCP SuperAssistant v0.6.0, ID: kngiafgkdnlkgmefdafaibkibegkcaef
+- Профиль: ~/.chrome-neva-debug (там установлено расширение)
+- Прокси: ~/Documents/NEVA/sandbox/mcp-superassistant/ → :3006/sse
+- Конфиг: ~/Documents/NEVA/sandbox/mcp-superassistant/mcpconfig.json
+- БАГ ИСПРАВЛЕН: configToSse.js — new Server() создаётся per-connection (не singleton)
+
+**Статус по ИИ (Server Connected ✅, 1 of 1 tools enabled):**
+- Grok ✅ | ChatGPT ✅ | DeepSeek ✅ | Gemini ✅
+
+**Запуск прокси:**
+```bash
+pkill -f mcp-superassistant-proxy 2>/dev/null; sleep 2
+cd ~/Documents/NEVA/sandbox/mcp-superassistant && \
+node node_modules/@srbhptl39/mcp-superassistant-proxy/dist/index.js \
+  --config ./mcpconfig.json &
+```
+
+**Важно:** Chrome запускать БЕЗ --remote-debugging-port для MCP SuperAssistant.
+CDP и расширение совместимы в одном профиле ~/.chrome-neva-debug.
+
+---
+
 ### ОТКРЫТЫЕ ЗАДАЧИ:
 1. Inspector launchd throttle
 2. background_auditor — нужен ли?
 3. neva_inspector_monitor.py
 4. Telegram двусторонняя связь
+5. РАДА — система API-оркестрации 4 веб-ИИ через NEVA MCP (следующий этап)
 
 ---
 
