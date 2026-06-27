@@ -1,3 +1,16 @@
+## СТАТУС НА 2026-06-27 11:00 — ПРОДОЛЖИТЬ В НОВОМ ЧАТЕ
+
+ДУМА MCP-MEM-GIT:
+- DeepSeek: ЗАКРЫТ. 6.5/10. Файл: DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md
+- Gemini: НЕ ЗАКРЫТ. Прочитал ARCH+TASK. Чат: https://gemini.google.com/app/775659b83449e1a3
+  Нужно: Документ 3 (PROMPT), вопросы, ответы, open source альтернативы, write_result
+
+ПРИ СТАРТЕ НОВОГО ЧАТА:
+1. Открыть Gemini по ссылке выше
+2. Написать: Документ 3 из 3 — ПРОМПТ. github_read filepath=audit_responses/DUMA-MCP-MEM-GIT-R1-PROMPT.txt
+3. Run -> Insert -> Отправить
+4. Получить вопросы -> ответить -> попросить open source альтернативы -> write_result auditor=gemini
+
 # NEVA SESSION BRIEF | 2026-06-26 | АКТУАЛЬНО
 
 ---
