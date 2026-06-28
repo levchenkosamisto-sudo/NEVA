@@ -164,7 +164,21 @@ def index_document(path: str, text: str) -> int:
     Возвращает количество записанных фактов.
     """
     log.info("[INDEXER] → %s", path)
-    facts = extract_facts(text, path)
+
+    # Разбиваем большие документы на чанки по 3000 символов
+    CHUNK_SIZE = 3000
+    if len(text) > CHUNK_SIZE:
+        chunks = [text[i:i+CHUNK_SIZE] for i in range(0, len(text), CHUNK_SIZE)]
+        log.info("[INDEXER] разбит на %d чанков", len(chunks))
+    else:
+        chunks = [text]
+
+    all_facts = []
+    for chunk in chunks:
+        chunk_facts = extract_facts(chunk, path)
+        all_facts.extend(chunk_facts)
+
+    facts = all_facts
     if not facts:
         log.info("[INDEXER] фактов не извлечено из %s", path)
         return 0
