@@ -1,5 +1,5 @@
 {
-  "total": 1443,
+  "total": 1480,
   "facts": [
     {
       "text": "CURSOR-001 — ФИНАЛЬНАЯ АРХИТЕКТУРА",
@@ -819,6 +819,104 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Пропускать тесты",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Писать код не по TASK.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Менять spec.md, AGENTS.md, TASK.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Изменять файлы вне папки projects/ и tools/pipeline/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "smoke_test.sh: 4/4 PASS ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "ruff: All checks passed ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "review_checker.py: 5/5 тестов ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "new_project.py: 4/4 тестов ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "inspector_poll.py: 6/6 тестов ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "notify_director.py: 8/8 тестов ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "utils.py: 3/3 тестов ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "pytest: 26 passed in 0.90s",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "Статус: 26/26 PASS ✅",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
+    },
+    {
+      "text": "Дата: 2026-06-26",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/test_report.md"
     },
     {
       "text": "Пайплайн состоит из 4 этапов",
@@ -5273,6 +5371,153 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "strict_type_checking: false",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/--help/AGENTS.md"
+    },
+    {
+      "text": "mypy опционален",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/--help/AGENTS.md"
+    },
+    {
+      "text": "ruff перед каждым коммитом",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/--help/AGENTS.md"
+    },
+    {
+      "text": "strict_type_checking: false",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Менять первую строку на: STATUS: RESOLVED",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Писать в questions.md: STATUS: BLOCKED",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "tools/pipeline/ review_checker.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "tools/pipeline/ new_project.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "tools/pipeline/ inspector_poll.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "tools/pipeline/ notify_director.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "tools/pipeline/ utils.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "stderr: ошибки и предупреждения",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "stdout: результат работы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "exit коды: 0 = успех, 1 = ошибка",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Все ошибки логировать, не падать молча",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Никаких TODO, pass, NotImplementedError в финальном коде",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "ruff перед каждым коммитом",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "pytest для тестов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "requests (только для Telegram)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "pathlib (не os.path)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
+      "text": "Python 3.12",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/AGENTS.md"
+    },
+    {
       "text": "Структура папки проекта",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -9258,6 +9503,20 @@
       "status": "АКТУАЛЬНО",
       "importance": 4,
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "после ответа обновлять questions.md с STATUS: RESOLVED",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/--help/AGENTS.md"
+    },
+    {
+      "text": "при блокировке обновлять questions.md с STATUS: BLOCKED и описанием",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/--help/AGENTS.md"
     },
     {
       "text": "Inspector poll каждые 3 мин как резерв",
