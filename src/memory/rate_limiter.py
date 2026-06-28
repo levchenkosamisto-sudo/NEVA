@@ -89,7 +89,7 @@ def call_with_rate_limit(prompt: str, max_tokens: int = 1000) -> Optional[str]:
             waits = [p.wait_secs() for p in PROVIDERS]
             w = max(1.0, min(waits))
             log.info("[RATE] все заняты, ждём %.0fс", w)
-            time.sleep(min(w, 10.0))
+            time.sleep(w)  # ждём реально
             continue
 
         # Выдерживаем интервал
