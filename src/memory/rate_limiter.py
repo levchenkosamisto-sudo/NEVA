@@ -60,12 +60,14 @@ class Provider:
 
 
 PROVIDERS = [
-    Provider(name="groq",          rpm=30,  priority=1),
-    Provider(name="github_models", rpm=60,  priority=2),
-    Provider(name="openrouter_1",  rpm=20,  priority=3),
-    Provider(name="openrouter_2",  rpm=20,  priority=4),
-    Provider(name="cerebras",      rpm=1,   priority=5),
-    Provider(name="deepseek",      rpm=60,  priority=6),
+    Provider(name="groq",              rpm=30, priority=1),
+    Provider(name="github_models",     rpm=60, priority=2),
+    Provider(name="or_gpt_oss_120b",   rpm=20, priority=3),
+    Provider(name="or_nemotron_550b",  rpm=10, priority=4),
+    Provider(name="or_llama_70b_k1",   rpm=20, priority=5),
+    Provider(name="or_llama_70b_k2",   rpm=20, priority=6),
+    Provider(name="cerebras",          rpm=1,  priority=7),
+    Provider(name="deepseek",          rpm=60, priority=8),
 ]
 
 _last_req: dict[str, float] = {}
@@ -148,37 +150,31 @@ def _call(name: str, prompt: str, max_tokens: int) -> str:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return _j.loads(resp.read())["choices"][0]["message"]["content"]
 
-    if name == "openrouter_1":
+    if name in ("or_gpt_oss_120b", "or_nemotron_550b", "or_llama_70b_k1", "or_llama_70b_k2"):
         import urllib.request, json as _j
+        MODEL_MAP = {
+            "or_gpt_oss_120b":  ("openai/gpt-oss-120b:free",               os.environ.get("OPENROUTER_API_KEY",   "")),
+            "or_nemotron_550b": ("nvidia/nemotron-3-ultra-550b-a55b:free",  os.environ.get("OPENROUTER_API_KEY",   "")),
+            "or_llama_70b_k1":  ("meta-llama/llama-3.3-70b-instruct:free",  os.environ.get("OPENROUTER_API_KEY",   "")),
+            "or_llama_70b_k2":  ("meta-llama/llama-3.3-70b-instruct:free",  os.environ.get("OPENROUTER_API_KEY_2", "")),
+        }
+        model, api_key = MODEL_MAP[name]
         payload = _j.dumps({
-            "model": "meta-llama/llama-3.2-3b-instruct:free",
+            "model": model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": max_tokens,
         }).encode()
         req = urllib.request.Request(
             "https://openrouter.ai/api/v1/chat/completions", data=payload,
             headers={"Content-Type": "application/json",
-                     "Authorization": f"Bearer {os.environ.get('OPENROUTER_API_KEY', '')}",
+                     "Authorization": f"Bearer {api_key}",
                      "HTTP-Referer": "https://github.com/levchenkosamisto-sudo/NEVA"})
         with urllib.request.urlopen(req, timeout=30) as resp:
             d = _j.loads(resp.read())
-            return d["choices"][0]["message"]["content"]
-
-    if name == "openrouter_2":
-        import urllib.request, json as _j
-        payload = _j.dumps({
-            "model": "meta-llama/llama-3.2-3b-instruct:free",
-            "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": max_tokens,
-        }).encode()
-        req = urllib.request.Request(
-            "https://openrouter.ai/api/v1/chat/completions", data=payload,
-            headers={"Content-Type": "application/json",
-                     "Authorization": f"Bearer {os.environ.get('OPENROUTER_API_KEY_2', '')}",
-                     "HTTP-Referer": "https://github.com/levchenkosamisto-sudo/NEVA"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            d = _j.loads(resp.read())
-            return d["choices"][0]["message"]["content"]
+            content = d["choices"][0]["message"]["content"]
+            if not content:
+                raise ValueError("Пустой ответ от OpenRouter")
+            return content
 
     if name == "deepseek":
         import urllib.request, json as _j
