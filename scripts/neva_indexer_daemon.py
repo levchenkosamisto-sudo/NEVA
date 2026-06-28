@@ -105,16 +105,13 @@ def _parse_retry(err):
 PROVIDERS = ['gemini', 'groq', 'github', 'or_gpt120', 'or_nemotron', 'or_llama_k1', 'or_llama_k2']
 
 def get_provider():
-    """Возвращает первого доступного провайдера."""
+    """Возвращает первого доступного провайдера или None."""
     now = time.time()
     for p in PROVIDERS:
         avail = provider_available_at.get(p, 0)
         if now >= avail:
             return p
-    # Все заняты — ждём ближайшего
-    earliest = min(provider_available_at.get(p, 0) for p in PROVIDERS)
-    wait = max(1, earliest - now)
-    return None, wait
+    return None
     
 def call_ai(prompt):
     """Вызов ИИ с авторотацией. Ждёт если все провайдеры заняты."""
