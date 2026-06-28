@@ -1,5 +1,5 @@
 {
-  "total": 1480,
+  "total": 1496,
   "facts": [
     {
       "text": "CURSOR-001 — ФИНАЛЬНАЯ АРХИТЕКТУРА",
@@ -819,6 +819,20 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "The system has 3 tools: mac_read_file, github_read, write_result",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "docs/MCP_AUDIT_TEST.md"
+    },
+    {
+      "text": "NEVA system uses MCP SuperAssistant to connect 4 web AI auditors to NEVA MCP server",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "docs/MCP_AUDIT_TEST.md"
     },
     {
       "text": "Пропускать тесты",
@@ -5371,6 +5385,90 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "Схема БД в работе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Архитектура памяти (memory layers) в работе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Наполнение governance/ в работе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Скелет создан",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Роль диспетчера завершена",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Структура папок завершена",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Границы системы (scope) завершено",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "СЛЕДУЮЩАЯ ФАЗА: GOVERNANCE FILL",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "СТАТУС: IN PROGRESS",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Фаза: SKELETON",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Версия: 0.1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Дата: 2026-05-30",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
       "text": "strict_type_checking: false",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -8521,6 +8619,20 @@
       "status": "АКТУАЛЬНО",
       "importance": 3,
       "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Структура memory layers детально открытого решения",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "status/NEVA_STATE.md"
+    },
+    {
+      "text": "Запуск диспетчера открытого решения",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "status/NEVA_STATE.md"
     },
     {
       "text": "Церебрас работает, 3.6 секунды.",
