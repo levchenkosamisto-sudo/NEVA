@@ -60,10 +60,12 @@ class Provider:
 
 
 PROVIDERS = [
-    Provider(name="cerebras",      rpm=1,   priority=1),
-    Provider(name="groq",          rpm=30,  priority=2),
-    Provider(name="github_models", rpm=60,  priority=3),
-    Provider(name="deepseek",      rpm=60,  priority=4),
+    Provider(name="groq",          rpm=30,  priority=1),
+    Provider(name="github_models", rpm=60,  priority=2),
+    Provider(name="openrouter_1",  rpm=20,  priority=3),
+    Provider(name="openrouter_2",  rpm=20,  priority=4),
+    Provider(name="cerebras",      rpm=1,   priority=5),
+    Provider(name="deepseek",      rpm=60,  priority=6),
 ]
 
 _last_req: dict[str, float] = {}
@@ -145,6 +147,38 @@ def _call(name: str, prompt: str, max_tokens: int) -> str:
         )
         with urllib.request.urlopen(req, timeout=30) as resp:
             return _j.loads(resp.read())["choices"][0]["message"]["content"]
+
+    if name == "openrouter_1":
+        import urllib.request, json as _j
+        payload = _j.dumps({
+            "model": "meta-llama/llama-3.2-3b-instruct:free",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+        }).encode()
+        req = urllib.request.Request(
+            "https://openrouter.ai/api/v1/chat/completions", data=payload,
+            headers={"Content-Type": "application/json",
+                     "Authorization": f"Bearer {os.environ.get('OPENROUTER_API_KEY', '')}",
+                     "HTTP-Referer": "https://github.com/levchenkosamisto-sudo/NEVA"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            d = _j.loads(resp.read())
+            return d["choices"][0]["message"]["content"]
+
+    if name == "openrouter_2":
+        import urllib.request, json as _j
+        payload = _j.dumps({
+            "model": "meta-llama/llama-3.2-3b-instruct:free",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+        }).encode()
+        req = urllib.request.Request(
+            "https://openrouter.ai/api/v1/chat/completions", data=payload,
+            headers={"Content-Type": "application/json",
+                     "Authorization": f"Bearer {os.environ.get('OPENROUTER_API_KEY_2', '')}",
+                     "HTTP-Referer": "https://github.com/levchenkosamisto-sudo/NEVA"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            d = _j.loads(resp.read())
+            return d["choices"][0]["message"]["content"]
 
     if name == "deepseek":
         import urllib.request, json as _j

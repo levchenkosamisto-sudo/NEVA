@@ -1,6 +1,76 @@
 {
   "facts": [
     {
+      "text": "Структура Гит утверждена.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Память NEVA v3 утверждена.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Arquitectura rate limiter уже готова",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Решение о едином источнике истины — Гит, утверждено Директором.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Архитектура памяти NEVA v3 готова к ДУМА аудиту.",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Три полки памяти вместо одной: SQLite, эпизоды, факты, процедуры.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Архитектура памяти завершена.",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Архитектура памяти объяснена простыми словами",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ключевое изменение — трёхуровневый поиск + классификация перед индексацией + SQLite вместо PostgreSQL для M1 8GB",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Индексатор классифицирует: DECISION / FACT / AUDIT / EVENT / CHAT и извлекает проект, компонент, дата, автор.",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
       "text": "Ollama отключена навсегда",
       "type": "DECISION",
       "status": "АКТУАЛЬНО",
@@ -328,6 +398,552 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "GitHub Branch Protection включён через admin токен.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "MCP завис, фоновая индексация перегружает систему",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "При 429 → автоматически переключается на следующего провайдера",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Разработан rate limiter с ротацией провайдеров для индексатора NEVA",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Церебрас = 1 запрос/мин, Грок по документации = 30 req/min",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Отключение Ollama + закрытие Brave освободило ~1100 MB RAM и сбросило 2GB swap.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ollama: остановлена + автозапуск отключён",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ollama не запустится при следующей перезагрузке.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Brave закрыт. Chrome оставляю — он нужен для MCP.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "На 8GB RAM нельзя одновременно держать открытыми Claude Desktop + Brave + Chrome + Cursor.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Swap используется: 3088 MB из 4096 MB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Свободно: всего 171 MB из ~8GB RAM",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ollama остановлена. Причина тормозов в недостатке RAM",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Цепочка индексатора теперь состоит из Церебрас и Грок",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Локальная Ollama отключена из цепочки памяти",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Церебрас gpt-oss-120b активен, индексация работает",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Теперь main защищён двойным слоем: pre-push хук локально + GitHub Branch Protection на сервере.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Branch Protection на main активен.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "GitHub синхронизирован.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "По правилам — только через dev → PR → main. Но для системных коммитов типа наших нужно либо пушить через dev, либо --no-verify.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "коммиты идут в локальный Гит, но не пушатся на GitHub. Причина: pre-push хук блокирует прямой пуш в main.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "wen 7B как единственный fallback для индексации занимает 60-90 секунд на файл. Как только добавите ключи Церебрас/Грок в .env — индексация ускорится до 1-3 секунд.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Патч на месте.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Проблема в индексаторе: qwen возвращает тип PROCEDURE для чата.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Теперь фикс constraint в schema — тип CHAT должен быть в таблице episodes, не procedures.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Файл в memory/raw/chats/ → fswatch замечает за 2-10 секунд → index_file.sh → индексатор → SQLite.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Watcher активен — com.neva.memory.watcher PID живой, KeepAlive=true.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Индексатор подключён как модуль (src/memory/indexer.py) — но не запущен ни как демон, ни как MCP tool.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "GitHub Branch Protection не включён (токен без прав admin).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "launchd — да, 00:00. Агент com.neva.memory.dedup загружен и зарегистрирован. Запустится автоматически сегодня в полночь.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запись чатов — сейчас ручная: файл .md → memory/raw/chats/ → git commit → индексатор видит новый файл → извлекает факты с важностью 1-3 → таблица episodes.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "launchd агент загружен. Статус - 0 = зарегистрирован, не запущен (ждёт 00:00).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Поиск по базе чатов идёт через уровни 5-6 конвейера — самый низкий приоритет. Сначала всегда ищем в решениях и фактах.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "7/7 тестов PASS.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Все 6 замечаний аудиторов закрыты.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Снимки без политики очистки — нужен лимит и архив",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Противоречие важность 5 vs новый факт — исключение из автоматики",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "context_package — сжатие через ИИ, не усечение",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Порог 0.92 — нужен двухшаговый алгоритм (вектор + ИИ проверяет)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет статуса ОЖИДАЕТ_ВЕКТОРИЗАЦИИ для фактов без вектора",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет точного триггера и таймаута переключения qwen↔e5",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Готово к ДУМА аудиту.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Зафиксировано. Два блока в памяти: NEVA ПАМЯТЬ v3 и NEVA ГИТ СТРУКТУРА",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "AGENTS.md стал стандартом для руководства ИИ-агентами.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "AGENTS.md стал стандартом для руководства ИИ-агентами, принятым более чем 20 000 репозиториев и формализованным в августе 2025 года.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "В 2026 году агенты проваливаются чаще из-за неясной структуры репозитория чем из-за качества модели.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Все 7 пробелов закрыты.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запрос 'что зависит от graphiti-core' работает точно через граф.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Выявлено 7 пробелов относительно мировых лучших практик 2026 года.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запись и индексация чатов добавлены.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Добавляю в архитектуру запись и индексацию сырых чатов",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Тип: CHANGE REQUEST — принято",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Должна быть запись в память рав чатов с ИИ и их индексация для поиска",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Все три пользователя используют один и тот же поисковик.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Поиск осуществляется по приоритету: решения, факты, аудит, смысл, чаты.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Каждому типу свой приоритет при поиске.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "ИИ извлекает 2-3 предложения с главным смыслом из большого документа.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "ИИ определяет тип документа: решение Директора, факт, аудит, событие, чат.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Индексатор — это фоновый процесс, который следит за Гитом.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Groq 70B — резервная (облако, 0.016с)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Cerebras 120B — основная (облако, 0.009с)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Исправлено местоположение qwen2.5:7b с 'основная' на 'fallback'.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ошибка: qwen локальная — это fallback последний, не основная.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "GET /memory/status ← сколько проиндекси",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "POST /memory/index ← ручной запуск индексации",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "POST /memory/search ← универсальный поиск",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "SQLite используется для хранения данных: decisions, facts, audits, events, documents, chunks, embeddings",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "AI Indexer использует FlagmanRouter: Cerebras→Groq→qwen2.5:7b",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Единый search endpoint для всех: Claude, DUMA веб-ИИ, API ИИ",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Claude Desktop — реалтайм запросы к памяти во время диалога",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Индексатор использует API ИИ из NEVA (не просто парсер)",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "SQLite выбран вместо PostgreSQL из-за ограничения по памяти и отсутствия Docker.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Единый API поиска будет доступен через MCP :9000 и FastAPI :8000.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Kuzu используется для слоя Б, хранящего модули, TASK-XXX и решения.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Индексируется: аудиты (AUDIT_CLOSED.md), решения Директора, управление/, чаты по завершению.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "ChromaDB выбран для слоя A. Он бесплатен, локален и совместим с M1 ARM64.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Решение 2 — Память Невa состоит из двух слоев: Слой А — RAG (чаты + решения + аудиты) и Слой Б — Граф (модули + задачи + зависимости).",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Решение 1 — Гит как ССОТ включает ветки: main(prod) → dev→task/TASK-XXX, хуки перед коммитом: ruff + pytest и автоотправка после закрытия аудита.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
     },
     {
       "text": "Цепочка Rate Limiter настроена",
@@ -2885,6 +3501,153 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "Kuzu граф: убрать MockGraph.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Новый Gemini API ключ нужен, старый заблокирован.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "276 файлов требует первичной индексации.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Необходимо остановить индексацию, чтобы восстановить MCP",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Необходимо ограничить скорость индексации в соответствии с лимитами апи ии и обеспечить ротацию ии если лимиты закончаться",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "285 md-файлов, ~1MB суммарно. При скорости Церебраса 2-3 сек на файл — около 10-15 минут.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Для зелёного статуса нужно закрыть ESC по qwen (они больше не актуальны) и обновить ThermalGuard.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Основная нагрузка сейчас: Claude Desktop (8% RAM) + Chrome NEVA (много вкладок)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Свободно RAM: 171 → 322 MB (+151 MB)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Браузер Brave использует 502 MB RAM",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Следующий шаг — TASK-MEM-005: первичная индексация всей NEVA. Запускать?",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Следующий шаг — TASK-MEM-005: первичная индексация всей NEVA (--full), и добавить ключи облачных ИИ в .env чтобы индексатор работал быстро.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Два замечания: .env имеет строку с пробелами, и индексатор возвращает тип PROCEDURE для чата (неверная классификация qwen).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "TASK-MEM-003 — memory_search как MCP tool для Claude Desktop.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Следующий шаг — TASK-MEM-003: добавить memory_search как MCP tool в сервер :9000 + скрипт автозаписи чата.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Следующий шаг — TASK-MEM-002: подключить memory_search как MCP инструмент в :9000 и добавить launchd для ночного процесса 03:00.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "AGENTS.md — главный файл для ИИ.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Факты на которые сослались извлекаются из чатов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Предложения принятые или отклонённые извлекаются из чатов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Чат индексируется иначе чем решение или аудит",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Обновлённое предложение включает изменения: замена ChromaDB на вторую БД, замена e5-small на multilingual-e5-base, переход на трехуровневый поиск.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
       "text": "Вердикт: ГОТОВ",
       "type": "DECISION",
       "status": "АКТУАЛЬНО",
@@ -3219,6 +3982,83 @@
       "status": "АКТУАЛЬНО",
       "importance": 3,
       "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "ESC по qwen в NEVA закрыть (устарели).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "scripts/snapshot.sh для аудита ДУМЫ.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Ночной процесс 00:00: дедупликация порог 0.92 + устаревание 90/180 дней.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "ESC по qwen устаревшие, нужно закрыть",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Kuzu граф — graphiti-core реальный ещё не подключён (MockGraph)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Снимок системы перед аудитом (scripts/snapshot.sh) не создан",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "GitHub Branch Protection настроен, но требует классического PAT для полного контроля",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Первичная индексация всей NEVA (269 файлов) прервана, нужно перезапустить с rate_limiter",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Если ДУМА не работает сейчас — можно закрыть.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Пока нет автоматической записи — чат нужно сохранять вручную или через хук завершения сессии.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запись чатов Claude Desktop → файл → Гит — не автоматизирована.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
     },
     {
       "text": "Нет блокирующих.",
@@ -3760,6 +4600,41 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "AGENTS.md"
+    },
+    {
+      "text": "История репо очищена через git filter-repo.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Brave тормозил Mac: закрыт.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Ollama отключена навсегда.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Токен сохраняю в .env и сразу удаляю из истории команд.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Аудиторы выявили 6 конкретных пробелов в архитектуре памяти.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
     },
     {
       "text": "DeepSeek: 402 Payment Required (нет баланса).",
@@ -4413,6 +5288,20 @@
       "source": "NEVA_PROJECT_KNOWLEDGE.md"
     },
     {
+      "text": "git push — dev запушен. Теперь main — с --no-verify для системных коммитов.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Статус предложения: предложение восстановлено из архива.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
       "text": "Круг 1 завершён; ожидаются ответы архитектора.",
       "type": "EVENT",
       "status": "АКТУАЛЬНО",
@@ -4446,6 +5335,48 @@
       "status": "АКТУАЛЬНО",
       "importance": 3,
       "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Церебрас работает, 3.6 секунды. Теперь тест.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Модель называется gpt-oss-120b. Обновляю индексатор.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Церебрас — модель не та. Смотрю какие модели реально доступны.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Церебрас модуль не установлен. Грок работает. Устанавливаю Церебрас и проверяю все.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Важно: токен в чате виден только нам двоим, но для безопасности лучше дать мне только нужный ключ.",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Процесс завершился — жду ещё результата индексации (qwen медленно).",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
     },
     {
       "text": "Как launchd решает, когда применять exponential backoff после EX_CONFIG (exit 78), и есть ли способ сбросить счётчик без reboot?",
@@ -5220,6 +6151,237 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "Планируется запуск TASK-MEM-006: первичная индексация всей NEVA через Церебрас",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Тестируем полный цикл снова.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запись чата Claude Desktop сохраняется через scripts/save_chat.sh и индексируется.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запускаю ДУМА. Сначала проверю что система готова.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Готовлю пакет документов для аудиторов — единый текст Круга 1.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запускаю аудиторов последовательно.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Уведомление в Телеграм при коммите в main реализовано.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Скрипт снимка системы перед аудитом разработан.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Автоматические тесты настроены в .github/workflows/ci.yml.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Утвержден формат решений DECISION-XXX.md и перенесены старые решения.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Настроены ветки main/dev и правила работы с ними.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Написаны AGENTS.md и CLAUDE.md.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Создана структура папок и перенесены файлы.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ночной процесс объединения дублей.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Контроль устаревания (метки + правила).",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Ночной процесс — объединение дублей запускается автоматически.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Шаг 4 — Запись и векторизация фактов с оценкой 2-5 в базу.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Шаг 3 — Связи между объектами. Kuzu получает связи, а не просто факт.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запись нового факта с актуальным статусом, старый факт помечается как отменённый.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Шаг 2 — Проверка противоречий. Поиск противоречащего старого факта перед записью нового.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Факты с оценкой 1 идут только в сырой архив. В поиск не попадают.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Шаг 1 — Извлечение. Церебрас (резерв: Грок) читает документ и извлекает факты.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет наблюдаемости памяти.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет оценки важности при записи.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет связей между сущностями — только текст.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет трёх типов памяти — только один.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет фонового объединения похожих фактов.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Нет разрешения противоречий при записи.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Устаревание данных не контролируется.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Выжимка ≤500 слов",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Запись в файл — автоматический коммит в Гит",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Индексатор видит новый файл и запускается",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "Каждый завершённый диалог автоматически сохраняется в Гит",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
       "text": "ESC по qwen в NEVA закрыть",
       "type": "PROCEDURE",
       "status": "АКТУАЛЬНО",
@@ -5428,6 +6590,20 @@
       "status": "АКТУАЛЬНО",
       "importance": 3,
       "source": "AGENTS.md"
+    },
+    {
+      "text": "Временный процесс macOS — должен сам умереть. Если не умрёт через минуту — убить.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
+    },
+    {
+      "text": "MCP tool memory_search вызывается Клодом когда он видит что контекста не хватает.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "memory/raw/chats/2026-06-28_full_shared_chat.md"
     },
     {
       "text": "Новый Gemini API ключ.",
@@ -5640,5 +6816,5 @@
       "source": "AGENTS.md"
     }
   ],
-  "total": 805
+  "total": 973
 }
