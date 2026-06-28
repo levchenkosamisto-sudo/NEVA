@@ -1653,7 +1653,7 @@ Used a tool
 GitHub.com → Settings (аккаунт, не репо) → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → галочка repo → скопировать. Затем:
 
 bash
-echo "GITHUB_TOKEN_ADMIN=[ВАШ_ТОКЕН]" >> ~/Documents/NEVA/.env
+echo "GITHUB_TOKEN_ADMIN=ghp_ваш_токен" >> ~/Documents/NEVA/.env
 
 Потом скажите мне — запущу скрипт включения Branch Protection через API.
 
@@ -1858,7 +1858,7 @@ GitHub синхронизирован.
 
 ---
 
-GitHub admin токен для Branch Protection [ТОКЕН_УДАЛЁН]
+GitHub admin токен для Branch Protection ТОКЕН_УДАЛЁН
 
 ---
 
