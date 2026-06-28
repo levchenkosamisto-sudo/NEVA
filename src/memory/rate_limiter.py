@@ -25,7 +25,7 @@ class Provider:
 
     @property
     def min_interval(self) -> float:
-        return 60.0 / self.rpm
+        return (60.0 / self.rpm) * 1.2  # +20% буфер
 
     def is_available(self) -> bool:
         now = time.time()
