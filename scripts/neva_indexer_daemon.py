@@ -93,12 +93,17 @@ def call_provider(name, prompt, max_tokens=1000):
     return None, 60
 
 def _parse_retry(err):
-    for pat in [r'retry.{0,10}after[:\s]+(\d+)', r'Please retry in (\d+)', r'(\d+)\s*second']:
-        m = re.search(pat, err.lower())
-        if m: return min(int(m.group(1)) + 5, 3600)
-    if '429' in err: return 65
-    if '402' in err: return 86400  # платный — на сутки
-    if '20' in err and 'limit' in err.lower(): return 86400  # дневной лимит
+    # Дневной лимит — блокируем до завтра
+    if 'PerDay' in err or 'per_day' in err.lower() or 'daily' in err.lower():
+        log(f"  ДНЕВНОЙ ЛИМИТ — блокируем на 8 часов")
+        return 28800
+    if '402' in err:
+        return 86400  # платный — на сутки
+    # Извлекаем retry-after из ответа
+    for pat in [r'Please retry in ([\d.]+)', r'retry.{0,10}after[:\s]+([\d.]+)', r'Retry-After[:\s]+([\d.]+)']:
+        m = re.search(pat, err)
+        if m: return min(float(m.group(1)) + 10, 3600)
+    if '429' in err: return 70  # стандартная минута + буфер
     return 30
 
 # Приоритет провайдеров
