@@ -1,6 +1,90 @@
 {
-  "total": 1496,
+  "total": 1514,
   "facts": [
+    {
+      "text": "Критерии успеха включают выполнение git_status, file_tree и file_read через Executor",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Claude остаётся ответственностью за архитектурные решения, анализ и планирование",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Файл конфигурации должен иметь динамический путь",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Архитектурный принцип: Claude — мышление, Executor — исполнение",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Цель — подключить локальный MCP сервер NEVA MCP Executor к Claude Desktop как tool backend",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "NEVA MCP EXECUTOR — ИНТЕГРАЦИЯ С CLAUDE DESKTOP",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Источник истины: governance/, Git",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/README_EMERGENCY.md"
+    },
+    {
+      "text": "Единственная точка входа: dispatcher/dispatcher.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/README_EMERGENCY.md"
+    },
+    {
+      "text": "Единственная запись в БД: core/db_writer.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/README_EMERGENCY.md"
+    },
+    {
+      "text": "Проекты: ARKA (разработка), SARJ (медмониторинг)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/README_EMERGENCY.md"
+    },
+    {
+      "text": "Архитектор: Серж",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/README_EMERGENCY.md"
+    },
+    {
+      "text": "NEVA — система управления памятью и потоками документов для мульти-агентной разработки",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "docs/README_EMERGENCY.md"
+    },
     {
       "text": "CURSOR-001 — ФИНАЛЬНАЯ АРХИТЕКТУРА",
       "type": "DECISION",
@@ -819,6 +903,13 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Агенты: Claude Desktop, ChatGPT, API агенты",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "docs/README_EMERGENCY.md"
     },
     {
       "text": "The system has 3 tools: mac_read_file, github_read, write_result",
@@ -5385,6 +5476,20 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "Executor может обрабатывать файлы, систему и локальные LLM",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Конфигурация MCP осуществляется через файл claude_desktop_config.json",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
       "text": "Схема БД в работе",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -7515,6 +7620,20 @@
       "source": "AGENTS.md"
     },
     {
+      "text": "Открытые вопросы включают аудит mcp_executor, динамический путь в конфиге и интеграцию с dispatcher",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
+      "text": "Реализация ЗАБЛОКИРОВАНА до подтверждения ТЗ-1, ТЗ-2, ТЗ-3 и аудита mcp_executor",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "docs/NEVA_MCP_EXECUTOR_DRAFT.md"
+    },
+    {
       "text": "Cerebras structured_output работает: gpt-oss-120b успешно запущен и добавлен как SECONDARY в Router",
       "type": "AUDIT",
       "status": "АКТУАЛЬНО",
@@ -8908,6 +9027,13 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Проверка системы: python3 dispatcher/dispatcher.py --health",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "docs/README_EMERGENCY.md"
     },
     {
       "text": "Этап 4: Утверждение (Директор)",
