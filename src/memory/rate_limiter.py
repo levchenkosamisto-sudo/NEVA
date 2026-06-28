@@ -60,14 +60,15 @@ class Provider:
 
 
 PROVIDERS = [
-    Provider(name="groq",              rpm=30, priority=1),
-    Provider(name="github_models",     rpm=60, priority=2),
-    Provider(name="or_gpt_oss_120b",   rpm=20, priority=3),
-    Provider(name="or_nemotron_550b",  rpm=10, priority=4),
-    Provider(name="or_llama_70b_k1",   rpm=20, priority=5),
-    Provider(name="or_llama_70b_k2",   rpm=20, priority=6),
-    Provider(name="cerebras",          rpm=1,  priority=7),
-    Provider(name="deepseek",          rpm=60, priority=8),
+    Provider(name="gemini",            rpm=1500, priority=1),
+    Provider(name="groq",              rpm=30,   priority=2),
+    Provider(name="github_models",     rpm=60,   priority=3),
+    Provider(name="or_gpt_oss_120b",   rpm=20,   priority=4),
+    Provider(name="or_nemotron_550b",  rpm=10,   priority=5),
+    Provider(name="or_llama_70b_k1",   rpm=20,   priority=6),
+    Provider(name="or_llama_70b_k2",   rpm=20,   priority=7),
+    Provider(name="cerebras",          rpm=1,    priority=8),
+    Provider(name="deepseek",          rpm=60,   priority=9),
 ]
 
 _last_req: dict[str, float] = {}
@@ -149,6 +150,12 @@ def _call(name: str, prompt: str, max_tokens: int) -> str:
         )
         with urllib.request.urlopen(req, timeout=30) as resp:
             return _j.loads(resp.read())["choices"][0]["message"]["content"]
+
+    if name == "gemini":
+        from google import genai as _genai
+        client = _genai.Client(api_key=os.environ.get("GEMINI_API_KEY", ""))
+        r = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
+        return r.text
 
     if name in ("or_gpt_oss_120b", "or_nemotron_550b", "or_llama_70b_k1", "or_llama_70b_k2"):
         import urllib.request, json as _j
