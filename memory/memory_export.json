@@ -1,6 +1,97 @@
 {
-  "total": 1323,
+  "total": 1443,
   "facts": [
+    {
+      "text": "CURSOR-001 — ФИНАЛЬНАЯ АРХИТЕКТУРА",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Директор проекта: Серж, дата: 2026-06-26",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Topic Lock = SQLite topic_locks (persistent)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Write sync = asyncio.Lock() в neva_write_queue.py",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Scheduler = APScheduler",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Rate limiting = slowapi",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "API = FastAPI + uvicorn (workers=1)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Embedding = intfloat/multilingual-e5-small (~230MB)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Pipeline = LangGraph + SqliteSaver (WAL mode)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Knowledge graph API = Graphiti (graphiti-core[kuzu] 0.29.1)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Граф БД = Kuzu embedded (pip install kuzu)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Решение принято 2026-06-28. Архитектор: Claude.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_test_watcher.md"
+    },
+    {
+      "text": "Серж утвердил структуру Гит NEVA и память v3.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_test_watcher.md"
+    },
     {
       "text": "ГИТ СТРУКТУРА УТВЕРЖДЕНА (DECISION-001)",
       "type": "DECISION",
@@ -728,6 +819,230 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Пайплайн состоит из 4 этапов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Тесты пишутся с pytest, файлы test_*.py в папке tests",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Типизация mypy опциональна, strict_type_checking: false",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Код оформляется с помощью ruff перед каждым коммитом",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Язык проекта — Python 3.12",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Если в review.md нет ни одного пункта чеклиста, review_checker.py завершается с exit 1 и выводит \"чеклист пуст\"",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Если review.md не существует, review_checker.py завершается с exit 1 и выводит \"review.md не найден\"",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Если нет прав на запись, скрипт завершает работу с exit 1 и выводит сообщение об ошибке",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Если проект уже существует, скрипт завершает работу с exit 1 и выводит сообщение об ошибке",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "logs/ — пустая папка",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "questions.md — пустой с заголовком STATUS: IDLE",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "smoke_test.sh — шаблон с TODO для заполнения Клодом",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "tests_spec.py — пустой файл с импортами и комментарием TODO",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "В v3.5 закрыто замечание \"write_queue: Queue не используется\" — Queue удалён.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Cerebras structured_output: gpt-oss-120b работает.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Backup restore 20/20: export→delete→restore совпадает.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "RAM baseline без Ollama: ~446MB (прогноз 770MB — лучше на 40%).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Тест 10 параллельных записей (write_queue): все 10 без ошибок.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Тест совместимости Graphiti + Kuzu: schema и индексы созданы.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Тест Kuzu ARM64 нативный wheel: работает.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Установлены пакеты: kuzu 0.11.3, graphiti-core 0.29.1, langgraph 1.2.4, langchain-core 1.4.0, sentence-transformers 5.5.1, fastapi 0.136.3, uvicorn 0.47.0, slowapi 0.1.9, apscheduler 3.11.2, pydantic 2.13.4, httpx 0.28.1, cerebras-cloud-sdk 1.67.0, psutil.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Google Drive смонтирован в ~/Library/CloudStorage/GoogleDrive-levchenkosamisto@gmail.com/.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Python virtual environment находится в ~/Documents/NEVA/venv/.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Операционная система macOS, пользователь: arka (основной).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "MacBook Air M1 8GB RAM, 228GB SSD, свободно ~36GB.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Система NEVA — это unified knowledge field для AI-агентов (Claude, GPT, Gemini, DeepSeek), работающая на MacBook Air M1 8GB RAM.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Результаты Этапа 0: Kuzu ARM64 нативный wheel — работает, Graphiti + Kuzu совместимость — schema + индексы созданы и другие",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Все тесты выполнены на реальном железе Директора",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Установленные пакеты: kuzu 0.11.3, graphiti-core 0.29.1, langgraph 1.2.4 и другие",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "GPT дал условное одобрение — все его замечания уже внесены в v3.5",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Предыдущие аудиторы: DeepSeek-R2 (УТВЕРЖДАЮ), DeepSeek-2 (УТВЕРЖДАЮ)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Система NEVA — это unified knowledge field для AI-агентов (Claude, GPT, Gemini, DeepSeek)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
     },
     {
       "text": "Чаты хранятся локально в memory/raw/chats/ (в .gitignore), экспортируются в memory/memory_export.json (788 записей: 519 фактов, 127 эпизодов, 142 процедуры)",
@@ -4958,6 +5273,314 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "Структура папки проекта",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Дата: 2026-06-26",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Архитектор: Claude",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Директор: Серж",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Шаблонный файл AGENTS.md содержит правила: ruff обязателен, mypy опционален, формат questions.md, формат STATUS: R",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Шаблонный файл spec.md содержит разделы: Требования, Контракты, Edge Cases, Примеры I/O",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Файл tools/pipeline/new_project.sh создаёт папку ~/Documents/NEVA/projects/[ИМЯ]/ с шаблонами файлов и выводит сообщение о создании проекта",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Edge case inspector_poll.py: если notify_director.py вернул exit 1, ошибка логируется, процесс не падает",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Edge case inspector_poll.py: если questions.md заблокирован другим процессом, итерация пропускается",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Edge case inspector_poll.py: если директория projects/ не существует, она создаётся и сканирование продолжается",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Все события inspector_poll.py логируются в logs/inspector_poll.log",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "inspector_poll.py хранит в памяти словарь {путь: время_последней_отправки} и не повторно отправляет уведомление, если прошло менее 10 минут",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Файл tools/pipeline/inspector_poll.py периодически (по умолчанию каждые 180 сек) сканирует подпапки projects/, ищет questions.md с STATUS: BLOCKED и временем модификации <10 мин и вызывает notify_director.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Edge case: при тайм‑ауте Telegram >10 сек notify_director.py делает один повтор и затем exit 1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Edge case: если questions.md не существует или пустой, notify_director.py выводит exit 0 и пишет WARNING в лог",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Формат сообщения Telegram: \"🔴 BLOCKED: [ИМЯ ПРОЕКТА]\\n[первые 500 символов причины]\"",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "При недоступности Telegram notify_director.py пишет в лог и завершает работу с кодом 1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Если в файле нет строки STATUS: BLOCKED, notify_director.py не отправляет сообщение и завершается с кодом 0",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "notify_director.py читает переменные NEVA_TELEGRAM_TOKEN и NEVA_TELEGRAM_CHAT_ID из .env",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Файл tools/pipeline/notify_director.py получает путь к questions.md, читает его, извлекает блок BLOCKED и отправляет сообщение в Telegram директору; выводит OK или ERROR",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Для реализации пайплайна разработки NEVA необходимо создать набор Python‑скриптов и bash‑утилит, где Claude пишет спецификацию, Cursor пишет код, Claude проверяет результат",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Не замерено: Pipeline resume с шага N при crash.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Не замерено: MTTR при сбое Kuzu (прогноз ~10s).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "Не замерено: RAM peak с qwen2.5:7b (прогноз ~4.2GB).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GPT.md"
+    },
+    {
+      "text": "FALLBACK = Mistral",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "BACKUP = DeepSeek (OpenRouter)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "FAST = Groq",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "SECONDARY = Cerebras gpt-oss-120b",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "PRIMARY = Gemini API",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "FalkorDB — ИСКЛЮЧЁН (нет нативной установки macOS ARM64 без Docker)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Google Drive snapshot = БЫСТРОЕ ВОССТАНОВЛЕНИЕ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Git backup JSONL      = АРХИВ (инкрементальный)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "cr-sqlite buffer      = ВРЕМЕННЫЙ буфер (при offline)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "neva_metrics.db       = ТЕЛЕМЕТРИЯ (K_truth история)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "LangGraph SqliteSaver = ЖУРНАЛ выполнения pipeline",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Прогноз MTTR при сбое Kuzu — ~10с",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Прогноз RAM peak с qwen2.5:7b активным — ~4.2GB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Google Drive смонтирован: ~/Library/CloudStorage/GoogleDrive-levchenkosamisto@gmail.com/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Python venv: ~/Documents/NEVA/venv/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "macOS, пользователь: arka (основной)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "MacBook Air M1 8GB RAM, 228GB SSD, свободно ~36GB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_GEMINI.md"
+    },
+    {
+      "text": "Цель достоверности по P16 – 95 % (K_repro), при этом e5‑small достигает 0.76–0.84",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "P16 определяет, что RAW‑файлы являются 100 % истиной, а индекс (Kuzu атомы) служит указателем к RAW и обеспечивает семантический поиск",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "В v3.5 добавлен принцип P16 – индексация всех документов одной моделью (Graphiti + multilingual‑e5‑small + Kuzu)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
       "text": "Открытая задача: закрыть ESC по qwen в NEVA (устарело)",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -5784,6 +6407,13 @@
       "source": "NEVA_PROJECT_KNOWLEDGE.md"
     },
     {
+      "text": "Не измерены в Этапе 0: RAM peak с qwen2.5:7b (прогноз ~4.2 GB), MTTR при сбое Kuzu (прогноз ~10 s), Pipeline resume после краша",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
       "text": "Chrome использует ~400 MB RAM",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -6540,6 +7170,48 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "AGENTS.md"
+    },
+    {
+      "text": "Cerebras structured_output работает: gpt-oss-120b успешно запущен и добавлен как SECONDARY в Router",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "Backup/restore 20 из 20 тестов прошли успешно, экспорт→удаление→восстановление без потерь",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "RAM baseline без Ollama составляет ~446 MB, что на 40 % лучше прогноза 770 MB",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "10 параллельных записей прошли без ошибок, asyncio.Lock работает корректно",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "Graphiti совместим с Kuzu: schema и индексы прошли тест test_graphiti_kuzu_compat.py",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "Kuzu ARM64 работает нативно без rosetta",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
     },
     {
       "text": "История репозитория очищена через git filter-repo",
@@ -7431,6 +8103,13 @@
       "source": "NEVA_PROJECT_KNOWLEDGE.md"
     },
     {
+      "text": "Триггер блокировки",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
       "text": "Коммит 1e3c47a: FIX – mcp_server.py в репо",
       "type": "EVENT",
       "status": "АКТУАЛЬНО",
@@ -7839,6 +8518,27 @@
   ],
   "procedures": [
     {
+      "text": "После ответа менять статус в questions.md на RESOLVED",
+      "type": "RULE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "При блокировке писать в questions.md статус BLOCKED с причиной",
+      "type": "RULE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "В финальном коде не должно быть TODO, pass, NotImplementedError",
+      "type": "RULE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
       "text": "Утвержден паыплайн 4 этапа",
       "type": "PROCEDURE",
       "status": "АКТУАЛЬНО",
@@ -7851,6 +8551,62 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 4: Утверждение (Директор)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Этап 3: Ревью (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Этап 2: Реализация (Cursor)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Этап 1: Спецификация (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Стек подтверждён на железе: все 6 тестов Этапа 0 зелёные",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "Backup подтверждён: 20/20 тестов restore пройдено",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "RAM baseline пересчитан: реальное 446 MB вместо расчётного 770 MB",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
+    },
+    {
+      "text": "AI Router обновлен: Cerebras gpt-oss-120b добавлен как SECONDARY (structured_output подтверждён)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
     },
     {
       "text": "Запуск сервисов через launchd: com.neva.memory.api (FastAPI :8001, KeepAlive), com.neva.memory.watcher (fswatch → index_file.sh, KeepAlive), com.neva.memory.dedup (ночной процесс 00:00)",
@@ -8502,6 +9258,90 @@
       "status": "АКТУАЛЬНО",
       "importance": 4,
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Inspector poll каждые 3 мин как резерв",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "использование xargs для передачи результатов в python3 notify_director.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "использование grep для фильтрации по questions.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "fswatch ~/Documents/NEVA/projects/ --event Modified",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/spec.md"
+    },
+    {
+      "text": "Порядок выполнения: 1) Создать структуру папок tools/pipeline/, 2) реализовать utils.py, 3) реализовать notify_director.py, 4) реализовать inspector_poll.py, 5) реализовать new_project.sh, 6) реализовать review_checker.py, 7) запустить ruff, 8) запустить pytest, 9) обновить test_report.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Общие утилиты размещаются в tools/pipeline/utils.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "review_checker.py ищет строки вида \"- [ ]\" и \"- [x]\"",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "review_checker.py выводит список незакрытых пунктов или \"OK — все пункты закрыты\"",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Выход review_checker.py: exit 0 если все пункты [x], exit 1 если есть незакрытые [ ]",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Вход review_checker.py: путь к review.md (sys.argv[1])",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "review_checker.py проверяет, что review.md содержит заполненный чеклист",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "projects/pipeline/TASK.md"
+    },
+    {
+      "text": "Логика P16: если атом указывает на существующий RAW‑документ, он считается истинным; иначе атом представляет логический вывод (genealogy) и не является вторым источником истины",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audits/NEVA_AUDIT_DEEPSEEK.md"
     },
     {
       "text": "memory_search MCP tool реализован в mcp_server.py и вызывается Claude Desktop в реальном времени",
