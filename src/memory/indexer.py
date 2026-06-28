@@ -17,7 +17,7 @@ from pathlib import Path
 from datetime import datetime
 
 from .db import get_conn, insert_record, update_status, find_contradictions
-from .ram_manager import ensure_e5_available, qwen_is_active
+
 
 log = logging.getLogger("neva.indexer")
 
@@ -25,7 +25,6 @@ log = logging.getLogger("neva.indexer")
 AI_PROVIDERS = [
     {"name": "cerebras",    "model": "gpt-oss-120b"},
     {"name": "groq",        "model": "llama-3.3-70b-versatile"},
-    {"name": "qwen_local",  "model": "qwen2.5:7b"},
 ]
 
 # Иерархия доверия → важность по пути файла
@@ -80,23 +79,6 @@ def _call_provider(provider: dict, prompt: str) -> str | None:
             max_tokens=1000,
         )
         return r.choices[0].message.content
-
-    if name == "qwen_local":
-        import urllib.request
-        payload = json.dumps({
-            "model": "qwen2.5:7b",
-            "prompt": prompt,
-            "stream": False,
-            "options": {"num_predict": 500}
-        }).encode()
-        req = urllib.request.Request(
-            "http://localhost:11434/api/generate",
-            data=payload,
-            headers={"Content-Type": "application/json"}
-        )
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = json.loads(resp.read())
-            return data.get("response", "")
 
     return None
 
@@ -187,14 +169,7 @@ def resolve_contradiction(table: str, old: dict, new_importance: int) -> str:
 
 
 def vectorize(text: str) -> bytes | None:
-    """Векторизация через multilingual-e5-base. Только когда qwen не активна."""
-    if qwen_is_active():
-        log.info("[EMBED] qwen активна — векторизация отложена")
-        return None
-
-    ok = ensure_e5_available()
-    if not ok:
-        return None
+    """Векторизация через multilingual-e5-base."""
 
     try:
         from sentence_transformers import SentenceTransformer
@@ -291,13 +266,6 @@ def index_document(path: str, text: str) -> int:
 
 def vectorize_pending() -> int:
     """Векторизация записей со статусом ОЖИДАЕТ_ВЕКТОРИЗАЦИИ."""
-    if qwen_is_active():
-        log.info("[EMBED] qwen активна — пропускаем отложенную векторизацию")
-        return 0
-
-    ok = ensure_e5_available()
-    if not ok:
-        return 0
 
     try:
         from sentence_transformers import SentenceTransformer

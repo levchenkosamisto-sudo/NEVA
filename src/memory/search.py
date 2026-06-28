@@ -19,7 +19,7 @@ import time
 from datetime import datetime
 
 from .db import get_conn, log_search
-from .ram_manager import qwen_is_active, ensure_e5_available
+
 
 log = logging.getLogger("neva.search")
 
@@ -165,13 +165,7 @@ def _search_level3(query: str) -> list:
 
 
 def _search_level4(query: str) -> list:
-    """Векторный поиск e5-base. Только когда qwen не активна."""
-    if qwen_is_active():
-        return []
-
-    ok = ensure_e5_available()
-    if not ok:
-        return []
+    """Векторный поиск e5-base."""
 
     try:
         from sentence_transformers import SentenceTransformer

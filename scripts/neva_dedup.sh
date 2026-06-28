@@ -10,20 +10,6 @@ mkdir -p logs
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] DEDUP START" >> "$LOGFILE"
 
-# Проверяем что qwen не активна
-python3 -c "
-from src.memory.ram_manager import qwen_is_active
-if qwen_is_active():
-    print('QWEN_ACTIVE')
-    exit(1)
-exit(0)
-" 2>>"$LOGFILE"
-
-if [ $? -eq 1 ]; then
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] qwen активна — откладываем на 30 мин" >> "$LOGFILE"
-    sleep 1800
-fi
-
 # Запускаем дедупликацию
 python3 -m src.memory.dedup 2>>"$LOGFILE"
 STATUS=$?

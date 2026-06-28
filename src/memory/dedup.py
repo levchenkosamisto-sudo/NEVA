@@ -14,7 +14,7 @@ import json
 from datetime import datetime, timedelta
 
 from .db import get_conn, update_status
-from .ram_manager import ensure_e5_available, qwen_is_active
+
 from .indexer import call_ai
 
 log = logging.getLogger("neva.dedup")
@@ -26,16 +26,7 @@ STALE_OBSOLETE_DAYS = 180
 
 def run_dedup() -> dict:
     """Основная точка входа ночного процесса."""
-    if qwen_is_active():
-        log.info("[DEDUP] qwen активна — откладываем на 30 минут")
-        return {"status": "postponed", "reason": "qwen_active"}
-
-    ok = ensure_e5_available()
-    if not ok:
-        log.warning("[DEDUP] e5 недоступна — пропускаем векторную дедупликацию")
-        merged = 0
-    else:
-        merged = _dedup_by_vector()
+    merged = _dedup_by_vector()
 
     stale_count = _mark_stale()
 
