@@ -1,4 +1,5 @@
 {
+  "total": 1323,
   "facts": [
     {
       "text": "ГИТ СТРУКТУРА УТВЕРЖДЕНА (DECISION-001)",
@@ -9265,6 +9266,5 @@
       "importance": 2,
       "source": "AGENTS.md"
     }
-  ],
-  "total": 1323
+  ]
 }
