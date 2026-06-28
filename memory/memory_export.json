@@ -1,6 +1,27 @@
 {
   "facts": [
     {
+      "text": "Ollama отключена навсегда",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Структура Гит утверждена",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Память NEVA v3 утверждена",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
       "text": "Ночной процесс 00:00: launchd com.neva.memory.dedup — дедупликация порог 0.92.",
       "type": "DECISION",
       "status": "АКТУАЛЬНО",
@@ -307,6 +328,76 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Цепочка Rate Limiter настроена",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "История репо очищена через git filter-repo",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Gemini API ключ утёк в Гит",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Brave тормозил Mac: закрыт",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "LaunchAgents: com.neva.memory.dedup.plist, com.neva.memory.watcher.plist",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "ESC по qwen устаревшие, нужно закрыть",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Kuzu граф не подключён, используется MockGraph",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Снимок системы перед аудитом не создан",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "GitHub Branch Protection настроен, но требует классического PAT",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
+    },
+    {
+      "text": "Первичная индексация всей NEVA прервана",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "memory/raw/chats/2026-06-28_claude_desktop_session_memory_git.md"
     },
     {
       "text": "GitHub Branch Protection включён через admin токен.",
@@ -5129,6 +5220,34 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "ESC по qwen в NEVA закрыть",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Kuzu граф реальный убран MockGraph",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Новый Gemini API ключ необходим",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
+      "text": "Первичная индексация 269 файлов запланирована",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "memory/raw/chats/2026-06-28_session_final.md"
+    },
+    {
       "text": "Альтернативой является запись сначала во временный файл, а затем атомарное замещение",
       "type": "PROCEDURE",
       "status": "АКТУАЛЬНО",
@@ -5521,5 +5640,5 @@
       "source": "AGENTS.md"
     }
   ],
-  "total": 788
+  "total": 805
 }
