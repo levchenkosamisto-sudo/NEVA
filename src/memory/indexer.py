@@ -229,6 +229,22 @@ def index_document(path: str, text: str) -> int:
             new_importance = fact.get("importance", 2)
             fact_type = fact.get("type", "FACT")
 
+            # Санитизация: проверяем что тип соответствует таблице
+            TYPE_TABLE = {
+                "facts":      {"DECISION","FACT","ARCHITECTURE","COMPONENT"},
+                "episodes":   {"AUDIT","EVENT","CHAT","SESSION"},
+                "procedures": {"PROCEDURE","TEMPLATE","RULE"},
+            }
+            if fact_type not in TYPE_TABLE.get(table, set()):
+                # Определяем таблицу по типу
+                for tbl, types in TYPE_TABLE.items():
+                    if fact_type in types:
+                        table = tbl
+                        break
+                else:
+                    # Неизвестный тип → facts/FACT
+                    table, fact_type = "facts", "FACT"
+
             # Шаг 2: проверка противоречий
             contradictions = check_contradiction(table, new_text, new_importance, conn)
             for old in contradictions:
