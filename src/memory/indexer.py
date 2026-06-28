@@ -23,7 +23,7 @@ log = logging.getLogger("neva.indexer")
 
 # Провайдеры в порядке приоритета
 AI_PROVIDERS = [
-    {"name": "cerebras",    "model": "llama-3.3-70b"},
+    {"name": "cerebras",    "model": "gpt-oss-120b"},
     {"name": "groq",        "model": "llama-3.3-70b-versatile"},
     {"name": "qwen_local",  "model": "qwen2.5:7b"},
 ]
@@ -65,7 +65,7 @@ def _call_provider(provider: dict, prompt: str) -> str | None:
         from cerebras.cloud.sdk import Cerebras
         client = Cerebras(api_key=os.environ.get("CEREBRAS_API_KEY"))
         r = client.chat.completions.create(
-            model="llama-3.3-70b",
+            model="gpt-oss-120b",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=1000,
         )
