@@ -21,11 +21,21 @@ from .db import get_conn, insert_record, update_status, find_contradictions
 
 log = logging.getLogger("neva.indexer")
 
-# Провайдеры в порядке приоритета
-AI_PROVIDERS = [
-    {"name": "cerebras",    "model": "gpt-oss-120b"},
-    {"name": "groq",        "model": "llama-3.3-70b-versatile"},
-]
+# Глобальный кеш e5-base — загружается один раз
+_E5_MODEL = None
+
+def _get_e5_model():
+    global _E5_MODEL
+    if _E5_MODEL is None:
+        try:
+            from sentence_transformers import SentenceTransformer
+            _E5_MODEL = SentenceTransformer("intfloat/multilingual-e5-base")
+            log.info("[EMBED] e5-base загружена в память")
+        except ImportError:
+            log.warning("[EMBED] sentence-transformers не установлен")
+    return _E5_MODEL
+
+from .rate_limiter import call_with_rate_limit
 
 # Иерархия доверия → важность по пути файла
 PATH_IMPORTANCE = {
@@ -45,42 +55,9 @@ def importance_from_path(path: str) -> int:
     return 2
 
 
-def call_ai(prompt: str) -> str | None:
-    """Вызов ИИ по цепочке Церебрас → Грок → qwen."""
-    for provider in AI_PROVIDERS:
-        try:
-            result = _call_provider(provider, prompt)
-            if result:
-                return result
-        except Exception as e:
-            log.warning("[AI] %s недоступен: %s", provider["name"], e)
-    return None
-
-
-def _call_provider(provider: dict, prompt: str) -> str | None:
-    name = provider["name"]
-
-    if name == "cerebras":
-        from cerebras.cloud.sdk import Cerebras
-        client = Cerebras(api_key=os.environ.get("CEREBRAS_API_KEY"))
-        r = client.chat.completions.create(
-            model="gpt-oss-120b",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=1000,
-        )
-        return r.choices[0].message.content
-
-    if name == "groq":
-        from groq import Groq
-        client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-        r = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=1000,
-        )
-        return r.choices[0].message.content
-
-    return None
+def call_ai(prompt: str, max_tokens: int = 1000) -> str | None:
+    """Вызов ИИ с rate limiting и ротацией: Церебрас(1RPM)→Грок(30RPM)→DeepSeek(60RPM)."""
+    return call_with_rate_limit(prompt, max_tokens=max_tokens)
 
 
 def extract_facts(text: str, source_path: str) -> list[dict]:
@@ -169,21 +146,17 @@ def resolve_contradiction(table: str, old: dict, new_importance: int) -> str:
 
 
 def vectorize(text: str) -> bytes | None:
-    """Векторизация через multilingual-e5-base."""
-
+    """Векторизация через e5-base (модель в памяти)."""
     try:
-        from sentence_transformers import SentenceTransformer
         import numpy as np
-        model = SentenceTransformer("intfloat/multilingual-e5-base")
+        model = _get_e5_model()
+        if model is None:
+            return None
         vec = model.encode(text, normalize_embeddings=True)
         return vec.astype(np.float32).tobytes()
-    except ImportError:
-        log.warning("[EMBED] sentence-transformers не установлен")
-        return None
     except Exception as e:
         log.error("[EMBED] ошибка: %s", e)
         return None
-
 
 def index_document(path: str, text: str) -> int:
     """
@@ -265,16 +238,12 @@ def index_document(path: str, text: str) -> int:
 
 
 def vectorize_pending() -> int:
-    """Векторизация записей со статусом ОЖИДАЕТ_ВЕКТОРИЗАЦИИ."""
-
-    try:
-        from sentence_transformers import SentenceTransformer
-        import numpy as np
-        model = SentenceTransformer("intfloat/multilingual-e5-base")
-    except ImportError:
-        log.warning("[EMBED] sentence-transformers не установлен")
+    """Векторизация отложенных записей (модель в памяти)."""
+    import numpy as np
+    model = _get_e5_model()
+    if model is None:
+        log.warning("[EMBED] e5-base недоступна")
         return 0
-
     count = 0
     with get_conn() as conn:
         for table in ("facts", "episodes", "procedures"):
