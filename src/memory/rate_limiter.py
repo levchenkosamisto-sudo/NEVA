@@ -60,9 +60,10 @@ class Provider:
 
 
 PROVIDERS = [
-    Provider(name="cerebras", rpm=1,  priority=1),
-    Provider(name="groq",     rpm=30, priority=2),
-    Provider(name="deepseek", rpm=60, priority=3),
+    Provider(name="cerebras",      rpm=1,   priority=1),
+    Provider(name="groq",          rpm=30,  priority=2),
+    Provider(name="github_models", rpm=60,  priority=3),
+    Provider(name="deepseek",      rpm=60,  priority=4),
 ]
 
 _last_req: dict[str, float] = {}
@@ -126,6 +127,24 @@ def _call(name: str, prompt: str, max_tokens: int) -> str:
             messages=[{"role":"user","content":prompt}],
             max_tokens=max_tokens)
         return r.choices[0].message.content
+
+    if name == "github_models":
+        import urllib.request, json as _j
+        payload = _j.dumps({
+            "model": "gpt-4o-mini",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+        }).encode()
+        req = urllib.request.Request(
+            "https://models.inference.ai.azure.com/chat/completions",
+            data=payload,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN_ADMIN', '')}",
+            }
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return _j.loads(resp.read())["choices"][0]["message"]["content"]
 
     if name == "deepseek":
         import urllib.request, json as _j

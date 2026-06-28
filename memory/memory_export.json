@@ -1,6 +1,34 @@
 {
   "facts": [
     {
+      "text": "Ночной процесс 00:00: launchd com.neva.memory.dedup — дедупликация порог 0.92.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Индексатор: rate_limiter.py — Церебрас(1RPM)→Грок(30RPM)→GitHub Models GPT-4o(60RPM)→DeepSeek(60RPM).",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Память v3: SQLite три полки (ЧТО ПРОИСХОДИЛО / ЧТО ИЗВЕСТНО / КАК ДЕЛАТЬ).",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Гит: main→dev→task/TASK-XXX. AGENTS.md, CLAUDE.md, pre-commit/pre-push хуки.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "session/2026-06-28_summary"
+    },
+    {
       "text": "Слияние dev → main происходит только после явного утверждения Директора",
       "type": "DECISION",
       "status": "АКТУАЛЬНО",
@@ -279,6 +307,41 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "GitHub Branch Protection включён через admin токен.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Чаты локально в memory/raw/chats/ (не в Гите).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Memory API :8001: launchd com.neva.memory.api (KeepAlive).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "fswatch: com.neva.memory.watcher — следит за memory/raw/chats/ governance/ state/ audit/. ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "memory_search в MCP :9000 — Claude Desktop вызывает в диалоге в реальном времени.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
     },
     {
       "text": "Используется PostgreSQL с расширением для смыслового поиска",
@@ -3499,6 +3562,76 @@
       "status": "АКТУАЛЬНО",
       "importance": 2,
       "source": "README.md"
+    },
+    {
+      "text": "При сбое следует обращаться к документу docs/README_EMERGENCY.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Статус системы указан в файле status/NEVA_STATE.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "NEVA — система управления памятью и потоками документов.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Версия документа: 1.0, дата: 2026-06-28.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Источник истины — Git в ветке governance/decisions/. При сомнениях смотреть governance/decisions/DECISION-XXX.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Красная зона (нельзя менять без явного разрешения Директора): governance/decisions/, src/core/neva_auth.py, src/memory/schema.sql, .env.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Разрешённые команды: ./scripts/start.sh, ./scripts/test.sh, ./scripts/index.sh, ruff check src/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Архитектор: Claude.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Директор: Серж.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "NEVA — агентная система на Mac M1 8GB RAM, Python 3.12, без Docker, ARM64.",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
     }
   ],
   "episodes": [
@@ -3536,6 +3669,20 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "AGENTS.md"
+    },
+    {
+      "text": "DeepSeek: 402 Payment Required (нет баланса).",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Gemini API ключ заблокирован Google (утёк в Гит). Нужен новый.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "session/2026-06-28_summary"
     },
     {
       "text": "Остались ли блокирующие замечания? Нет.",
@@ -4378,5 +4525,1001 @@
       "source": "CLAUDE.md"
     }
   ],
-  "total": 625
+  "procedures": [
+    {
+      "text": "Утвержден паыплайн 4 этапа",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 4: Утверждение, Директор утверждает результат",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Резервный вариант при сбое внешней АПИ: локальная лёгкая модель на Маке",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Индексатор использует быструю АПИ из пула для обработки файлов",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Индексатор работает в реальном времени через фоновый процесс",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "ИИ сам запрашивает недостающее в ходе разговора",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Контекст обновляется прямо в ходе разговора",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Инджексация в реальном времени через быструю АПИ из пула",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Порядок внедрения задач 1 и 2 — сначала Задача 1 (Mem0 + индексация), затем Задача 2 (contradiction_check)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Действие 2 — перезапуск Claude Desktop при мёртвом Claude Desktop более 5 минут и мёртвом Medic более 5 минут",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Действие 1 — рестарт MCP серверов при мёртвом Desktop Commander более 2 минут",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Директор может переопределить блокировку с помощью команды git commit --no-verify",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Настроить pre-commit hook для проверки файлов перед коммитом",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Добавить action git_commit и git_branch в neva_mcp_server.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Автоматически создавать git коммит после каждой завершённой задачи NEVA",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Добавить action semantic_search в neva_mcp_server.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Создать neva_semantic_search.py для индексирования файлов из governance/ и docs/",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Активировать семантический поиск через уже установленную модель e5-small",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Обновить mcpconfig.json — добавить neva_audit_tools как постоянный сервер",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Запустить neva_audit_tools через launchd (постоянно)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Добавить в neva_mcp_server.py три новых action: github_read, write_result, ask_ai",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Перенести инструменты из sandbox/neva_audit_tools.py в основной MCP сервер :9000",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Использование внешнего вотчдог-скрипта для мониторинга статуса ThermalGuard",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GEMINI.md"
+    },
+    {
+      "text": "Переписывание логики ThermalGuard для возвращения стандартного generic error вместо 78",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GEMINI.md"
+    },
+    {
+      "text": "Необходим воспроизводимый тест для архитектурного решения NEVA",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "tools/pipeline/inspector_poll.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "tools/pipeline/notify_director.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Резервное копирование: Hourly, Daily, Weekly",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Постоянный эталонный набор 100-200 запросов для оценки качества поиска",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "При истечении TTL: STALE-метка, не удаление",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Автоиндексация ответов аудиторов ДУМЫ после каждого Круга",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Инкрементальная индексация при каждом git pull и полный пересчёт раз в неделю",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Единый memory_writer процесс вместо прямых WAL-конкурентных записей",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "При конфликте: не удалять старый, хранить оба с статусом active/superseded/disputed",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Порядок внедрения задач: сначала Задача 1 (Mem0 + индексация), затем Задача 2 (contradiction_check)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Директор может переопределить блокировку с помощью команды git commit --no-verify",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Этап 4: Утверждение (Директор)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Ревью (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Реализация (Cursor)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Альтернатива - атомарная запись через временный файл",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Порядок реализации: utils → notify → inspector → new_project → review_checker",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "tools/pipeline/review_checker.py: проверяет review.md на наличие незакрытых пунктов",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "tools/pipeline/new_project.sh: создаёт папку проекта со всеми шаблонами",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "tools/pipeline/inspector_poll.py: сканирует проекты каждые N сек и отправляет уведомление при STATUS: BLOCKED",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "tools/pipeline/notify_director.py: отправляет уведомление Директору при STATUS: BLOCKED",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Ревью",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Реализация",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Claude читает git diff + test_report.md + smoke_report.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Cursor пишет код → ruff → mypy(опц) → pytest → smoke_test.sh",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Claude пишет spec.md + AGENTS.md + tests_spec.py + smoke_test.sh",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Рекомендуется переписать new_project.sh на Python 3.12 для устранения кросс-платформенных различий",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "19 тестов покрывают основные функции, edge cases по файлам, статусам, таймаутам и дублям",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "ТЗ для Cursor описывает каждый файл с входными данными, действиями, переменными окружения, edge cases и порядком реализации",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "Этап 3: Ревью, Claude проверяет код и тесты",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Реализация, Cursor пишет код и выполняет тесты",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация, Claude пишет spec.md, AGENTS.md, tests_spec.py, smoke_test.sh",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Ревью",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Реализация",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Этап 6: Утверждение Директора",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 5: Аудит тестов (Claude + ДУМА)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 4: Ревью кода (Claude — независимый верификатор)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Реализация (Cursor кодирует)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: TDD RED — тесты до кода (Claude пишет)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация (Claude пишет, Директор утверждает)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 0: Аудит архитектуры (ДУМА — уже работает)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Этап 4: Утверждение (Директор)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Этап 3: Ревью (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Этап 2: Реализация (Cursor)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Этап 1: Спецификация (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Этап 4: УТВЕРЖДЕНИЕ",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 3: РЕВЬЮ",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 2: РЕАЛИЗАЦИЯ",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 1: СПЕЦИФИКАЦИЯ",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 4: Утверждение, Директор утверждает код",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Ревью, Claude проверяет код, тесты, пишет review.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Реализация, Cursor пишет код, запускает тесты",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация, артефакты: spec.md, AGENTS.md, tests_spec.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Итоговый чеклист в review.md должен включать обязательные пункты",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Добавление smoke-теста в Этапе 2 для проверки программы с реальными входными данными",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Этапы решения: ЭТАП 0: АУДИТ АРХИТЕКТУРЫ, ЭТАП 1: СПЕЦИФИКАЦИЯ, ЭТАП 2: TDD RED, ЭТАП 3: РЕАЛИЗАЦИЯ, ЭТАП 4: РЕВЬЮ КОДА, ЭТАП 5: АУДИТ ТЕСТОВ, ЭТАП 6: УТВЕРЖДЕНИЕ ДИРЕКТОРА",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Нарушение красной зоны = блокировка коммита через pre-commit хук",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Этап 2: Реализация (Cursor)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Этап 1: Спецификация (Claude Desktop)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Альтернативой является запись сначала во временный файл, а затем атомарное замещение",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Утилита review_checker.py проверяет review.md на полноту",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Утилита new_project.sh создаёт папку проекта со всеми шаблонами",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Утилита inspector_poll.py сканирует проекты и уведомляет о блокировках",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Утилита notify_director.py уведомляет Директора о блокировках",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 4: Директор утверждает → деплой",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Claude читает git diff + test_report.md + smoke_report.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Cursor пишет код → ruff → mypy(опц) → pytest → smoke_test.sh",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Claude пишет spec.md + AGENTS.md + tests_spec.py + smoke_test.sh",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Альтернатива: дополнительный пункт чеклиста без отдельного файла трассировки",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Альтернатива: ввод отдельного файла трассировки требований",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Итоговый чеклист в review.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Добавить smoke-тест в Этапе 2",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Этап 4: УТВЕРЖДЕНИЕ - Директор читает review.md и утверждает",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 3: РЕВЬЮ - Claude читает git diff + test_report.md и пишет review.md",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 2: РЕАЛИЗАЦИЯ - Cursor читает spec.md + AGENTS.md + tests_spec.py и пишет код",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Этап 1: СПЕЦИФИКАЦИЯ - Claude пишет spec.md + AGENTS.md + tests_spec.py",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Формат коммита: [TASK-XXX] заголовок / что изменено / N PASS",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "После изменения: ./scripts/test.sh — все тесты должны пройти",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Каждое изменение покрывать тестом",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Не переписывать рабочий код без измеримой причины",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Менять только то что указано в задаче",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "ruff check src/ — проверка стиля кода",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "./scripts/index.sh — переиндексация памяти",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "./scripts/test.sh — запуск тестов",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "./scripts/start.sh — запуск NEVA",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Новый Gemini API ключ.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "scripts/snapshot.sh для аудита.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Kuzu граф: graphiti-core реальный (убрать MockGraph).",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Принятая рабочая гипотеза о первичной индексации 269 файлов: scripts/run_full_index.py.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "session/2026-06-28_summary"
+    },
+    {
+      "text": "Монитор: хорошо, но hotkeys в rich требуют threading или loop — добавь обработку.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R3-GROK.md"
+    },
+    {
+      "text": "Proposed alternatives must meet the criteria: free, lightweight (< 50 MB RAM), and easy to install.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "In Round 2, after receiving the architect's answers, auditor must propose alternative solutions based on the best free open‑source tools, global practices for similar local AI systems, and real tools for Mac M1 8 GB (ARM64).",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "In Round 1, auditor must ask a minimum of three questions for each block (MCP server, memory, Git) and provide only questions without any evaluations.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "Questions and alternative solutions should be asked only after the third document has been received.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "Auditor must read each document via github_read.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "Избегать повторного анализа данных.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Читать только необходимые файлы и не дублировать уже существующий контекст.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "После написания кода необходимо выполнить ./scripts/test.sh.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Не делить задачу на несколько сессий, чтобы не тратить premium requests.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Cursor использует один атомарный промпт: agent --trust --model auto.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Результат ревью сохраняется в файле audit/responses/review_TASK-XXX.md.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Claude проверяет git diff по чеклисту из 6 пунктов: 1) тесты написаны и проходят; 2) красная зона не затронута; 3) нет заглушек (TODO, FIXME, pass, raise NotImplementedError); 4) Ruff clean; 5) формат коммита соблюдён; 6) документация обновлена при необходимости.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "После завершения задачи уведомлять Директора и ждать слияния.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Никогда не коммитить напрямую в ветки main или dev.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Работать только в ветке task/TASK-XXX.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "При старте любого чата о NEVA нужно прочитать файл governance/NEVA_SESSION_BRIEF.md (не более 50 строк) и подтвердить фразой \"СТАРТ: BRIEF [N строк]\".",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Избегать повторного анализа данных",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Читать только нужные файлы и не дублировать контекст",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Выполнять ./scripts/test.sh после кода",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Не делить задачу на несколько сессий",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Уведомить Директора после завершения задачи и ждать слияния",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Никогда не коммитить напрямую в main или dev",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Работать только в ветке task/TASK-XXX",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Прочитать governance/NEVA_SESSION_BRIEF.md перед началом чата о NEVA",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Правила работы с кодом: менять только то, что указано в задаче; не переписывать рабочий код без измеримой причины; покрывать каждое изменение тестом; после изменения запускать ./scripts/test.sh; формат коммита: [TASK-XXX] заголовок / что изменено / N PASS.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "AGENTS.md"
+    }
+  ],
+  "total": 788
 }
