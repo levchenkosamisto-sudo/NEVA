@@ -27,3 +27,4 @@ __pycache__/
 test.db
 test_restore.db
 memory/raw/chats/
+memory/*.db

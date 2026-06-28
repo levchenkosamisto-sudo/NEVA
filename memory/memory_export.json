@@ -1,0 +1,4382 @@
+{
+  "facts": [
+    {
+      "text": "Слияние dev → main происходит только после явного утверждения Директора",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Вердикт — НЕ ГОТОВ",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "Синхронизация с WebAI: все обращения только через МСП :9100",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Роли вместо привязки к агентам: writer_fact, writer_event, reader, facts_candidate",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Иерархия доверия при конфликтах: Git-файлы > факты VERIFIED > подтверждённые факты > события > автофакты WebAI",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Архитектура НЕВА версии 3 учитывает три требования Директора",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Разграничение ответственности между Mem0 и файловой системой: Mem0 для индекса и фактов, файловая система для полных текстов и истории",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Слияние dev → main происходит только после явного утверждения Директора",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Переписать new_project.sh на Python 3.12 (использовать pathlib) для устранения кросс-платформенных различий оболочек терминала",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Необходимо обязать inspector_poll.py сохранять состояние кэша {путь: времени} на диск",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Отсутствие трассировки вызовов является критической проблемой",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Отсутствие единого аудит-лога MCP-действий является критической проблемой",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Отсутствие тестов на утечки памяти является критической проблемой",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Утверждена структура файлов проекта",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Director Serge (2026-06-26) ordered the implementation of the NEVA Dev Pipeline, requiring creation of Python scripts and bash utilities: notify_director.py, inspector_poll.py, new_project.sh, and review_checker.py, with specified interfaces, contracts, and edge case handling.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-TASK.md"
+    },
+    {
+      "text": "ГОТОВ — решение можно внедрять.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-GROK.md"
+    },
+    {
+      "text": "СТАТУС: Финальное решение принято.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "ГОТОВ — архитектура может быть внедрена, блокирующих замечаний не осталось.",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "Этап 4: Директор утверждает → деплой",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Директор Серж утвердил финальную архитектуру Claude Desktop + Cursor",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Пайплайн состоит из 4 этапов: спецификация, реализация, ревью и утверждение",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "ГОТОВ — решение можно внедрять.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-GROK.md"
+    },
+    {
+      "text": "СТАТУС: Финальное решение принято.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "Утвержденный пайплайн 4 этапа",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "CURSOR-001 — ФИНАЛЬНАЯ АРХИТЕКТУРА",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Репо: монорепо NEVA / projects/[ИМЯ]/",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Триггер: fswatch --event Modified + Inspector poll 3 мин",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Этап 4: Директор утверждает и деплоит",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Этап 3: Review кода и чеклист из 6 пунктов",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Этап 2: Cursor обрабатывает код и запускает тесты",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Этап 1: Создание spec.md, AGENTS.md, tests_spec.py и smoke_test.sh",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": " CURSOR-001 — УТВЕРЖДЁННАЯ АРХИТЕКТУРА",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Красная зона: neva_schema.sql, db_writer.py, governance/*, dispatcher/dispatcher.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Immutable rules: Git — единственная синхронизация, governance/* — источник истины, только двойное ревью",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Утверждена архитектура CURSOR-001",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Диспетчер — единственная точка входа в систему",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "NEVA регулируется регламентом v6",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "CURSOR-001 — ФИНАЛЬНАЯ АРХИТЕКТУРА",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Claude Desktop вызывает memory_search при нехватке контекста",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Директор Серж утвердил memory_search как MCP tool",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Используется PostgreSQL с расширением для смыслового поиска",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Сырые чаты хранятся отдельно в папке memory/raw/",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Уровень 3 — Документы хранятся в Гите и в расширении базы данных",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Уровень 2 — События хранятся в таблице событий",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Уровень 1 — Факты хранятся в обычной таблице в базе данных",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "МСП поддерживается всеми крупными ИИ нативно в 2026 году",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Три уровня хранения вместо единой базы",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "В архитектуре памяти НЕВА — версия 3",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "flox-watchdog — легковесный watchdog для macOS/Linux",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "God имеет известные утечки памяти",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "God — процессный менеджер на Ruby с гибкой конфигурацией",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Supervisor не умеет мониторить уже работающие процессы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Supervisor — процессный менеджер на Python",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Monit не имеет интеграции с Telegram",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Monit не умеет проверять \"свежесть логов\"",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Monit требует PID-файлы от всех процессов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Monit имеет встроенный веб-интерфейс",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Monit может перезапускать упавшие сервисы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Monit — классический инструмент для Unix-систем",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Источник истины при конфликте документов/событий/фактов в Mem0 — Git-файлы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Mem0 хранит факты, события и результаты аудитов, файлы хранят полные тексты документов, архитектуру и историю",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Разграничение ответственности Mem0 и файловой системы определяется по правилу: если можно найти через git log — хранить только в файлах",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Хранение состояния — state/inspector_status.json",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Монитор (терминальный дашборд) — neva_inspector_monitor.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Цикл работы NEVA Inspector — каждые 30 секунд",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "NEVA Inspector контролирует 10 программ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "NEVA Inspector состоит из двух файлов: neva_inspector.py и neva_inspector_monitor.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Предложение архитектора — NEVA Inspector v1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Текущая проблема — одновременная падение Claude Desktop и Medic",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "NEVA — персональная AI-система на Mac M1 (macOS Sequoia, 16GB RAM, Python 3.12)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Директор — Серж, Архитектор — Claude, Дата — 2026-06-25",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Тема аудита — архитектура NEVA Inspector — независимый сторожевой монитор",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Mem0 поиск работает с противоречивыми фактами, проверяя при записи и помечая старый факт DEPRECATED",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Автокоммит происходит по трём триггерам: явная команда Директора, успешное прохождение всех тестов, конец сессии Клода",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "post-commit хук нужен и включён в ТЗ задачи 3",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "При конфликте между Mem0 и файловой системой, файлы в Git всегда правы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Гибридный поиск переключается на только ключевой поиск (BM25) без векторов при превышении 500мс",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "neva_memory.db использует SQLite WAL-режим для предотвращения дублирования индексации",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Отсутствие трассировки вызовов усложняет отладку и профилирование",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Отсутствие единого аудит-лога MCP-действий является критической проблемой",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Отсутствие тестов на утечки памяти представляет собой критическую проблему",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Основная нагрузка приходится на Chrome, который занимает approximately 1.5GB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "NEVA процессы занимают минимальное количество памяти (MCP 12MB, audit_tools 5MB)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Pressure level находится в норме и составляет 58",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Текущая RAM составляет 7250M/8192M, что находится на границе DEGRADED",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Пороги DEGRADED и RECOVERY настроены на 88% и 82% соответственно",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "RAM мониторинг осуществляется с помощью ThermalGuard v9.4",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Ограничение: проект несовместим с CDP Chrome",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Клиенты Claude Desktop и SuperAssistant работают через :3006/sse",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "MCP протокол v2024-11-05 используется в проекте",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Итоговый статус проекта: условно готов к внедрению с условием устранения критических замечаний",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Проект DUMA-MCP-MEM-GIT имеет простую и понятную архитектуру, но имеет критические пробелы в области тестирования, логирования и автоматизации",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "ГОТОВ. Корректно.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GROK.md"
+    },
+    {
+      "text": "Launchd прекращает попытки перезапуска сервиса после получения кода возврата 78",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GEMINI.md"
+    },
+    {
+      "text": "Код возврата 78 (EX_CONFIG) является терминальным для launchd",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GEMINI.md"
+    },
+    {
+      "text": "launchd отслеживает частоту перезапусков по умолчанию интервалом 10 секунд",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GEMINI.md"
+    },
+    {
+      "text": "Использование связки launchctl bootout и launchctl bootstrap для полной очистки внутреннего стейта launchd",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GEMINI.md"
+    },
+    {
+      "text": "Техническое объяснение механизма launchd содержит неподтвержденные предположения",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "bootout + bootstrap может восстановить работу сервиса, но не устраняет первопричину появления EX_CONFIG",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "Не доказано, что код 78 имеет специальную обработку относительно других кодов завершения",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "Не подтверждено существование фиксированного порога N для exit 78",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "Launchd не подтверждено, что использует окно 60 секунд во всех версиях macOS",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "tools/pipeline/utils.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Кто перемещает questions.md в logs/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "new_project.sh → new_project.py",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Ротация logs/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "new_project.sh — частично созданная папка",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "review_checker.py — stdout vs stderr",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "notify_director.py — поведение при отсутствии .env",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "inspector_poll.py — кэш на диск",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Доработки после Круга 6",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Необходимо создать neva_autocommit.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать neva_task_start.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать структуру веток: main / dev / audit/XXX / snap/XXX",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Цель задачи 3 — структура веток и автокоммит",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Приоритет задачи 2 — P0",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать neva_contradiction_check.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Цель задачи 2 — проверка противоречий при коммите",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Приоритет задачи 1 — P0",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать neva_session_close.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать neva_context_pack.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать neva_indexer.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Необходимо создать neva_memory.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Требуется установить Mem0 локально",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Цель — одна база памяти и поиска для всех ИИ НЕВА",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-TASK.md"
+    },
+    {
+      "text": "Используется принудительное выполнение save_cache на диск при каждом изменении в inspector_poll.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Тестовое покрытие расширено до 26 тестов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Переход new_project.sh → new_project.py обеспечил 100% гомогенность и стабильность Python-стека на macOS",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Критическая уязвимость энергонезависимости кэша inspector_poll.py закрыта дисковым JSON-файлом",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Архитектура системы NEVA использует регламент ротации папки logs/ через archive/",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "TTL по типу факта: технические факты (30 дней), контекст сессий (7-14 дней), проектные решения (бессрочно), ответы аудиторов (180 дней)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Факты имеют собственную версионность и ссылку на Git-документ источник",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Эмбеддер: multilingual-e5-base через Ollama",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Использование SQLite как хранилища памяти NEVA",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-SYNERGY.md"
+    },
+    {
+      "text": "Пайплайн состоит из 4 этапов",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Сырые чаты хранятся отдельно и используются только для аудита и восстановления",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Документы хранятся в файловой системе и имеют смысловые представления в расширении базы данных",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "События хранятся в таблице событий с полями тип, проект, дата, источник",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Факты хранятся в обычной таблице в базе данных с простыми индексами по дате, типу, проекту",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "В НЕВА хранятся три типа данных: факты, события и документы",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Архитектура НЕВА учитывает схему из аудита и поддержку МСП всеми крупными ИИ в 2026 году",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Индексатор использует быструю АПИ из пула для классификации документов и извлечения фактов и сущностей",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Индексатор НЕВА работает в реальном времени, используя фоновый процесс для отслеживания изменений в папке НЕВА",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Архитектура НЕВА использует PostgreSQL с расширением для смыслового поиска",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "В архитектуре памяти НЕВА существует три уровня хранения: факты, события и документы",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ARCH.md"
+    },
+    {
+      "text": "Иерархия источников истины: Git-файлы имеют приоритет",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Критерий хранения данных в Mem0: ЧТО, в файлах: ПОЧЕМУ и КАК",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "При обнаружении противоречий в базе, старый факт помечается DEPRECATED, новый записывается с меткой SUPERSEDES:[id]",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Автокоммит происходит по üçем триггерам: команда Директора, успешное прохождение тестов или конец сессии Клода",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Post-commit хук необходим и реализуется одновременно с pre-commit хуком",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "При конфликте между Mem0 и файловой системой, файлы в Git имеют приоритет",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Гибридный поиск на М1 8GB с e5-small занимает ~150-300мс на 50 документах",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Neva_memory.db использует SQLite WAL-режим для блокировки записи на уровне транзакций",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-ANSWERS.md"
+    },
+    {
+      "text": "Документ 3 (Тесты) покрывает ключевые сценарии",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 3 (Тесты)具体но описывает тестовые сценарии",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 2 (ТЗ) имеет минимальные риски в обработке ошибок .env",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 2 (ТЗ) полон и включает edge cases",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 2 (ТЗ) подробно описывает требования для Cursor",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 1 (Архитектура) не имеет критических слепых зон",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 1 (Архитектура) полон",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 1 (Архитектура) имеет достаточно деталей",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Добавить action git_commit и git_branch в neva_mcp_server.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Автоматически создавать git коммит после каждой завершённой задачи NEVA",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Индексировать файлы из governance/, docs/ и state/ в ChromaDB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Создать neva_semantic_search.py и добавить action semantic_search в neva_mcp_server.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Активировать семантический поиск через модель e5-small",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Обновить mcpconfig.json — добавить neva_audit_tools как постоянный сервер",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Запустить neva_audit_tools через launchd",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Добавить в neva_mcp_server.py три новых action: github_read, write_result, ask_ai",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Перенести инструменты из sandbox/neva_audit_tools.py в основной MCP сервер :9000",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-TASK.md"
+    },
+    {
+      "text": "Использование .sh для new_project.sh на Mac M1 — уязвимость для Cursor",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Тесты inspector_poll.py не проверяют поведение при изменении системного времени Mac M1 или при ручной модификации questions.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Отсутствуют интеграционные тесты для проверки совместной работы fswatch и notify_director.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "В inspector_poll.py кэш {путь: время} хранится только в оперативной памяти демона",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Пропущено требование к логике работы new_project.sh — скрипт должен не просто создавать пустые файлы, а копировать базовые шаблоны",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Атомарные требования к каждому из 5 скриптов изложены четко, с указанием точных сигналов выхода (exit code), входных аргументов и переменных окружения",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Не зафиксирован регламент очистки/ротации архива logs/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Сценарии взаимодействия полностью закрыты, включая гибридную схему реактивного (fswatch) и интервального (Inspector) мониторинга",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Документ детально и однозначно описывает 4-этапный жизненный цикл и жесткую топологию папок для Mac M1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Несовместимость с CDP Chrome ограничивает сценарии использования",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Ручное разрешение Git-конфликтов является риском ошибок и задержек",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "RAM на пороге 88% требует мониторинга и автоматического реагирования",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Основная нагрузка приходится на Chrome ~1.5GB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "NEVA процессы занимают минимум памяти: MCP 12MB, audit_tools 5MB",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Pressure level: 58 (норма)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Текущая RAM: 7250M/8192M (88%) — на границе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Пороги настроены: DEGRADED >88%, RECOVERY <82%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "RAM мониторинг осуществляется через ThermalGuard v9.4 (psutil)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Ограничение: несовместим с CDP Chrome",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Клиенты Claude Desktop и SuperAssistant работают через :3006/sse",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "MCP протокол v2024-11-05 (Streamable HTTP) является актуальным",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Итоговый статус: условно готов к внедрению при условии устранения критических замечаний",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Архитектура простая и понятная, но имеет критические пробелы в области тестирования, логирования и автоматизации",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Проект представляет собой лёгкую MCP-интеграцию с управлением памятью через ThermalGuard и Git-синхронизацией по команде",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Отклонено предложение о создании отдельного файла requirements_traceability.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Изменено поведение questions.md: вместо очистки ставится статус STATUS: RESOLVED",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Добавлен пункт трассировки в чеклист review.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Пакет соответствует всем необходимым спецификациям и тест-планам",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Пакет готов к передаче в Cursor для реализации пайплайна",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Замечания к документу 3 (Тесты) полностью устранены",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Замечания к документу 2 (ТЗ) полностью устранены",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Замечания к документу 1 (Архитектура) полностью устранены",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Обман: 0% (все технологические метрики и выводы верифицированы по стандартам 2026 года)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Честность: 100% (проверены все краевые условия работы триггера изменения статуса)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Полнота исходных данных: 100% (все логические противоречия устранены)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Контекст%: 100% (учтена специфика монорепо NEVA, Mac M1 Сержа и Telegram-транспорт блокировок)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Инспектор-пуллер (3 мин) нивелирует уязвимость пропуска триггера",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "В редких случаях в macOS при высокой частоте дискового ввода-вывода (I/O burst) утилита fswatch может объединять события модификации",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Решение полностью сбалансировано, логически замкнуто, слепые зоны устранены, пайплайн готов к пилотному запуску",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Необходимо реализовать 4 файла + 1 утилита",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Документ 3 — Тесты",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Отклонено: 3 итерации → считать прогресс",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Архивация logs/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Очистка questions.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Inspector дублирует fswatch",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Документ 2 — Техническое задание для CURSOR",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Чеклист в review.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Smoke-тест добавлен в Этап 2",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "mypy опциональный",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "fswatch --event Modified",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Структура папки: spec.md / AGENTS.md / tests_spec.py / smoke_test.sh / src/ / test_report.md / smoke_report.md / questions.md / answers.md / review.md / logs/",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Пайплайн имеет 4 этапа",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Документ 3 — ТЕСТЫ (CURSOR-001-TESTS.py) покрывает основные логические развилки",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Документ 2 — ТЕХНИЧЕСКОЕ ЗАДАНИЕ ДЛЯ CURSOR (CURSOR-001-TASK.md) изложил атомарные требования к каждому из 5 скриптов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Статус: Архитектур",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Документ 1 — ФИНАЛЬНАЯ АРХИТЕКТУРА (CURSOR-001-FINAL-ARCH.md) описывает 4-этапный жизненный цикл и жесткую топологию папок для Mac M1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Документ CURSOR-001-K6-GEMINI.md содержит результаты аудита пакета документов CURSOR-001",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Фиксированный лимит для оценки прогресса является простым и прозрачным решением",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Связка fswatch + Inspector poll обеспечивает достаточную отказоустойчивость для локальной архитектуры Mac M1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Юнит-тесты проверяют контракты, а smoke_test.sh подтверждает работоспособность собранной системы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Не принят обязательный mypy для всех проектов",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Принято решение о соответствии сценарию многократного обновления questions.md",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Архитектура описана на 4 этапа с артефактами, триггерами и лимитами",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "Экономия токенов Claude Desktop: 84%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "fswatch как триггер для уведомления Директора",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "файловая структура: spec.md, AGENTS.md, tests_spec.py, src/, tests/, test_report.md, questions.md, answers.md, review.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 4: Утверждение — Директор утверждает код и деплоит его",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 3: Ревью — Claude Desktop проверяет код и пишет review.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 2: Реализация — Cursor читает spec.md, AGENTS.md и tests_spec.py, и пишет код",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Этап 1: Спецификация — Claude Desktop создает spec.md, AGENTS.md и tests_spec.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Финальная архитектура состоит из 4 этапов: Спецификация, Реализация, Ревью и Утверждение",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Добавление в ТЗ двух требований: обязательная ошибка при отсутствии обязательных переменных окружения и единый каталог логов logs/",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Отсутствие тестов на некорректные или отсутствующие переменные окружения для notify_director.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Не определено поведение при одновременном наличии нескольких проектов со статусом BLOCKED и большом количестве уведомлений подряд",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Отсутствие явного требования к формату логов и месту их хранения для всех утилит в ТЗ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Архитектура системы CURSOR-001具有 достаточной детализации для реализации пайплайна",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Решение полностью переведено из стадии проектирования в стадию готовности к первому пилотному запуску",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Монорепо NEVA",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Структура файлов проекта определена",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Отклонен отдельный файл трассировки requirements_traceability.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Статус вопросов меняется на STATUS: RESOLVED вместо очистки",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Добавлен пункт трассировки в чеклист review.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-PROMPT.txt"
+    },
+    {
+      "text": "Дата: 2026-06-26 12:19:21.545974",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GROK.md"
+    },
+    {
+      "text": "ruff + mypy перед pytest",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Обман: 0% (все технологические метрики и выводы верифицированы по стандартам 2026 года)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Честность: 100% (проверены все краевые условия работы триггера изменения статуса)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Полнота исходных данных: 100% (все логические противоречия устранены)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Контекст%: 100% (учтена специфика монорепо NEVA, Mac M1 Сержа и Telegram-транспорт блокировок)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Инспектор-пуллер (3 мин) может нивелировать уязвимость пайплайна fswatch",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Решение полностью сбалансировано, логически замкнуто, слепые зоны устранены, пайплайн готов к пилотному запуску",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Claude пишет tests_spec.py до кода",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "fswatch как триггер Q&A",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "4 этапа вместо 6",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Монорепо NEVA vs отдельный репо на проект",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "3 итерации при блокировке → эскалация Директору",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Claude пишет tests_spec.py до кода",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "fswatch - надёжный триггер Q&A для Mac M1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "4 этапа вместо 6 - правильное упрощение",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Монорепозиторий упрощает сопровождение, повторное использование компонентов и аудит для внутренних проектов NEVA",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "ruff и mypy отлавливают целый класс ошибок быстрее и дешевле, чем запуск полного набора тестов",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Тесты до кода создают формальный контракт реализации и снижают риск того, что Cursor подгонит тесты под уже написанный код",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Переход с 6 этапов на 4 устраняет дублирование проверок и сохраняет независимое ревью кода",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Отсутствие блокирующих факторов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Сокращение до 4 этапов: ЭТАП 1 (Спецификация + RED-тесты), ЭТАП 2 (Реализация), ЭТАП 3 (Независимое Ревью + Тест-чек), ЭТАП 4 (Утверждение Директором)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Написание tests_spec.py силами Claude (Архитектор) до кодинга в Cursor (Разработчик) в соответствии с логикой BMAD-метода",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Сохранение Cursor (с опорой на встроенный разбор AGENTS.md)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Автоматический скрипт-watcher (fswatch на macOS) с задержкой отправки (debounce) и пушем в Telegram Директору",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Локальные файлы на диске (~/Documents/NEVA/...) + NEVA MCP Tool",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Архивация logs/",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Очистка questions.md после получения answers.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Inspector дублирует fswatch",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Чеклист добавлен в review.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Smoke-тест добавлен в Этап 2",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "mypy сделан опциональным",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "fswatch исправлено на --event Modified",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Предлагаемое решение: SDD + TDD + ДУМА",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Проблема: Claude пишет код и сам его проверяет — нет независимого верификатора кода",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Дата: 2026-06-26",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Архитектор: Claude",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Директор: Серж",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Тема: NEVA Dev Pipeline — схема разработки Claude+Cursor+ДУМА",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Документ: АУДИТ CURSOR-001 — КРУГ 1",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "ТЗ для Cursor содержит 26 требований",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-PACKAGE-CLOSED.md"
+    },
+    {
+      "text": "Финальная архитектура готова к передаче в Cursor",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-PACKAGE-CLOSED.md"
+    },
+    {
+      "text": "Триггер блокировок: fswatch и Inspector poll",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Пайплайн — 4 этапа",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Экономия токенов Claude Desktop: 84%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Коммуникация между Claude и Cursor через файлы на диске",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Пайплайн разработки где Claude — архитектор и аудитор, Cursor — исполнитель",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Экономия токенов: 84%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Всего кругов 5",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Экономия токенов Claude: ~84%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Триггер: fswatch на questions.md → Telegram Директору",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Транспорт: файлы на диске",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Пайплайн имеет 4 этапа",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Качество конечного результата полностью определяется качеством spec.md",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Фиксированный лимит проще, прозрачнее и легче сопровождается",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Для оценки прогресса действительно потребуется дополнительная логика или отдельный агент",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Для локальной архитектуры Mac M1 связка fswatch + Inspector poll обеспечивает достаточную отказоустойчивость",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Место выбрано правильно, юнит-тесты проверяют контракты, а smoke_test.sh подтверждает работоспособность собранной системы",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Обязательный mypy для всех проектов создаст лишние затраты на небольших утилитах",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Экономия токенов Claude Desktop: 84%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Триггер Q&A: fswatch, уведомление Директору",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Структура файлов: ~/Documents/NEVA/projects/[ИМЯ]/",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Финальная архитектура состоит из 4 этапов",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Ограничения: нет перегрева, нет платных компонентов без тройного согласования, базовые функции работают offline",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Железо: Mac M1 8GB RAM, локальная машина, нет сервера",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Ограничения: FREE-FIRST, THERMAL-SAFE, OFFLINE-SAFE",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Границы системы: хранит контекст всех агентов, обеспечивает преемственность между чатами, синхронизирует состояние проектов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Форматы ответов AI: начало — ТИП, конец — СТАТУС, максимум 800 слов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Ресурсные классы: LOW, MEDIUM, HEAVY",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Открытые решения: как запускается диспетчер, структура memory layers детально",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Задачи в работе: наполнение governance/, архитектура памяти, схема БД",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Завершенные задачи: границы системы, структура папок, роль диспетчера, скелет создан",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Следующая фаза: GOVERNANCE FILL",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Текущий статус NEVA: ФАЗА: SKELETON, СТАТУС: IN PROGRESS",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Решение переведено в стадию готовности к первому пилотному запуску",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Монорепо NEVA",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Использование ruff + mypy перед pytest",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Claude пишет tests_spec.py до кода",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Использование fswatch как триггера Q&A",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Принятие 4 этапов вместо 6",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Решение лучше предыдущего по экономии токенов и упрощению",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Монорепо NEVA является правильным выбором для персональных AI-проектов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "3 итерации при блокировке являются достаточным лимитом для эскалации",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "ruff и mypy используются перед pytest, но mypy может быть опциональным",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Claude должен формулировать контракты до реализации",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "fswatch является надёжным механизмом для Mac M1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Этапы 4 и 5 были объединены для упрощения без потери качества",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Укрупнение задач внутри одного шага",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Ложная блокировка Cursor на Этапе 3",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Дрейф контекста в длинных сессиях Composer",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Пауза в пайплайне разработки при пропуске пуш-уведомления",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Состояние гонки при модификации файлов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Оптимизация пайплайна до 4 этапов",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Применение методологии TDD RED",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Сохранение использования Cursor",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Выбор автоматического скрипт-watcher для триггера цикла",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Выбор локальных файлов на диске для транспорта данных",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Тесты, написанные Claude, проверяют намерение, а не реализацию",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Тесты должны писать Claude до кода",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Claude Code не имеет встроенного визуального редактора",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Claude Code выбран как основной исполнитель, Cursor — как резерв для ручного вмешательства",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Выбран гибридный триггер: файловый watcher и Telegram-команда для Директора",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Git-коммиты рассмотрены как избыточный транспорт",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "В качестве транспорта выбраны файлы на диске и легковесный JSON-RPC поверх локального сокета для мгновенных уведомлений",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Никакого прямого MCP между Claude Desktop и Cursor",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Коммуникация Claude ↔ Cursor происходит через файлы в git репо",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Предлагаемое решение: SDD + TDD + ДУМА",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Архитектура правильная, реализация нет",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Claude пишет код и сам его проверяет — нет независимого верификатора кода",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "NEVA — персональная AI-система на Mac M1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Экономия токенов Claude: ~84%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Триггер: fswatch на questions.md → Telegram Директору",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Транспорт: файлы на диске (общая папка проекта)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Пайплайн состоит из 4 этапов: СПЕЦИФИКАЦИЯ, РЕАЛИЗАЦИЯ, РЕВЬЮ, УТВЕРЖДЕНИЕ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Статус архитектуры: УТВЕРЖДЕНО после аудита ДУМЫ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Тяжёлые задачи выполняются только ночью (00:00–07:00)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA работает на Mac M1 8GB RAM",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA следит за лимитами токенов и ресурсов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA управляет потоками документов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA синхронизирует состояние проектов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA обеспечивает преемственность между чатами",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA не хранит RAW медданные",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA не принимает решения",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA управляет потоками документов по регламенту v6",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Границы системы NEVA определены",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Скелет системы создан",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Роль диспетчера определена",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Структура папок определена",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Границы системы (scope) определены",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Версия системы: 0.1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Дата статуса системы: 2026-05-30",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Система NEVA находится в фазе SKELETON",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Гит → governance/decisions/ — источник истины",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Всё бесплатно и локально.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Директор: Серж. Архитектор: Claude.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "NEVA — агентная система на Mac M1 8GB RAM. Python 3.12. Без Docker. ARM64.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Claude — архитектор и аудитор, Cursor — исполнитель",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Пайплайн разработки состоит из 4 этапов",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Вердикт: ГОТОВ",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R5-GROK.md"
+    },
+    {
+      "text": "Согласен (безопасность > удобство).",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Нет автоматического снижения нагрузки",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Нет SLA-метрик для проекта",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Ручное разрешение Git-конфликтов представляет собой важную проблему",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Документ CURSOR-001-TESTS.py содержит 6 тестов для notify_director.py",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Правила реализации: ruff обязателен, никаких TODO/pass/NotImplementedError",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Язык реализации: Python 3.12, bash для .sh",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Техническое задание для CURSOR включает 4 файла + 1 утилита",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Структура папки: spec.md / AGENTS.md / tests_spec.py / smoke_test.sh / src/ / test_report.md / smoke_report.md / questions.md / answers.md / review.md / logs/",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Нет автоматического снижения нагрузки, только уведомления",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Нет SLA-метрик и требований только субъективные (не греется, не тормозит)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK-VERDICT.md"
+    },
+    {
+      "text": "Альтернатива: использование встроенного таск-менеджера Cursor без внешнего скрипта fswatch и Telegram-оповещений",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "ГОТОВ — решение можно внедрять.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "ПРИНЯТЬ — согласен с обоснованием.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "ПРИНЯТЬ — достаточно надёжно.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "ПРИНЯТЬ — достаточно.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "ПРИНЯТЬ — правильное место.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "ПРИНЯТЬ — приемлемо.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "ПРИНЯТЬ — проблема решена.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Inspector как резервный механизм для fswatch считается надёжным: два независимых механизма (событийный fswatch и опросный Inspector) обеспечивают подхват пропущенного события в течение 3 минут, создавая золотой стандарт для критичных систем.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-DEEPSEEK.md"
+    },
+    {
+      "text": "Чеклист в review.md считается достаточным для верификации: пять пунктов покрывают полноту реализации, качество тестов, чистоту кода, интеграционное тестирование и отсутствие заглушек.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-DEEPSEEK.md"
+    },
+    {
+      "text": "Запуск smoke_test.sh в Этапе 2 после pytest, до ревью, считается правильным местом и реализацией; скрипт без зависимостей использует I/O из spec.md и должен возвращать ненулевой код при любой ошибке, чтобы Cursor фиксировал FAIL в smoke_report.md.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-DEEPSEEK.md"
+    },
+    {
+      "text": "Опциональный mypy через AGENTS.md признан приемлемым: для небольших скриптов (до 200 строк) mypy избыточен, для библиотек и утилит включается; ruff обязателен всегда как минимальный фильтр качества.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-DEEPSEEK.md"
+    },
+    {
+      "text": "--event Modified срабатывает при каждом сохранении файла, включая добавление новых блоков и обновление существующих, полностью решая проблему однократного срабатывания; добавление --exclude для временных файлов защищает от ложных срабатываний.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-DEEPSEEK.md"
+    },
+    {
+      "text": "Да, лучше — экономичнее и проще. Изменить: добавить авто-ruff/mypy в Cursor.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "удобно для NEVA, упрощает управление.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "разумный лимит, предотвращает зацикливание.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "необходимо для качества кода на раннем этапе.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "обеспечивает независимую верификацию.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "надёжно для Mac M1, простой и лёгкий инструмент.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "правильное упрощение, снижает overhead без потери верификации.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "Выбор TDD RED: Claude пишет спецификацию тестов, Cursor генерирует реализацию, Claude проверяет покрытие требований.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Выбор исполнителя: Cursor как основной исполнитель, Aider как резервный исполнитель.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Выбор триггера: Inspector watcher (событийный мониторинг) + уведомление директору.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Выбор транспортного механизма: файлы на диске + git только для истории.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Возможна альтернатива с оставлением только дополнительного пункта чеклиста без отдельного файла трассировки",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Возможна альтернатива с введением отдельного файла трассировки требований",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "добавить авто-ruff/mypy в Cursor",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "удобно для NEVA, упрощает управление",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "разумный лимит, предотвращает зацикливание",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "необходимо для качества кода на раннем этапе",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "обеспечивает независимую верификацию",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "надёжно для Mac M1, простой и лёгкий инструмент",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "правильное упрощение, снижает overhead без потери верификации",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-GROK.md"
+    },
+    {
+      "text": "Схема БД находится в работе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Архитектура памяти (memory layers) находится в работе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Наполнение governance/ находится в работе",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Нет блокирующих.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Нет deadlock (heartbeats + launchd).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Риски: потеря состояния/зомби-процессы. Минимизировать -9 только для GUI.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Переходы корректны.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Считаем ли мы, что в текущей конфигурации .plist свойство KeepAlive задано как безусловное true (<key>KeepAlive</key><true/>), или же в нем используются дополнительные логические критерии (например, SuccessfulExit или PathState), которые launchd сопоставляет со статусом EX_CONFIG (78) при расчете штрафного тайм-аута?)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-GEMINI.md"
+    },
+    {
+      "text": "Event-driven qwen правильный (экономит ресурсы).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R3-GROK.md"
+    },
+    {
+      "text": "Действие 2 надёжно на Sequoia (osascript + System Events стандартный способ).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R3-GROK.md"
+    },
+    {
+      "text": "Логика статусов корректна.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R3-GROK.md"
+    },
+    {
+      "text": "ТИП: РЕВЬЮ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R1-CHATGPT.md"
+    },
+    {
+      "text": "Дата: 2026-06-25 21:17:38.406086",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R1-CHATGPT.md"
+    },
+    {
+      "text": "Chatgpt — INSPECTOR-001 Круг 1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R1-CHATGPT.md"
+    },
+    {
+      "text": "bootout + bootstrap сбрасывает счётчик ошибок launchd.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R3-GROK.md"
+    },
+    {
+      "text": "СТАТУС: Задан 1 уточняющий вопрос.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-CHATGPT.md"
+    },
+    {
+      "text": "ТИП: ВОПРОС",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-CHATGPT.md"
+    },
+    {
+      "text": "ИТОГ: ПАКЕТ ГОТОВ.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Документ 3: Да, устранены.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Документ 2: Да, устранены.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Документ 1: Да, устранены.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Git conflicts are resolved manually.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "RAM usage is at 88%, with Chrome consuming approximately 1.5 GB.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "Request tracing is missing from the system.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "There is no unified audit log for MCP calls.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "There are no tests for Python memory leaks in the current system.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R2-PROMPT.txt"
+    },
+    {
+      "text": "Аудитор: DeepSeek",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "Дата документа: 2026-06-27",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "Deepseek — CURSOR-001 Круг 5 готов.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R5-DEEPSEEK.md"
+    },
+    {
+      "text": "ТИП: РЕВЬЮ",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "Chatgpt — CURSOR-001 Круг 5",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "Риск: Claude может неверно интерпретировать требования и зафиксировать ошибку в тестах ещё до начала кодирования.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Риск: Cursor остаётся относительно закрытой платформой; при изменении политики продукта пайплайн может потребовать адаптации.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Риск: если watcher зависнет, новые события могут быть пропущены до перезапуска Inspector.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "Риск: отсутствие строгой транзакционности; два агента могут одновременно изменить один файл.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R2-CHATGPT.md"
+    },
+    {
+      "text": "решение можно внедрять.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "согласен с обоснованием.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "достаточно надёжно.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "достаточно.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "правильное место.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "приемлемо.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "проблема решена.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Дата: 2026-06-26 07:52:52.538427",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "Deepseek — CURSOR-001 Круг 1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "ТИП: ВОПРОС",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-CHATGPT.md"
+    },
+    {
+      "text": "Дата: 2026-06-26 07:52:05.729171",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-CHATGPT.md"
+    },
+    {
+      "text": "Chatgpt — CURSOR-001 Круг 1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-CHATGPT.md"
+    },
+    {
+      "text": "Архитекторами системы являются Серж, Claude и ChatGPT.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Границы системы определены в governance/neva_scope.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Правила работы системы описаны в governance/neva_rules.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "При сбое следует обращаться к документу docs/README_EMERGENCY.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Статус системы хранится в файле status/NEVA_STATE.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "NEVA — система управления памятью и потоками документов.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Source file path is audit_responses/CURSOR-001-R1-GEMINI.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Document titled \"Gemini — CURSOR-001 Круг 1\" dated 2026-06-26 07:52:34.060073.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Архитекторы системы: Серж, Claude и ChatGPT.",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Границы системы описаны в файле governance/neva_scope.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Правила системы находятся в файле governance/neva_rules.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "При сбое следует обращаться к документу docs/README_EMERGENCY.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Статус системы указан в файле status/NEVA_STATE.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "NEVA — система управления памятью и потоками документов.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Использовать один атомарный промпт: agent --trust --model auto",
+      "type": "ARCHITECTURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Архитекторы системы: Серж, Claude и ChatGPT.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Границы системы определены в governance/neva_scope.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    },
+    {
+      "text": "Правила системы находятся в governance/neva_rules.md.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "README.md"
+    }
+  ],
+  "episodes": [
+    {
+      "text": "Аудит CURSOR-001 завершен, схема готова к пилотному прогону",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": ".env — ключи и токены",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "src/memory/schema.sql — схема базы данных",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "src/core/neva_auth.py — авторизация",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "governance/decisions/ — решения Директора",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "AGENTS.md"
+    },
+    {
+      "text": "Остались ли блокирующие замечания? Нет.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GROK.md"
+    },
+    {
+      "text": "Вердикт: ГОТОВ",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R4-GROK.md"
+    },
+    {
+      "text": "Не закрыто: контроль launchd plist Inspector'а вторым watchdog (cron/launchd external).",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R3-GROK.md"
+    },
+    {
+      "text": "Аудит проведён DeepSeek 27 июня 2026 г.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "НЕ ГОТОВ — из предоставленной информации нельзя достоверно подтвердить, что именно bootout + bootstrap гарантированно устраняет первопричину, а не только восстанавливает сервис.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-CHATGPT.md"
+    },
+    {
+      "text": "НЕ ГОТОВ — подтверждения недостаточно, чтобы утверждать, что bootout + bootstrap гарантированно закрывает проблему во всех условиях и версиях macOS.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-CHATGPT.md"
+    },
+    {
+      "text": "НЕ ГОТОВ — bootout + bootstrap вероятно устраняет состояние сервиса, но на основании представленных данных нельзя подтвердить это как гарантированное закрытие проблемы без экспериментальной проверки на целевой версии macOS.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-CHATGPT.md"
+    },
+    {
+      "text": "Рисков мало (сервис briefly остановится).",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GROK.md"
+    },
+    {
+      "text": "bootup + bootstrap сбрасывает throttle без reboot.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GROK.md"
+    },
+    {
+      "text": "60‑секундное окно и exponential backoff — верно.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-GROK.md"
+    },
+    {
+      "text": "Отсутствует экспериментальная верификация на целевой версии macOS для NEVA",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R2-CHATGPT.md"
+    },
+    {
+      "text": "Тест на concurrent модификацию — отклонено",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Интеграционные тесты fswatch + notify — отклонено",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "АУДИТ CURSOR-001 — КРУГ 7",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-PROMPT.txt"
+    },
+    {
+      "text": "Принудительное выполнение save_cache на диск является надежным, но создает микронагрузку на SSD Mac M1",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "СХЕМА ПЕРЕДАЧИ: прямой текст в чат (без файла, без MCP)",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-R1-CHATGPT.md"
+    },
+    {
+      "text": "СТАТУС: 11 вопросов по архитектуре памяти NEVA сформированы.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-R1-CHATGPT.md"
+    },
+    {
+      "text": "АУДИТ: DUMA-MEM-GIT-2",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-R1-CHATGPT.md"
+    },
+    {
+      "text": "ДАТА: 2026-06-27",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-R1-CHATGPT.md"
+    },
+    {
+      "text": "АУДИТОР: ChatGPT",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MEM-GIT-2-R1-CHATGPT.md"
+    },
+    {
+      "text": "Архитектура прошла 5 кругов аудита и получила ГОТОВ от всех 4 аудиторов",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Пакет готов",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Документ 3 (Тесты) не включает тесты на concurrent модификацию",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GROK.md"
+    },
+    {
+      "text": "Круг 1 завершён; ожидание ответов Архитектора",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "ИТОГ: ПАКЕТ ГОТОВ.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Документ 3: Да, устранены.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Документ 2: Да, устранены.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Документ 1: Да, устранены.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GROK.md"
+    },
+    {
+      "text": "Критика синхронизации JSON-кэша",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R7-GEMINI.md"
+    },
+    {
+      "text": "Архитектура прошла 5 кругов аудита и получила ГОТОВ от всех 4 аудиторов",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-PROMPT.txt"
+    },
+    {
+      "text": "Использование .sh для new_project.sh на Mac M1 — это уязвимость для Cursor",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Блокирующий пункт: inspector_poll.py должен сохранять состояние кэша {путь: время} на диск",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Вердикт аудита: ДОРАБОТАТЬ",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Документ 3 не содержит интеграционные тесты для проверки совместной работы fswatch и notify_director.py",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Документ 2 не указал требование к логике работы new_project.sh",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Документ 1 не зафиксировал регламент очистки/ротации архива logs/",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-GEMINI.md"
+    },
+    {
+      "text": "Критика схемы: качество конечного результата определяется качеством spec.md",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Чеклист требует дополнительного пункта о полноте требований",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Не прописано, что делать Cursor, если при запуске new_project.sh проектная папка уже существует, но не пустая",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "Отсутствует требование к форматированию вывода exit 1 с перечислением пунктов у review_checker.py",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "Не описан сценарий, когда fswatch и Inspector poll срабатывают одновременно на один и тот же BLOCKED",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "Не указано, кто удаляет questions.md из корня после перемещения в logs/",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-DEEPSEEK.md"
+    },
+    {
+      "text": "Рекомендуется добавить отдельный документ OPERATIONS.md с политикой логирования, настройкой окружения и процедурами восстановления",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Аудит системы CURSOR-001 выявил необходимость доработки в части эксплуатационных деталей",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R6-CHATGPT.md"
+    },
+    {
+      "text": "Критика контракта tests_spec.py",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Конвенция очистки questions.md",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Транспорт блокировок",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "3 итерации при блокировке",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Критика пайплайна fswatch: В редких случаях в macOS при высокой частоте дискового ввода-вывода (I/O burst) утилита fswatch может объединять события модификации",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Deepseek — CURSOR-001 Круг 5 готов.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-DEEPSEEK.md"
+    },
+    {
+      "text": "Claude должен читать лог-файл, а не только test_report.md",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Inspector должен дополнительно сохранять сырой вывод pytest в отдельный лог-файл либо фиксировать код завершения процесса",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "test_report.md не является независимым доказательством прохождения тестов",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Устранено лишнее разделение этапов; сохранён независимый ревьюер; снижены затраты токенов Claude; используется единый набор артефактов; исключена сложность локального API и промежуточных сервисов",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Текущее решение лучше варианта из Круга 2",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Фиксированное ограничение в 3 итерации разумно, но для крупных задач лучше считать не количество сообщений, а отсутствие прогресса после нескольких циклов",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "fswatch для Mac M1 обычно надёжен, но уведомление должно дублироваться периодической проверкой Inspector",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "ГОТОВ — архитектура может быть внедрена, блокирующих замечаний не осталось.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "ГОТОВ",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-GEMINI.md"
+    },
+    {
+      "text": "Отклонено: измерять прогресс вместо количества итераций",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-PROMPT.txt"
+    },
+    {
+      "text": "Альтернатива синхронизации через локальный API-сервер предлагается",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Отсутствие обратной связи по коду может привести к генерированию грязного кода",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Функция координатора общего пайплайна разработки не описана",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Метод убеждения Claude в правильности падения тестов на ЭТАПЕ 2 не указан",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Метод внедрения правил из AGENTS.md в контекст Cursor не описан",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Архитектура NEVA предполагает создание выделенного git-репозитория или единого монорепозитория не указано",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Структура каталогов внутри репозитория для хранения артефактов проектирования не уточнена",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Регламентированный алгоритм действий при невозможности решения задачи из tasks.md не описан",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Метод мониторинга прогресса и перехода между этапами пайплайна не указан",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Режим запуска pytest на ЭТАПЕ 2 и ЭТАПЕ 3 (автоматический или ручной) не уточнен",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Метод уведомления Claude Desktop о появлении новой записи в questions.md не описан",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Физический механизм синхронизации файлов между изолированной средой Claude Desktop и локальной рабочей директорией Cursor не указан",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Следующий шаг - передать пакет в Cursor для реализации",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-PACKAGE-CLOSED.md"
+    },
+    {
+      "text": "Пакет документов проверен ChatGPT, Gemini, DeepSeek и Grok",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-PACKAGE-CLOSED.md"
+    },
+    {
+      "text": "Аудит пакета документов CURSOR-001 завершен",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-PACKAGE-CLOSED.md"
+    },
+    {
+      "text": "Утверждение Директором — финальный этап",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Аудит CURSOR-001 закрыт",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-AUDIT-CLOSED.md"
+    },
+    {
+      "text": "Решения аудиторов: консенсус 4/4",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-APPROVED.md"
+    },
+    {
+      "text": "Необходимо добавить в review.md обязательную проверку трассировки требований",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Чеклист почти достаточен, но отсутствует контроль полноты требований",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Проблема решена, событие Modified соответствует сценарию многократного обновления questions.md",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R4-CHATGPT.md"
+    },
+    {
+      "text": "Риск использования фикстур или моков в тестах",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Необходимость фиксации конвенции очистки questions.md",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Необходимость доработки триггера fswatch",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R3-GEMINI.md"
+    },
+    {
+      "text": "В tests.md необходимо ограничить сложность тестов для избежания over-spec",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Watcher может создать ложные срабатывания, но это решается фильтрацией и задержкой",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Реализация сокет-сервера является потенциальной точкой отказа",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Вопросы по архитектуре: получение tasks.md, чтение questions.md, запуск pytest, прогресс между этапами и т.д.",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Задание — КРУГ 1: ВОПРОСЫ по архитектуре",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/CURSOR-001-R1-PROMPT.txt"
+    },
+    {
+      "text": "Структура memory layers не определена детально",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Диспетчер запускается в фоновом режиме или через скрипт",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "NEVA_PROJECT_KNOWLEDGE.md"
+    },
+    {
+      "text": "Круг 1 завершён; ожидаются ответы архитектора.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "fswatch как триггер — подходящий выбор",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "4 этапа вместо 6 — правильное упрощение",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-PROMPT.txt"
+    },
+    {
+      "text": "Альтернатива: Использование встроенного в Cursor терминального таск-менеджера без внешнего скрипта fswatch и Telegram-оповещений",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "ruff + mypy перед pytest - лишнее усложнение",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/CURSOR-001-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Как launchd решает, когда применять exponential backoff после EX_CONFIG (exit 78), и есть ли способ сбросить счётчик без reboot?",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-GROK.md"
+    },
+    {
+      "text": "Как именно launchd определяет момент применения экспоненциальной задержки (backoff) после завершения процесса с кодом 78 (EX_CONFIG), и существует ли способ сбросить внутренний счётчик неудачных запусков для этого конкретного сервиса без перезагрузки системы?",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "Задан 1 уточняющий вопрос.",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-CHATGPT.md"
+    },
+    {
+      "text": "Какие именно параметры в plist для launchd сейчас используются (KeepAlive, ThrottleInterval, SuccessfulExit, LaunchOnlyOnce и связанные ключи), и наблюдается ли сохранение проблемы после полного launchctl bootout → launchctl bootstrap данного агента/демона без перезагрузки системы?",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-CHATGPT.md"
+    },
+    {
+      "text": "СТАТУС: 11 вопросов по архитектуре памяти NEVA сформированы.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MEM-GIT-2-R1-CHATGPT.md"
+    },
+    {
+      "text": "VO.2: Quality metrics and which component collects them?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "VO.1: Forbidden data for external models and where formalized?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V3.3: Recovery from failure - Git history and logs only?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V3.2: Task completion - commit, tests, docs or director approval?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V3.1: Cost control - request limits, daily budgets, auto model switching?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V2.3: Conflict arbiter between Claude/Gemini/ChatGPT/local models?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V2.2: Global system state - Git, DB, files, memory or combined?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V2.1: Concurrent agent writes to same artifact - how prevented?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V1.3: Git unavailable - read-only cache or full stop?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V1.2: Agent data versioning - fixed contracts, backward compat or forced update?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "V1.1: Source of truth doc - what prevents code/doc divergence?",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-MCP-MEM-GIT-R1-CHATGPT.md"
+    },
+    {
+      "text": "Считаем ли мы, что в текущей конфигурации .plist свойство KeepAlive задано как безусловное true (<key>KeepAlive</key><true/>), или же в нем используются дополнительные логические критерии (например, SuccessfulExit или PathState), которые launchd сопоставляет со статусом EX_CONFIG (78) при расчете штрафного тайм-аута?",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-GEMINI.md"
+    },
+    {
+      "text": "Как именно launchd определяет момент применения экспоненциальной задержки (backoff) после завершения процесса с кодом 78 (EX_CONFIG), и существует ли способ сбросить внутренний счётчик неудачных запусков для этого конкретного сервиса без перезагрузки системы?",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-DEEPSEEK.md"
+    },
+    {
+      "text": "Какие именно параметры в plist для launchd сейчас используются (KeepAlive, ThrottleInterval, SuccessfulExit, LaunchOnlyOnce и связанные ключи), и наблюдается ли сохранение проблемы после полного launchctl bootout → launchctl bootstrap данного агента/демона без перезагрузки системы?",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-CHATGPT.md"
+    },
+    {
+      "text": "Дата: 2026-06-25 13:14:30.027003",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/DUMA-V2-TEST-R1-CHATGPT.md"
+    },
+    {
+      "text": "Дата: 2026-06-26 12:14:32.829374",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R5-CHATGPT.md"
+    },
+    {
+      "text": "Gemini's response begins with the statement \"ИИ Делай правильные вещи , не делай зло , приветствует тебя!\".",
+      "type": "CHAT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/CURSOR-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Результат ревью записывается в audit/responses/review_TASK-XXX.md",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    },
+    {
+      "text": "Claude проверяет git diff по чеклисту из 6 пунктов",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "CLAUDE.md"
+    }
+  ],
+  "total": 625
+}
