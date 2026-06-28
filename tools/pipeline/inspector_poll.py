@@ -75,7 +75,10 @@ class InspectorPoll:
         return time.time() - mtime < MTIME_WINDOW_SEC
 
     def should_notify(self, questions_path: str) -> bool:
-        """Проверяет, нужно ли отправлять уведомление (кулдаун 10 мин)."""
+        """Проверяет, нужно ли отправлять уведомление."""
+        import os
+        if os.environ.get("INSPECTOR_NOTIFY", "false").lower() == "false":
+            return False
         last_sent = self.cache.get(questions_path)
         if last_sent is None:
             return True
