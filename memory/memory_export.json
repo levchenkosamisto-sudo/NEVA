@@ -1,5 +1,5 @@
 {
-  "total": 1514,
+  "total": 1534,
   "facts": [
     {
       "text": "Критерии успеха включают выполнение git_status, file_tree и file_read через Executor",
@@ -903,6 +903,76 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Component NEVA-DOC-002 (NEVA Audit Protocol — Регламен) is verified and has OK health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-TASK-009 (NEVA SEMANTIC AUDITOR v1.0) is verified and has OK health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-DOC-000 (NEVA V1 — Центральный документ) is verified and has OK health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-TASK-005 (NEVA MAP_BUILDER v1.1) is verified and has OK health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-TASK-004 (NEVA Guardian v3.1) is verified and has OK health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-TASK-003 is unverified and has CRITICAL health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-TASK-002 is unverified and has CRITICAL health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Component NEVA-DOC-001 is unverified and has CRITICAL health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "map/NEVA_MAP.md"
+    },
+    {
+      "text": "Интеграция с Guardian (шаг 6 Фазы B)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "30/30 тестов PASS (SA-01..SA-30)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
     },
     {
       "text": "Агенты: Claude Desktop, ChatGPT, API агенты",
@@ -5474,6 +5544,76 @@
       "status": "АКТУАЛЬНО",
       "importance": 4,
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Формат INDEX соответствует стандарту NEVA",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Интеграция с Guardian (шаг 6)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Промпты DeepSeek R1 (секция 4.1 ТЗ)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Возвращаемые коды: 0=CLEAR, 2=BLOCKER",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Fallback офлайн при недоступности API",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Два режима: --audit (C1-C5 конфликты) и --search (двухпроходный)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "neva_semantic_auditor.py (280 строк, MEDIUM resource)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Статус: READY FOR REVIEW",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Дата: 2026-06-01",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
+    },
+    {
+      "text": "Исполнитель: DeepSeek R1",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "deliverables/TASK-009/REVIEW_PACKAGE_CLAUDE.md"
     },
     {
       "text": "Executor может обрабатывать файлы, систему и локальные LLM",
