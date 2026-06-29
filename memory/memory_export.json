@@ -1,6 +1,20 @@
 {
-  "total": 1626,
+  "total": 1638,
   "facts": [
+    {
+      "text": "Вердикт: готов к реализации.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R7-DEEPSEEK.md"
+    },
+    {
+      "text": "Гибридный сенсор: NSProcessInfo (PyObjC) + powermetrics с fallback + SMC-сенсоры через IOKit",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/THERMAL-001-R2-DEEPSEEK.md"
+    },
     {
       "text": "План валидирован, можно переходить к деплою Блоков 1-4",
       "type": "DECISION",
@@ -987,6 +1001,34 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Ложное чувство безопасности — logger.error() создаёт иллюзию, что проблема зафиксирована, но система продолжает работать в деградированном режиме без возможности восстановления",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Отсутствие fallback-механизма — перехват ошибки логируется в thermal.log, но temp=None → _determine_level() → DEGRADED → единственный выход через BLOCKED→UNBLOCKING→NOMINAL, но без температуры туда не попасть",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "Полная зависимость от привилегий — powermetrics без sudo возвращает только заголовок и завершается с PermissionError",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R2-DEEPSEEK.md"
+    },
+    {
+      "text": "powermetrics требует sudo → система навсегда в DEGRADED",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R2-DEEPSEEK.md"
     },
     {
       "text": "Проведен глубокий аудит логики spinlock, race conditions в launchd и проверка синтаксиса python-импортов",
@@ -8290,6 +8332,48 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "AGENTS.md"
+    },
+    {
+      "text": "Перехват исключений requests полный.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R7-DEEPSEEK.md"
+    },
+    {
+      "text": "clear_logs использует только missing_ok=True и проверку размера.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R7-DEEPSEEK.md"
+    },
+    {
+      "text": "Обработка crash_loop корректна (блокирует перезапуск launchd через time.sleep(3600)).",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R7-DEEPSEEK.md"
+    },
+    {
+      "text": "Код самосогласован: все пути абсолютные (через STATE).",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R7-DEEPSEEK.md"
+    },
+    {
+      "text": "Все 4 блокирующих замечания из Круга 6 закрыты.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R7-DEEPSEEK.md"
+    },
+    {
+      "text": "АУДИТ THERMALGUARD NEVA — КРУГ 2",
+      "type": "EVENT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R2-DEEPSEEK.md"
     },
     {
       "text": "Функция kill_graceful(pid) реализована через psutil.Process(pid), защищающая от Race Condition при переиспользовании PID",
