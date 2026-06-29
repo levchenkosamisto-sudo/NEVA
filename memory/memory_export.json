@@ -1,6 +1,13 @@
 {
-  "total": 1638,
+  "total": 1655,
   "facts": [
+    {
+      "text": "Ограничение прав плейбуков (Белый список)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
     {
       "text": "Вердикт: готов к реализации.",
       "type": "DECISION",
@@ -1001,6 +1008,118 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "status_dot.py не должен вызывать команды старта, если запуск доверен launchd",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Запуск neva_medic.py через launchd",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Watchdog для status_dot через launchd",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Проверка свободного места на диске",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Атомарная запись incident_log.json (os.replace)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Защита от зависаний сетевых вызовов должна быть строго декларативной",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R3-GEMINI.md"
+    },
+    {
+      "text": "Реальный путь — настроить ExitTimeOut и ThrottleInterval в plist, чтобы управлять поведением",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Корректный способ сбросить статистику конкретного сервиса — через launchctl kill SIGKILL + launchctl stop, либо launchctl reset (macOS 13+)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Сброс счётчика через перерегистрацию может сработать, но это побочный эффект, не документированный и негарантированный",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Bootout домена (особенно gui) вырубаются все пользовательские агенты, что эквивалентно мягкому перелогину",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Bootout + bootstrap может сломать цепочку зависимостей, если сервис зависит от других, выгружаемых вместе с доменом",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Код 78 маркирует падение как \"конфигурационную ошибку\", но не меняет логику подсчёта",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Порог N зависит от ThrottleInterval (по умолчанию 5 сек) и количества попыток, описанных в ExitTimeOut",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Экспоненциальный backoff включается на основе частоты падений за окно (~60 сек)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "История падений хранится не в определении сервиса (plist), а в subsystem state процесса launchd",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
+    },
+    {
+      "text": "Launchctl bootout + bootstrap не гарантирует сброс внутреннего счётчика отказов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/DUMA-V2-TEST-R3-DEEPSEEK.md"
     },
     {
       "text": "Ложное чувство безопасности — logger.error() создаёт иллюзию, что проблема зафиксирована, но система продолжает работать в деградированном режиме без возможности восстановления",
