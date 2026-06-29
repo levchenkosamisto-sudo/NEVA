@@ -1,6 +1,69 @@
 {
-  "total": 1545,
+  "total": 1626,
   "facts": [
+    {
+      "text": "План валидирован, можно переходить к деплою Блоков 1-4",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Переписать neva_status_dot.py и базовый watchdog ядра на Golang или Rust",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Для части системы отсутствует критерий работоспособности, что считается блокирующей ошибкой.",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "requests.get с перехватом RequestException и общем Exception для MCP health check — принято как неблокирующее",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R6-ANSWERS.md"
+    },
+    {
+      "text": "Все пути через STATE или абсолютные, относительный Path('logs') исправлен",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R6-ANSWERS.md"
+    },
+    {
+      "text": "_is_open() удалена из clear_logs, используется missing_ok=True при unlink",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R6-ANSWERS.md"
+    },
+    {
+      "text": "_CRASH_LOOP обработка: после write_heartbeat('crash_loop') и push_event('red') делает time.sleep(3600) чтобы launchd не перезапускал процесс",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R6-ANSWERS.md"
+    },
+    {
+      "text": "save_incident_log() использует STATE для абсолютного пути вместо относительного: tmp = STATE/'incident_log.json.tmp'",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R6-ANSWERS.md"
+    },
+    {
+      "text": "Архитектура NEVA INSPECTOR v4 полностью готова к финальной реализации в виде рабочего кода",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
     {
       "text": "Архитектуру желательно перевести на heartbeat как основной источник истины",
       "type": "DECISION",
@@ -924,6 +987,286 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Проведен глубокий аудит логики spinlock, race conditions в launchd и проверка синтаксиса python-импортов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Контекст выполнения задачи составляет 100%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Система должна потреблять 2 МБ ОЗУ и работать на уровне системных сокетов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Использование скомпилированного бинарника без рантайма Python уменьшает проблемы с блокировкой интерпретатора Python",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Использование WatchPaths теряет гибкость логики, например, трудно вычислить grace period в 120 секунд для тяжелых импортов средствами чистого .plist.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Встроенный механизм launchd с ключом WatchPaths может отслеживать изменения файла medic.heartbeat и запускать триггеры при их отсутствии.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Архитектура «watchdog над watchdog» (launchd ⇆ status_dot ⇆ neva_medic) работоспособна, но переусложнена; в macOS предпочтительнее делегировать логику перезапуска и контроля зацикливания launchd.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "План готов к реализации на 95%; оставшиеся 5% — косметическая зачистка плейбуков от старых nohup команд и исправление импорта Path.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Внутри restart_medic() необходимо убедиться, что битый файл удаляется или перезаписывается.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "В status_dot уже есть блок try...except Exception, который возвращает CORRUPTED при ошибке чтения.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Если файл heartbeat пустой или недописан, метод .split('|') вызовет ValueError: not enough values to unpack.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "status_dot.py читает файл heartbeat так: ts, pid, status = HEARTBEAT.read_text().strip().split('|')",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "В блоке crash loop необходимо явно вызывать перезапись HEARTBEAT.write_text(...), чтобы status_dot не пытался бесконечно поднимать упавший в петлю медик, а AnyBar загорелся красным.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Если срабатывает защита от crash loop (len(recent) >= 3), скрипт выполняет sys.exit(0) (или падает), но перед этим флаг _CRASH_LOOP = True выставляется после захвата лока, и в файле neva_medic.heartbeat останется статус crash_loop.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Boot-счётчик реализует отсечку частых падений (crashloop protection): 3 перезапуска за 5 минут",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Spinlock с retry (5 раз по 0.3с) защищает от race condition при перезапуске launchd",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Запись heartbeat со статусом 'starting' до блокировки flock позволяет status_dot сразу увидеть новый PID",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Валидация порядка операций при старте: Heartbeat (starting) → Lock (flock с retry 5×0.3с) → Boot-счётчик (3 падения за 5 мин) → Тяжелые импорты. Порядок признан идеальным",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Противоречие Б: Неявный импорт Path в Блоке 1. Используется Path.home() до строки 'from pathlib import Path', что вызовет NameError: name 'Path' is not defined при первой же строчке исполнения",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Противоречие А: Конфликт ручного запуска через nohup и launchctl. Если neva_medic.py запускается через nohup, он работает вне контроля launchd. Параметр KeepAlive: true в com.neva.medic.plist заставит launchd поднять вторую копию, которая упрется в fcntl.flock() и создаст хаос циклического перезапуска",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Обнаружены 2 скрытых технических противоречия (Edge Cases), которые уронят скрипт neva_medic.py в Production, если не исправить до релиза",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Для процессов без HTTP и без логов (background_auditor, desktop_commander, claude_desktop) любое зависание процесса останется незамеченным и Inspector будет считать его ALIVE вечно.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Логика состояния ALIVE содержит архитектурную дыру: ALIVE = PID есть + (HTTP OK ИЛИ лог свежий ИЛИ проверка отсутствует)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Блокирующих замечаний осталось: 0",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R6-ANSWERS.md"
+    },
+    {
+      "text": "Если Chrome зависнет наглухо внутри ядра рендеринга (без падения PID), Inspector его не перезапустит.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Если порт :9222/json упадет, Inspector переведет его в DEAD только если процесс Chrome исчезнет физически.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "chrome_cdp завязан на запущенный браузер Google Chrome, stale_timeout: None — это спасение от ложных срабатываний, когда Серж закрывает вкладки.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "В macOS ollama может запускаться как CLI‑бинарник, так и как Mac‑приложение Ollama.app (которое порождает фоновые процессы ollama runner).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "v4 является эталоном для заданных условий.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Конечный автомат сбалансирован: мгновенный переход STARTING → DEAD при потере PID предотвращает зависание на 30-секундном ожидании",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Для desktop-commander установлен stale_timeout: 300 для защиты от зависаний IPC-каналов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Минимизация Python: core на bash + launchd",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Добавление maintenance flag и suppress-файлов",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Усиление launchd.plist (KeepAlive, ThrottleInterval)",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Реализация Monit-подобной логики health + restart",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Использование launchd KeepAlive + heartbeat для контроля Inspector",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Замечаний нет. Все блокеры закрыты",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R4-GROK.md"
+    },
+    {
+      "text": "HOT_PENDING для nsprocessinfo не вызывается — ок (нет точных °C)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R4-GROK.md"
+    },
+    {
+      "text": "ns=1 (Fair) → NOMINAL при низком swap — правильно",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R4-GROK.md"
+    },
+    {
+      "text": "Логика _determine_level() с тремя раздельными путями — корректна",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R4-GROK.md"
     },
     {
       "text": "Требования к архитектуре ThermalGuard: предотвращение рассинхронизации состояний и сохранность данных",
@@ -5595,6 +5938,83 @@
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
     },
     {
+      "text": "Решение противоречия Б: Явно перенести 'from pathlib import Path' на самую первую строку кода",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Решение противоречия А: Полностью исключить nohup из документации и плейбуков. Запуск и перезапуск медика должен происходить строго через launchctl load или launchctl kickstart -k",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Для процессов без heartbeat/HTTP статус ALIVE означает только существование PID, а не работоспособность.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Логика статусов в целом корректна: STARTING закрывает ложные тревоги, STALE отделён от DEAD, Anti-flapping реализован, Grace period присутствует.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Контекст ответа: 100% (учтен весь эволюционный стек изменений от Круга 1 до Круга 5)",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "osquery — мониторинг процессов и health",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "launchd + plist — встроенный в macOS",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Monit — лёгкий open-source watchdog",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R2-GROK.md"
+    },
+    {
+      "text": "Текущее решение использует запись в текстовый файл neva_medic_boots.txt и экономичнее, если инициализацию вынести в try‑except.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Минус альтернатива: высокие затраты CPU на парсинг системного лога через subprocess.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Плюс альтернатива: исключает race condition записи и не изнашивает SSD атомарными перезаписями файлов.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
       "text": "Оператор смотрит на AnyBar",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -7072,6 +7492,41 @@
       "source": "NEVA_PROJECT_KNOWLEDGE.md"
     },
     {
+      "text": "После обновления Claude имя процесса может измениться, что представляет единственный риск.",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Быстрая модель не использовалась, нагрузка на модель: 80%",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Технические метрики: Честность 100%, обман 0% (данные выверены по спецификации Python 3).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Технические метрики: Напряжённость 95% (глубокий статический анализ области видимости переменных Python).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Технические метрики: Контекст 100% (учтён профиль Сержа, логистика в Черногории, специфика macOS/launchd).",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 2,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
       "text": "Не измерены в Этапе 0: RAM peak с qwen2.5:7b (прогноз ~4.2 GB), MTTR при сбое Kuzu (прогноз ~10 s), Pipeline resume после краша",
       "type": "FACT",
       "status": "АКТУАЛЬНО",
@@ -7835,6 +8290,76 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "AGENTS.md"
+    },
+    {
+      "text": "Функция kill_graceful(pid) реализована через psutil.Process(pid), защищающая от Race Condition при переиспользовании PID",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Изоляция ollama, chrome_cdp, claude_desktop и background_auditor от статуса STALE (stale_timeout: None) предотвращает ложные рестарты",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "ГОТОВ. Блокирующих замечаний нет.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GROK.md"
+    },
+    {
+      "text": "Статус проекта: НЕ ГОТОВ. Требуется исправление фиксации _CRASH_LOOP в глобальном/локальном поле перед вызовом heal_cycle.",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "В Блоке 5 функция heal_cycle() использует переменную _CRASH_LOOP, которая рассчитывается один раз при старте и не пересчитывается при последующих вызовах, что приводит к некорректному поведению после очистки лога без перезапуска процесса",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Реальная уязвимость: Race Condition / ресурсный сбой при чтении BOOT_LOG, может привести к падению скрипта до инициализации критических переменных",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Переменная boots инициализируется после вызова BOOT_LOG.touch(exist_ok=True), но перед циклом чтения; если файл пустой, цикл не выполнится, но boots будет пустым списком — это не ошибка, однако логика записи в BOOT_LOG использует переменную boots до её корректного заполнения",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "Блокирующее замечание №1: UnboundLocalError в Блоке 3",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "При финальной компиляции и сквозном анализе кода Круга 7 выявлена критическая ошибка логики в Блоке 3, которая гарантированно приведет к падению watchdog (Crash) при первом запуске системы или после ротации",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
+    },
+    {
+      "text": "ВЕРДИКТ: НЕ ГОТОВ (Обнаружено 1 скрытое блокирующее замечание)",
+      "type": "AUDIT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
     },
     {
       "text": "Открытые вопросы включают аудит mcp_executor, динамический путь в конфиге и интеграцию с dispatcher",
@@ -9958,6 +10483,48 @@
       "status": "АКТУАЛЬНО",
       "importance": 4,
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Для Sequoia решение активировать Claude через osascript (applescript tell application \"Claude\" to activate) считается безопаснее, чем использовать Bash open -a Claude или Bash pkill + restart.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Модель статусов корректна только если каждый критичный сервис имеет хотя бы один признак жизнедеятельности: HTTP, heartbeat или обновляемый лог.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "В продакшн‑версии скрипта рекомендуется записывать в inspector_status.json не просто факт перезапуска, а точный признак: завершился ли процесс мягко (через terminate()) или жестко (по истечении 5 секунд через kill()).",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Убедись при написании регулярного выражения в psutil, что строка 'match': 'ollama' одинаково успешно перехватывает именно родительский процесс, контролирующий порт 11434.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Рекомендация: обернуть kill_graceful в try...except Exception для обработки зомби-процессов в macOS (defunct)",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/INSPECTOR-001-R5-GEMINI.md"
+    },
+    {
+      "text": "Альтернатива механизму Boot‑логгера: использовать system journalctl или log show --pred на macOS для подсчёта перезапусков com.neva.medic за последние 5 минут вместо записи в файл neva_medic_boots.txt.",
+      "type": "PROCEDURE",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R8-GEMINI.md"
     },
     {
       "text": "после ответа обновлять questions.md с STATUS: RESOLVED",
