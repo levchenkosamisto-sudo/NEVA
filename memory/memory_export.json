@@ -1,6 +1,27 @@
 {
-  "total": 1534,
+  "total": 1545,
   "facts": [
+    {
+      "text": "Архитектуру желательно перевести на heartbeat как основной источник истины",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/MEDIC-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Альтернативные методы решения: использование NSProcessInfoThermalStateDidChangeNotification или низкоуровневого демаона",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/THERMAL-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Использование NSProcessInfo.thermalState вместо powermetrics",
+      "type": "DECISION",
+      "status": "АКТУАЛЬНО",
+      "importance": 5,
+      "source": "audit_responses/THERMAL-001-R1-GEMINI.md"
+    },
     {
       "text": "Критерии успеха включают выполнение git_status, file_tree и file_read через Executor",
       "type": "DECISION",
@@ -903,6 +924,34 @@
       "status": "АКТУАЛЬНО",
       "importance": 5,
       "source": "memory/raw/chats/2026-06-28_test2_watcher.md"
+    },
+    {
+      "text": "Требования к архитектуре ThermalGuard: предотвращение рассинхронизации состояний и сохранность данных",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Ограничения ThermalGuard: отсутствие абстракции для динамического добавления новых метрик и экшенов",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Отсутствие официального API для управления троттлингом в macOS",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R1-GEMINI.md"
+    },
+    {
+      "text": "Архитектура ThermalGuard v9.4",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 4,
+      "source": "audit_responses/THERMAL-001-R1-GEMINI.md"
     },
     {
       "text": "Component NEVA-DOC-002 (NEVA Audit Protocol — Регламен) is verified and has OK health",
@@ -5544,6 +5593,34 @@
       "status": "АКТУАЛЬНО",
       "importance": 4,
       "source": "audit_responses/CURSOR-001-FINAL-ARCH.md"
+    },
+    {
+      "text": "Оператор смотрит на AnyBar",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Status_dot смотрит на процесс и логи",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Launchd смотрит на процесс",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R3-CHATGPT.md"
+    },
+    {
+      "text": "Реализована тройная логика контроля",
+      "type": "FACT",
+      "status": "АКТУАЛЬНО",
+      "importance": 3,
+      "source": "audit_responses/MEDIC-001-R3-CHATGPT.md"
     },
     {
       "text": "Формат INDEX соответствует стандарту NEVA",
